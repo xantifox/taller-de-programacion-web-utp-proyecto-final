@@ -1,0 +1,93 @@
+name: 🐛 Bug Report
+description: Reportar un error o problema
+title: "[BUG] "
+labels: ["bug", "priority-high"]
+assignees:
+  - tu-usuario-github
+body:
+  - type: input
+    id: bug-summary
+    attributes:
+      label: 🐛 Resumen del Bug
+      description: Descripción concisa del problema
+      placeholder: "ej: El toggle de tema no funciona en Safari"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: affected-area
+    attributes:
+      label: 📍 Área Afectada
+      description: ¿Qué parte del sitio tiene el problema?
+      options:
+        - Página Principal (index.html)
+        - Portafolio/Galería
+        - Formulario de Contacto
+        - Página de Técnicas
+        - Página de Progreso
+        - Página de Materiales
+        - Navegación/Menú
+        - Sistema de Temas
+        - Responsive Design
+        - JavaScript Global
+    validations:
+      required: true
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: 🌐 Navegador
+      description: ¿En qué navegador ocurre?
+      options:
+        - Chrome
+        - Firefox  
+        - Safari
+        - Edge
+        - Mobile Chrome
+        - Mobile Safari
+        - Todos los navegadores
+        - No probado en otros
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: 🔄 Pasos para Reproducir
+      description: ¿Cómo se reproduce el problema?
+      placeholder: |
+        1. Ve a la página...
+        2. Haz click en...
+        3. Observa que...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: ✅ Comportamiento Esperado
+      description: ¿Qué debería suceder?
+      placeholder: "Describe qué debería pasar en lugar del error..."
+
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: ❌ Comportamiento Actual
+      description: ¿Qué está sucediendo realmente?
+      placeholder: "Describe exactamente qué está fallando..."
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: 🚨 Severidad
+      description: ¿Qué tan crítico es el problema?
+      options:
+        - 🔴 Critical - Bloquea funcionalidad principal
+        - 🟠 High - Afecta experiencia significativamente
+        - 🟡 Medium - Problema notable pero no crítico
+        - 🟢 Low - Problema menor o cosmético
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: 📋 Contexto Adicional
+      description: Screenshots, console errors, información adicional
+      placeholder: "Agrega cualquier información adicional que pueda ayudar..."

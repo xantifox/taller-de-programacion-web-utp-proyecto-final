@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Consulta General del Curso
+    url: https://github.com/tu-usuario/acuarela-arte-portfolio/discussions
+    about: Para dudas generales sobre el proyecto o el curso
+  - name: 📚 Documentación del Proyecto
+    url: https://github.com/tu-usuario/acuarela-arte-portfolio/wiki
+    about: Revisa la documentación antes de crear un issue

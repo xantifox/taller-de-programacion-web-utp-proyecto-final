@@ -1,0 +1,101 @@
+name: 🎯 Epic - Funcionalidad Principal
+description: Crear una épica que agrupa múltiples tareas relacionadas
+title: "[EPIC] "
+labels: ["epic", "priority-critical"]
+assignees:
+  - tu-usuario-github
+body:
+  - type: input
+    id: epic-name
+    attributes:
+      label: 🎨 Nombre de la Épica
+      description: Nombre descriptivo de la funcionalidad principal
+      placeholder: "ej: Sistema de Temas Claro/Oscuro"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: milestone
+    attributes:
+      label: 📅 Milestone (Entrega del Curso)
+      description: ¿A qué entrega del curso pertenece?
+      options:
+        - APF1 - HTML Foundations (Semana 5)
+        - APF2 - CSS Mastery (Semana 10)
+        - APF3 - JavaScript Interactivity (Semana 15)
+        - PROY - Final Integration (Semana 18)
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 📝 Descripción Detallada
+      description: Explica qué funcionalidad implementa esta épica
+      placeholder: "Describe la funcionalidad principal, sus objetivos y alcance..."
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: acceptance-criteria
+    attributes:
+      label: ✅ Criterios de Aceptación
+      description: Marca los criterios que debe cumplir esta épica
+      options:
+        - label: Funcionalidad completamente implementada
+        - label: Testing realizado en múltiples navegadores
+        - label: Responsive design verificado
+        - label: Accesibilidad básica implementada
+        - label: Código documentado y comentado
+        - label: Validación W3C sin errores críticos
+
+  - type: input
+    id: estimation
+    attributes:
+      label: ⏱️ Estimación Total (horas)
+      description: Tiempo estimado para completar toda la épica
+      placeholder: "ej: 15"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: difficulty
+    attributes:
+      label: 🎯 Dificultad Técnica
+      description: Nivel de complejidad de la épica
+      options:
+        - 🟢 Fácil - Conocimientos básicos
+        - 🟡 Medio - Requiere investigación  
+        - 🔴 Difícil - Conocimientos avanzados
+    validations:
+      required: true
+
+  - type: textarea
+    id: tasks
+    attributes:
+      label: 📋 Issues Relacionados (Para completar después)
+      description: Lista los issues que formarán parte de esta épica
+      placeholder: |
+        - [ ] #XX - Tarea específica 1
+        - [ ] #XX - Tarea específica 2
+        - [ ] #XX - Tarea específica 3
+      value: |
+        - [ ] #XX - Implementar funcionalidad base
+        - [ ] #XX - Agregar estilos CSS
+        - [ ] #XX - Testing y validación
+    
+  - type: textarea
+    id: resources
+    attributes:
+      label: 📚 Recursos Necesarios
+      description: Documentación, herramientas, assets requeridos
+      placeholder: "Enlaces a documentación, imágenes necesarias, herramientas específicas..."
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: 🔗 Dependencias
+      description: Qué épicas o tareas deben completarse antes/después
+      placeholder: |
+        **Depende de:** [épicas o issues que deben completarse antes]
+        **Bloquea a:** [épicas que no pueden empezar hasta que esta termine]
