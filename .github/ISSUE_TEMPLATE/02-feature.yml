@@ -1,6 +1,6 @@
 name: ⚡ Feature - Tarea Específica
 description: Crear una tarea específica de desarrollo
-title: ""
+title: "Título del issue..."
 labels: ["priority-medium"]
 assignees:
   - tu-usuario-github
