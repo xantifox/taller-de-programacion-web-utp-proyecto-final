@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Meta tags esenciales -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AcuarelaArte - Aprende técnicas de acuarela y explora mi portafolio artístico. Tutoriales paso a paso, materiales recomendados y evolución artística.">
+    <meta name="keywords" content="acuarela, arte, pintura, tutoriales, técnicas, portafolio, materiales, watercolor">
+    <meta name="author" content="AcuarelaArte">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="AcuarelaArte | Técnicas y Portafolio de Acuarelas">
+    <meta property="og:description" content="Descubre el mundo de las acuarelas con tutoriales, técnicas y mi portafolio artístico">
+    <meta property="og:image" content="assets/images/og-image.jpg">
+    <meta property="og:url" content="https://acuarelaarte.com">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="AcuarelaArte">
+    
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AcuarelaArte | Técnicas y Portafolio de Acuarelas">
+    <meta name="twitter:description" content="Descubre el mundo de las acuarelas con tutoriales, técnicas y mi portafolio artístico">
+    <meta name="twitter:image" content="assets/images/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/icons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/icons/favicon-16x16.png">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#4A90C2">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="css/main.css" as="style">
+    <link rel="preload" href="assets/fonts/primary-font.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    
+    <title>AcuarelaArte | Técnicas y Portafolio de Acuarelas</title>
+</head>
+<body>
+    <!-- Skip to main content para accesibilidad -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+    
+    <!-- Header Principal -->
+    <header class="header" role="banner">
+        <nav class="navbar" role="navigation" aria-label="Navegación principal">
+            <div class="navbar-container">
+                <!-- Logo -->
+                <div class="navbar-brand">
+                    <a href="index.html" class="brand-link" aria-label="AcuarelaArte - Inicio">
+                        <h1 class="brand-text">AcuarelaArte</h1>
+                    </a>
+                </div>
+                
+                <!-- Controls de navegación -->
+                <div class="navbar-controls">
+                    <!-- Toggle de tema -->
+                    <button class="theme-toggle" 
+                            id="themeToggle" 
+                            type="button"
+                            aria-label="Cambiar entre tema claro y oscuro"
+                            title="Cambiar tema">
+                        <span class="theme-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Cambiar tema</span>
+                    </button>
+                    
+                    <!-- Menú hamburguesa -->
+                    <button class="menu-toggle" 
+                            id="menuToggle" 
+                            type="button"
+                            aria-label="Abrir menú de navegación"
+                            aria-expanded="false"
+                            aria-controls="navMenu">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="sr-only">Menú</span>
+                    </button>
+                </div>
+                
+                <!-- Menú de navegación -->
+                <ul class="nav-menu" id="navMenu" role="menubar">
+                    <li class="nav-item" role="none">
+                        <a href="index.html" 
+                           class="nav-link active" 
+                           role="menuitem"
+                           aria-current="page">Inicio</a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="pages/portafolio.html" 
+                           class="nav-link" 
+                           role="menuitem">Mi Portafolio</a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="pages/tecnicas.html" 
+                           class="nav-link" 
+                           role="menuitem">Técnicas y Tutoriales</a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="pages/progreso.html" 
+                           class="nav-link" 
+                           role="menuitem">Mi Progreso</a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="pages/contacto.html" 
+                           class="nav-link" 
+                           role="menuitem">Contacto</a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="pages/materiales.html" 
+                           class="nav-link" 
+                           role="menuitem">Materiales Recomendados</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Contenido Principal -->
+    <main id="main-content" class="main" role="main">
+        <!-- Hero Section -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h2 id="hero-title" class="hero-title fade-in-up">
+                        Bienvenido a AcuarelaArte
+                    </h2>
+                    <p class="hero-subtitle fade-in-up delay-1">
+                        Descubre el mundo mágico de las acuarelas a través de técnicas, 
+                        tutoriales y mi evolución artística personal
+                    </p>
+                    <p class="hero-description fade-in-up delay-2">
+                        Soy un artista intermedio con un año de experiencia compartiendo 
+                        conocimientos sobre acuarelas. Aquí encontrarás desde técnicas básicas 
+                        hasta proyectos avanzados, todo explicado paso a paso.
+                    </p>
+                    <div class="hero-actions fade-in-up delay-3">
+                        <a href="pages/portafolio.html" 
+                           class="cta-button cta-primary"
+                           aria-describedby="cta-description">
+                            Ver Mi Portafolio
+                        </a>
+                        <a href="pages/tecnicas.html" 
+                           class="cta-button cta-secondary">
+                            Explorar Técnicas
+                        </a>
+                        <p id="cta-description" class="sr-only">
+                            Explora mi colección de obras de acuarela organizadas por categorías
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="hero-image fade-in-up delay-1">
+                    <img src="assets/images/hero-watercolor.jpg" 
+                         alt="Acuarela principal mostrando paisaje con técnica húmedo sobre húmedo"
+                         class="hero-img">
+                    <div class="hero-image-overlay" aria-hidden="true"></div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Filosofía Artística -->
+        <section class="philosophy" aria-labelledby="philosophy-title">
+            <div class="philosophy-container">
+                <header class="section-header">
+                    <h2 id="philosophy-title" class="section-title">Mi Filosofía Artística</h2>
+                    <p class="section-subtitle">
+                        Las acuarelas son más que una técnica, son una forma de ver y sentir el mundo
+                    </p>
+                </header>
+                
+                <div class="philosophy-grid">
+                    <article class="philosophy-card fade-in-up" tabindex="0">
+                        <div class="card-icon" aria-hidden="true">
+                            <img src="assets/images/icons/flow-icon.svg" 
+                                 alt="" 
+                                 class="icon">
+                        </div>
+                        <h3 class="card-title">Fluidez Natural</h3>
+                        <p class="card-description">
+                            Creo en dejar que los colores fluyan naturalmente, 
+                            encontrando belleza en lo impredecible y espontáneo 
+                            de cada pincelada.
+                        </p>
+                    </article>
+                    
+                    <article class="philosophy-card fade-in-up delay-1" tabindex="0">
+                        <div class="card-icon" aria-hidden="true">
+                            <img src="assets/images/icons/learning-icon.svg" 
+                                 alt="" 
+                                 class="icon">
+                        </div>
+                        <h3 class="card-title">Aprendizaje Continuo</h3>
+                        <p class="card-description">
+                            Cada obra es una oportunidad de aprender algo nuevo. 
+                            Comparto mis errores y aciertos para que otros 
+                            puedan aprender de mi experiencia.
+                        </p>
+                    </article>
+                    
+                    <article class="philosophy-card fade-in-up delay-2" tabindex="0">
+                        <div class="card-icon" aria-hidden="true">
+                            <img src="assets/images/icons/emotion-icon.svg" 
+                                 alt="" 
+                                 class="icon">
+                        </div>
+                        <h3 class="card-title">Emoción en Cada Trazo</h3>
+                        <p class="card-description">
+                            Las acuarelas capturan emociones de manera única. 
+                            Cada técnica transmite un sentimiento diferente, 
+                            desde la calma hasta la energía vibrante.
+                        </p>
+                    </article>
+                    
+                    <article class="philosophy-card fade-in-up delay-3" tabindex="0">
+                        <div class="card-icon" aria-hidden="true">
+                            <img src="assets/images/icons/community-icon.svg" 
+                                 alt="" 
+                                 class="icon">
+                        </div>
+                        <h3 class="card-title">Comunidad Artística</h3>
+                        <p class="card-description">
+                            El arte se enriquece cuando se comparte. 
+                            Construyo una comunidad donde principiantes y 
+                            experimentados pueden crecer juntos.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Sección de Destacados -->
+        <section class="highlights" aria-labelledby="highlights-title">
+            <div class="highlights-container">
+                <header class="section-header">
+                    <h2 id="highlights-title" class="section-title">¿Qué Encontrarás Aquí?</h2>
+                </header>
+                
+                <div class="highlights-grid">
+                    <div class="highlight-item fade-in-up">
+                        <div class="highlight-image">
+                            <img src="assets/images/highlight-portfolio.jpg" 
+                                 alt="Vista previa de obras de acuarela del portafolio" 
+                                 class="highlight-img">
+                        </div>
+                        <div class="highlight-content">
+                            <h3 class="highlight-title">Portafolio Interactivo</h3>
+                            <p class="highlight-description">
+                                Explora mi colección de obras organizadas por técnicas, 
+                                temas y niveles de dificultad con filtros interactivos.
+                            </p>
+                            <a href="pages/portafolio.html" class="highlight-link">
+                                Explorar Galería →
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="highlight-item fade-in-up delay-1">
+                        <div class="highlight-image">
+                            <img src="assets/images/highlight-tutorials.jpg" 
+                                 alt="Vista previa de tutoriales paso a paso" 
+                                 class="highlight-img">
+                        </div>
+                        <div class="highlight-content">
+                            <h3 class="highlight-title">Tutoriales Detallados</h3>
+                            <p class="highlight-description">
+                                Aprende técnicas desde básicas hasta avanzadas con 
+                                guías paso a paso, materiales y consejos prácticos.
+                            </p>
+                            <a href="pages/tecnicas.html" class="highlight-link">
+                                Ver Técnicas →
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="highlight-item fade-in-up delay-2">
+                        <div class="highlight-image">
+                            <img src="assets/images/highlight-materials.jpg" 
+                                 alt="Vista previa de materiales recomendados" 
+                                 class="highlight-img">
+                        </div>
+                        <div class="highlight-content">
+                            <h3 class="highlight-title">Materiales Expertos</h3>
+                            <p class="highlight-description">
+                                Descubre qué pinceles, papeles y acuarelas uso, 
+                                con comparativas y recomendaciones por presupuesto.
+                            </p>
+                            <a href="pages/materiales.html" class="highlight-link">
+                                Ver Materiales →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">AcuarelaArte</h3>
+                    <p class="footer-description">
+                        Compartiendo la pasión por las acuarelas a través de 
+                        tutoriales, técnicas y experiencias artísticas.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Navegación</h4>
+                    <ul class="footer-links">
+                        <li><a href="pages/portafolio.html" class="footer-link">Portafolio</a></li>
+                        <li><a href="pages/tecnicas.html" class="footer-link">Técnicas</a></li>
+                        <li><a href="pages/progreso.html" class="footer-link">Mi Progreso</a></li>
+                        <li><a href="pages/contacto.html" class="footer-link">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Recursos</h4>
+                    <ul class="footer-links">
+                        <li><a href="pages/materiales.html" class="footer-link">Materiales</a></li>
+                        <li><a href="#" class="footer-link">Consejos</a></li>
+                        <li><a href="#" class="footer-link">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    &copy; 2025 AcuarelaArte. Proyecto educativo - Taller de Programación Web.
+                </p>
+                <p class="footer-credits">
+                    Desarrollado con ❤️ y acuarelas
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="js/main.js" defer></script>
+</body>
+</html>
