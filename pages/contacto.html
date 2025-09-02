@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contacta conmigo para clases personalizadas, encargos de obras o consultas sobre técnicas de acuarela.">
+    <meta name="keywords" content="contacto, clases acuarela, encargos, consultas, formulario">
+    <meta property="og:title" content="Contacto - AcuarelaArte">
+    <meta property="og:description" content="Ponte en contacto para clases, encargos o consultas sobre acuarelas">
+    <link rel="stylesheet" href="../css/main.css">
+    <title>Contacto | AcuarelaArte</title>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+    
+    <header class="header" role="banner">
+        <nav class="navbar" role="navigation" aria-label="Navegación principal">
+            <div class="navbar-container">
+                <div class="navbar-brand">
+                    <a href="../index.html" class="brand-link">
+                        <h1 class="brand-text">AcuarelaArte</h1>
+                    </a>
+                </div>
+                
+                <div class="navbar-controls">
+                    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Cambiar tema">
+                        <span class="theme-icon" aria-hidden="true"></span>
+                    </button>
+                    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-expanded="false">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
+                </div>
+                
+                <ul class="nav-menu" id="navMenu" role="menubar">
+                    <li class="nav-item"><a href="../index.html" class="nav-link">Inicio</a></li>
+                    <li class="nav-item"><a href="portafolio.html" class="nav-link">Mi Portafolio</a></li>
+                    <li class="nav-item"><a href="tecnicas.html" class="nav-link">Técnicas y Tutoriales</a></li>
+                    <li class="nav-item"><a href="progreso.html" class="nav-link">Mi Progreso</a></li>
+                    <li class="nav-item"><a href="contacto.html" class="nav-link active" aria-current="page">Contacto</a></li>
+                    <li class="nav-item"><a href="materiales.html" class="nav-link">Materiales Recomendados</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <main id="main-content" class="main" role="main">
+        <section class="page-header" aria-labelledby="contact-title">
+            <div class="container">
+                <h1 id="contact-title" class="page-title">Contacto</h1>
+                <p class="page-subtitle">¿Tienes preguntas sobre acuarelas, interés en clases o quieres encargar una obra? ¡Hablemos!</p>
+            </div>
+        </section>
+        
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-content">
+                    <!-- Información de contacto -->
+                    <div class="contact-info">
+                        <h2>Formas de Contactar</h2>
+                        
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <h3>Clases Personalizadas</h3>
+                                <p>
+                                    Ofrezco clases individuales y grupales para todos los niveles. 
+                                    Presenciales en Lima o virtuales via videollamada.
+                                </p>
+                                <ul>
+                                    <li><strong>Individual:</strong> S/80 por 2 horas</li>
+                                    <li><strong>Grupal:</strong> S/50 por persona (mín. 3 personas)</li>
+                                    <li><strong>Virtual:</strong> S/60 por 1.5 horas</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <h3>Encargos Personalizados</h3>
+                                <p>
+                                    Acepto encargos de retratos, paisajes y obras personalizadas. 
+                                    Consulta sin compromiso sobre precios y tiempos.
+                                </p>
+                                <ul>
+                                    <li><strong>Retrato:</strong> desde S/200 (A4)</li>
+                                    <li><strong>Paisaje:</strong> desde S/150 (A4)</li>
+                                    <li><strong>Obra personalizada:</strong> Precio según complejidad</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <h3>Consultas Generales</h3>
+                                <p>
+                                    ¿Dudas sobre técnicas, materiales o proceso creativo? 
+                                    Estoy aquí para ayudarte en tu viaje artístico.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Formulario de contacto -->
+                    <div class="contact-form-container">
+                        <form class="contact-form" id="contactForm" novalidate>
+                            <h2>Envíame un Mensaje</h2>
+                            
+                            <div class="form-group">
+                                <label for="name" class="form-label">
+                                    Nombre completo <span class="required" aria-label="Campo obligatorio">*</span>
+                                </label>
+                                <input type="text" 
+                                       id="name" 
+                                       name="name" 
+                                       class="form-control" 
+                                       required 
+                                       aria-describedby="nameError nameHelp"
+                                       minlength="2"
+                                       maxlength="50">
+                                <small id="nameHelp" class="form-help">Introduce tu nombre y apellido</small>
+                                <span class="error-message" id="nameError" role="alert"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email" class="form-label">
+                                    Correo electrónico <span class="required">*</span>
+                                </label>
+                                <input type="email" 
+                                       id="email" 
+                                       name="email" 
+                                       class="form-control" 
+                                       required 
+                                       aria-describedby="emailError emailHelp">
+                                <small id="emailHelp" class="form-help">Usa un correo válido para poder responderte</small>
+                                <span class="error-message" id="emailError" role="alert"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone" class="form-label">Teléfono (opcional)</label>
+                                <input type="tel" 
+                                       id="phone" 
+                                       name="phone" 
+                                       class="form-control" 
+                                       aria-describedby="phoneHelp"
+                                       pattern="[0-9+\-\s()]+">
+                                <small id="phoneHelp" class="form-help">Incluye código de país si es internacional</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject" class="form-label">Asunto</label>
+                                <select id="subject" name="subject" class="form-control" aria-describedby="subjectHelp">
+                                    <option value="">Selecciona un asunto</option>
+                                    <option value="clases">Clases particulares</option>
+                                    <option value="encargo">Encargo personalizado</option>
+                                    <option value="consulta">Consulta sobre técnicas</option>
+                                    <option value="materiales">Consulta sobre materiales</option>
+                                    <option value="colaboracion">Colaboración/Proyecto</option>
+                                    <option value="otro">Otro asunto</option>
+                                </select>
+                                <small id="subjectHelp" class="form-help">Esto me ayuda a priorizar tu consulta</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="experience" class="form-label">Tu nivel en acuarelas</label>
+                                <fieldset class="radio-group" aria-describedby="experienceHelp">
+                                    <legend class="sr-only">Selecciona tu nivel de experiencia</legend>
+                                    
+                                    <label class="radio-label">
+                                        <input type="radio" name="experience" value="principiante" class="radio-input">
+                                        <span class="radio-custom"></span>
+                                        <span class="radio-text">Principiante (nunca he pintado)</span>
+                                    </label>
+                                    
+                                    <label class="radio-label">
+                                        <input type="radio" name="experience" value="basico" class="radio-input">
+                                        <span class="radio-custom"></span>
+                                        <span class="radio-text">Básico (algunas obras)</span>
+                                    </label>
+                                    
+                                    <label class="radio-label">
+                                        <input type="radio" name="experience" value="intermedio" class="radio-input">
+                                        <span class="radio-custom"></span>
+                                        <span class="radio-text">Intermedio (varios meses pintando)</span>
+                                    </label>
+                                    
+                                    <label class="radio-label">
+                                        <input type="radio" name="experience" value="avanzado" class="radio-input">
+                                        <span class="radio-custom"></span>
+                                        <span class="radio-text">Avanzado (años de experiencia)</span>
+                                    </label>
+                                </fieldset>
+                                <small id="experienceHelp" class="form-help">Esto me ayuda a personalizar mi respuesta</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message" class="form-label">
+                                    Mensaje <span class="required">*</span>
+                                </label>
+                                <textarea id="message" 
+                                          name="message" 
+                                          class="form-control" 
+                                          rows="6" 
+                                          required 
+                                          aria-describedby="messageError messageHelp"
+                                          minlength="10"
+                                          maxlength="1000"></textarea>
+                                <small id="messageHelp" class="form-help">Cuéntame en detalle sobre tu consulta o pedido</small>
+                                <span class="error-message" id="messageError" role="alert"></span>
+                                <div class="character-count">
+                                    <span id="messageCount">0</span>/1000 caracteres
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <fieldset class="checkbox-group">
+                                    <legend class="form-label">Preferencias de comunicación</legend>
+                                    
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="preferences" value="newsletter" class="checkbox-input">
+                                        <span class="checkbox-custom"></span>
+                                        <span class="checkbox-text">Quiero recibir noticias sobre nuevos tutoriales</span>
+                                    </label>
+                                    
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="preferences" value="workshops" class="checkbox-input">
+                                        <span class="checkbox-custom"></span>
+                                        <span class="checkbox-text">Avísame sobre talleres y clases grupales</span>
+                                    </label>
+                                    
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="preferences" value="portfolio" class="checkbox-input">
+                                        <span class="checkbox-custom"></span>
+                                        <span class="checkbox-text">Notifícame cuando publique nuevas obras</span>
+                                    </label>
+                                </fieldset>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="checkbox-label required-checkbox">
+                                    <input type="checkbox" 
+                                           name="privacy" 
+                                           id="privacy" 
+                                           class="checkbox-input" 
+                                           required
+                                           aria-describedby="privacyError">
+                                    <span class="checkbox-custom"></span>
+                                    <span class="checkbox-text">
+                                        Acepto que mis datos sean utilizados para responder a esta consulta <span class="required">*</span>
+                                    </span>
+                                </label>
+                                <span class="error-message" id="privacyError" role="alert"></span>
+                                <small class="form-help">
+                                    Tus datos solo se usarán para responder tu mensaje y no se compartirán con terceros.
+                                </small>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="submit" class="submit-btn" id="submitBtn">
+                                    <span class="btn-text">Enviar Mensaje</span>
+                                    <span class="btn-loader" aria-hidden="true"></span>
+                                </button>
+                                <button type="reset" class="reset-btn">Limpiar Formulario</button>
+                            </div>
+                            
+                            <div class="form-feedback" id="formFeedback" role="status" aria-live="polite"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="footer" role="contentinfo">
+        <div class="footer-container">
+            <p>&copy; 2025 AcuarelaArte. Proyecto educativo.</p>
+        </div>
+    </footer>
+    
+    <script src="../js/main.js" defer></script>
+    <script src="../js/pages/contact.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portafolio de obras de acuarela organizadas por categorías. Explora paisajes, retratos y arte abstracto con técnicas detalladas.">
+    <meta name="keywords" content="portafolio, acuarela, paisajes, retratos, arte abstracto, galería, obras">
+    <meta property="og:title" content="Mi Portafolio - AcuarelaArte">
+    <meta property="og:description" content="Explora mi colección de obras de acuarela organizadas por categorías y técnicas">
+    <meta property="og:image" content="../assets/images/og-portfolio.jpg">
+    <link rel="stylesheet" href="../css/main.css">
+    <title>Mi Portafolio | AcuarelaArte</title>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+    
+    <header class="header" role="banner">
+        <nav class="navbar" role="navigation" aria-label="Navegación principal">
+            <div class="navbar-container">
+                <div class="navbar-brand">
+                    <a href="../index.html" class="brand-link">
+                        <h1 class="brand-text">AcuarelaArte</h1>
+                    </a>
+                </div>
+                
+                <div class="navbar-controls">
+                    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Cambiar tema">
+                        <span class="theme-icon" aria-hidden="true"></span>
+                    </button>
+                    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-expanded="false">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
+                </div>
+                
+                <ul class="nav-menu" id="navMenu" role="menubar">
+                    <li class="nav-item"><a href="../index.html" class="nav-link">Inicio</a></li>
+                    <li class="nav-item"><a href="portafolio.html" class="nav-link active" aria-current="page">Mi Portafolio</a></li>
+                    <li class="nav-item"><a href="tecnicas.html" class="nav-link">Técnicas y Tutoriales</a></li>
+                    <li class="nav-item"><a href="progreso.html" class="nav-link">Mi Progreso</a></li>
+                    <li class="nav-item"><a href="contacto.html" class="nav-link">Contacto</a></li>
+                    <li class="nav-item"><a href="materiales.html" class="nav-link">Materiales Recomendados</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <main id="main-content" class="main" role="main">
+        <section class="page-header" aria-labelledby="portfolio-title">
+            <div class="container">
+                <h1 id="portfolio-title" class="page-title">Mi Portafolio</h1>
+                <p class="page-subtitle">Explora mi colección de obras de acuarela organizadas por categorías y técnicas</p>
+            </div>
+        </section>
+        
+        <section class="gallery-section" aria-labelledby="gallery-heading">
+            <div class="container">
+                <header class="gallery-header">
+                    <h2 id="gallery-heading" class="sr-only">Galería de obras</h2>
+                    <div class="filter-controls" role="tablist" aria-label="Filtros de galería">
+                        <button class="filter-btn active" 
+                                role="tab" 
+                                aria-selected="true" 
+                                aria-controls="gallery-grid" 
+                                data-filter="all">
+                            Todas las obras
+                        </button>
+                        <button class="filter-btn" 
+                                role="tab" 
+                                aria-selected="false" 
+                                aria-controls="gallery-grid" 
+                                data-filter="paisajes">
+                            Paisajes
+                        </button>
+                        <button class="filter-btn" 
+                                role="tab" 
+                                aria-selected="false" 
+                                aria-controls="gallery-grid" 
+                                data-filter="retratos">
+                            Retratos
+                        </button>
+                        <button class="filter-btn" 
+                                role="tab" 
+                                aria-selected="false" 
+                                aria-controls="gallery-grid" 
+                                data-filter="abstracto">
+                            Abstracto
+                        </button>
+                    </div>
+                </header>
+                
+                <div class="gallery-grid" 
+                     id="galleryGrid" 
+                     role="tabpanel" 
+                     aria-labelledby="active-filter">
+                    <!-- Las obras se cargarán dinámicamente con JavaScript -->
+                    
+                    <!-- Ejemplo de estructura de obra -->
+                    <article class="gallery-item" data-category="paisajes">
+                        <div class="gallery-image">
+                            <img src="../assets/images/obras/paisaje01.jpg" 
+                                 alt="Atardecer en el campo, técnica húmedo sobre húmedo" 
+                                 class="artwork-img"
+                                 loading="lazy">
+                            <div class="gallery-overlay">
+                                <button class="view-artwork" 
+                                        data-artwork="paisaje01"
+                                        aria-label="Ver obra en detalle">
+                                    Ver Obra
+                                </button>
+                            </div>
+                        </div>
+                        <div class="gallery-info">
+                            <h3 class="artwork-title">Atardecer en el Campo</h3>
+                            <p class="artwork-technique">Húmedo sobre húmedo</p>
+                            <span class="artwork-category" aria-label="Categoría">Paisajes</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Lightbox Modal -->
+    <div class="lightbox" 
+         id="lightbox" 
+         role="dialog" 
+         aria-labelledby="lightbox-title" 
+         aria-describedby="lightbox-description" 
+         aria-hidden="true">
+        <div class="lightbox-content">
+            <button class="close-lightbox" 
+                    aria-label="Cerrar galería de imágenes" 
+                    type="button">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            
+            <img class="lightbox-image" 
+                 id="lightboxImage" 
+                 alt="" 
+                 role="img">
+            
+            <div class="lightbox-info">
+                <h3 id="lightbox-title"></h3>
+                <p id="lightbox-description"></p>
+                <div class="artwork-details">
+                    <span class="detail-item" id="lightbox-technique"></span>
+                    <span class="detail-item" id="lightbox-category"></span>
+                </div>
+            </div>
+            
+            <button class="lightbox-nav prev" 
+                    id="prevBtn" 
+                    aria-label="Imagen anterior" 
+                    type="button">
+                <span aria-hidden="true">❮</span>
+            </button>
+            <button class="lightbox-nav next" 
+                    id="nextBtn" 
+                    aria-label="Imagen siguiente" 
+                    type="button">
+                <span aria-hidden="true">❯</span>
+            </button>
+        </div>
+    </div>
+    
+    <footer class="footer" role="contentinfo">
+        <div class="footer-container">
+            <p>&copy; 2025 AcuarelaArte. Proyecto educativo.</p>
+        </div>
+    </footer>
+    
+    <script src="../js/main.js" defer></script>
+    <script src="../js/pages/gallery.js" defer></script>
+</body>
+</html>

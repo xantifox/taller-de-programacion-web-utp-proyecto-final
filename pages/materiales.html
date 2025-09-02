@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Guía completa de materiales para acuarela: pinceles, papeles, acuarelas y accesorios recomendados con comparativas de precio y calidad.">
+    <meta name="keywords" content="materiales acuarela, pinceles, papel acuarela, acuarelas, recomendaciones, comparativa">
+    <meta property="og:title" content="Materiales Recomendados - AcuarelaArte">
+    <meta property="og:description" content="Descubre qué materiales uso y recomiendo para acuarela con comparativas detalladas">
+    <link rel="stylesheet" href="../css/main.css">
+    <title>Materiales Recomendados | AcuarelaArte</title>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+    
+    <header class="header" role="banner">
+        <nav class="navbar" role="navigation" aria-label="Navegación principal">
+            <div class="navbar-container">
+                <div class="navbar-brand">
+                    <a href="../index.html" class="brand-link">
+                        <h1 class="brand-text">AcuarelaArte</h1>
+                    </a>
+                </div>
+                
+                <div class="navbar-controls">
+                    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Cambiar tema">
+                        <span class="theme-icon" aria-hidden="true"></span>
+                    </button>
+                    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-expanded="false">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
+                </div>
+                
+                <ul class="nav-menu" id="navMenu" role="menubar">
+                    <li class="nav-item"><a href="../index.html" class="nav-link">Inicio</a></li>
+                    <li class="nav-item"><a href="portafolio.html" class="nav-link">Mi Portafolio</a></li>
+                    <li class="nav-item"><a href="tecnicas.html" class="nav-link">Técnicas y Tutoriales</a></li>
+                    <li class="nav-item"><a href="progreso.html" class="nav-link">Mi Progreso</a></li>
+                    <li class="nav-item"><a href="contacto.html" class="nav-link">Contacto</a></li>
+                    <li class="nav-item"><a href="materiales.html" class="nav-link active" aria-current="page">Materiales Recomendados</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <main id="main-content" class="main" role="main">
+        <section class="page-header" aria-labelledby="materials-title">
+            <div class="container">
+                <h1 id="materials-title" class="page-title">Materiales Recomendados</h1>
+                <p class="page-subtitle">Guía completa de pinceles, papeles, acuarelas y accesorios que uso y recomiendo</p>
+            </div>
+        </section>
+        
+        <!-- Controles de filtrado y búsqueda -->
+        <section class="materials-controls" aria-labelledby="controls-title">
+            <div class="container">
+                <h2 id="controls-title" class="sr-only">Controles de búsqueda y filtrado</h2>
+                <div class="controls-container">
+                    <div class="search-control">
+                        <label for="searchMaterials" class="sr-only">Buscar materiales</label>
+                        <input type="search" 
+                               id="searchMaterials" 
+                               name="search"
+                               placeholder="Buscar materiales..." 
+                               class="search-input"
+                               aria-describedby="searchHelp">
+                        <small id="searchHelp" class="sr-only">Busca por nombre, marca o categoría de material</small>
+                    </div>
+                    
+                    <div class="filter-controls">
+                        <label for="categoryFilter" class="filter-label">Categoría:</label>
+                        <select id="categoryFilter" name="category" class="filter-select">
+                            <option value="">Todas las categorías</option>
+                            <option value="pinceles">Pinceles</option>
+                            <option value="papeles">Papeles</option>
+                            <option value="acuarelas">Acuarelas</option>
+                            <option value="accesorios">Accesorios</option>
+                        </select>
+                        
+                        <label for="budgetFilter" class="filter-label">Presupuesto:</label>
+                        <select id="budgetFilter" name="budget" class="filter-select">
+                            <option value="">Todos los precios</option>
+                            <option value="economico">Económico (< S/50)</option>
+                            <option value="medio">Medio (S/50 - S/150)</option>
+                            <option value="premium">Premium (> S/150)</option>
+                        </select>
+                        
+                        <label for="levelFilter" class="filter-label">Nivel:</label>
+                        <select id="levelFilter" name="level" class="filter-select">
+                            <option value="">Todos los niveles</option>
+                            <option value="principiante">Principiante</option>
+                            <option value="intermedio">Intermedio</option>
+                            <option value="avanzado">Avanzado</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Tabla de materiales -->
+        <section class="materials-table-section">
+            <div class="container">
+                <div class="table-container">
+                    <table class="materials-table" id="materialsTable">
+                        <caption class="table-caption">
+                            Comparativa detallada de materiales para acuarela con precios, calificaciones y recomendaciones
+                        </caption>
+                        
+                        <thead>
+                            <tr>
+                                <th scope="col" class="sortable" data-sort="name" tabindex="0" role="button" aria-sort="none">
+                                    Producto 
+                                    <span class="sort-icon" aria-hidden="true">↕</span>
+                                </th>
+                                <th scope="col" class="sortable" data-sort="category" tabindex="0" role="button" aria-sort="none">
+                                    Categoría
+                                    <span class="sort-icon" aria-hidden="true">↕</span>
+                                </th>
+                                <th scope="col" class="sortable" data-sort="brand" tabindex="0" role="button" aria-sort="none">
+                                    Marca
+                                    <span class="sort-icon" aria-hidden="true">↕</span>
+                                </th>
+                                <th scope="col" class="sortable" data-sort="price" tabindex="0" role="button" aria-sort="none">
+                                    Precio (S/)
+                                    <span class="sort-icon" aria-hidden="true">↕</span>
+                                </th>
+                                <th scope="col" class="sortable" data-sort="rating" tabindex="0" role="button" aria-sort="none">
+                                    Mi Calificación
+                                    <span class="sort-icon" aria-hidden="true">↕</span>
+                                </th>
+                                <th scope="col">Nivel Recomendado</th>
+                                <th scope="col">Mi Recomendación</th>
+                            </tr>
+                        </thead>
+                        
+                        <tbody id="materialsTableBody">
+                            <!-- Pinceles -->
+                            <tr data-category="pinceles" data-budget="economico" data-level="principiante">
+                                <td class="product-cell">
+                                    <div class="product-info">
+                                        <img src="../assets/images/materiales/pincel-basico.jpg" 
+                                             alt="Pincel redondo básico" 
+                                             class="product-image"
+                                             loading="lazy">
+                                        <div class="product-details">
+                                            <strong class="product-name">Pincel Redondo #8</strong>
+                                            <small class="product-description">Pincel sintético básico</small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td data-label="Categoría">
+                                    <span class="category-badge pinceles">Pinceles</span>
+                                </td>
+                                <td data-label="Marca">Genérico</td>
+                                <td data-label="Precio" class="price-cell">
+                                    <span class="price">S/ 15</span>
+                                    <small class="price-note">Por unidad</small>
+                                </td>
+                                <td data-label="Calificación" class="rating-cell">
+                                    <div class="star-rating" aria-label="3 de 5 estrellas">
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                    </div>
+                                    <span class="rating-number">3/5</span>
+                                </td>
+                                <td data-label="Nivel">
+                                    <span class="level-badge principiante">Principiante</span>
+                                </td>
+                                <td data-label="Recomendación" class="recommendation-cell">
+                                    <p>Ideal para empezar. Económico pero funcional para aprender las bases.</p>
+                                </td>
+                            </tr>
+                            
+                            <tr data-category="pinceles" data-budget="medio" data-level="intermedio">
+                                <td class="product-cell">
+                                    <div class="product-info">
+                                        <img src="../assets/images/materiales/winsor-newton.jpg" 
+                                             alt="Pincel Winsor Newton Cotman" 
+                                             class="product-image"
+                                             loading="lazy">
+                                        <div class="product-details">
+                                            <strong class="product-name">Cotman Serie 111 #12</strong>
+                                            <small class="product-description">Pincel sintético de calidad</small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td data-label="Categoría">
+                                    <span class="category-badge pinceles">Pinceles</span>
+                                </td>
+                                <td data-label="Marca">Winsor & Newton</td>
+                                <td data-label="Precio" class="price-cell">
+                                    <span class="price">S/ 65</span>
+                                    <small class="price-note">Por unidad</small>
+                                </td>
+                                <td data-label="Calificación" class="rating-cell">
+                                    <div class="star-rating" aria-label="4 de 5 estrellas">
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star">★</span>
+                                    </div>
+                                    <span class="rating-number">4/5</span>
+                                </td>
+                                <td data-label="Nivel">
+                                    <span class="level-badge intermedio">Intermedio</span>
+                                </td>
+                                <td data-label="Recomendación" class="recommendation-cell">
+                                    <p>Excelente relación calidad-precio. Mantiene la punta y dura mucho tiempo. ¡Mi favorito!</p>
+                                </td>
+                            </tr>
+                            
+                            <!-- Papeles -->
+                            <tr data-category="papeles" data-budget="economico" data-level="principiante">
+                                <td class="product-cell">
+                                    <div class="product-info">
+                                        <img src="../assets/images/materiales/papel-canson.jpg" 
+                                             alt="Papel Canson XL Watercolor" 
+                                             class="product-image"
+                                             loading="lazy">
+                                        <div class="product-details">
+                                            <strong class="product-name">Canson XL Watercolor 300gsm</strong>
+                                            <small class="product-description">Block A4 - 30 hojas</small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td data-label="Categoría">
+                                    <span class="category-badge papeles">Papeles</span>
+                                </td>
+                                <td data-label="Marca">Canson</td>
+                                <td data-label="Precio" class="price-cell">
+                                    <span class="price">S/ 45</span>
+                                    <small class="price-note">Block 30 hojas</small>
+                                </td>
+                                <td data-label="Calificación" class="rating-cell">
+                                    <div class="star-rating" aria-label="4 de 5 estrellas">
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star">★</span>
+                                    </div>
+                                    <span class="rating-number">4/5</span>
+                                </td>
+                                <td data-label="Nivel">
+                                    <span class="level-badge principiante">Principiante</span>
+                                </td>
+                                <td data-label="Recomendación" class="recommendation-cell">
+                                    <p>Papel accesible y confiable. Perfecto para practicar sin preocuparse por el costo.</p>
+                                </td>
+                            </tr>
+                            
+                            <tr data-category="papeles" data-budget="premium" data-level="avanzado">
+                                <td class="product-cell">
+                                    <div class="product-info">
+                                        <img src="../assets/images/materiales/arches-paper.jpg" 
+                                             alt="Papel Arches 100% algodón" 
+                                             class="product-image"
+                                             loading="lazy">
+                                        <div class="product-details">
+                                            <strong class="product-name">Arches 100% Algodón 300gsm</strong>
+                                            <small class="product-description">Hoja suelta A4</small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td data-label="Categoría">
+                                    <span class="category-badge papeles">Papeles</span>
+                                </td>
+                                <td data-label="Marca">Arches</td>
+                                <td data-label="Precio" class="price-cell">
+                                    <span class="price">S/ 18</span>
+                                    <small class="price-note">Por hoja</small>
+                                </td>
+                                <td data-label="Calificación" class="rating-cell">
+                                    <div class="star-rating" aria-label="5 de 5 estrellas">
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                    </div>
+                                    <span class="rating-number">5/5</span>
+                                </td>
+                                <td data-label="Nivel">
+                                    <span class="level-badge avanzado">Avanzado</span>
+                                </td>
+                                <td data-label="Recomendación" class="recommendation-cell">
+                                    <p>El mejor papel que he usado. Textura perfecta, absorbe y seca de manera ideal. Para obras importantes.</p>
+                                </td>
+                            </tr>
+                            
+                            <!-- Acuarelas -->
+                            <tr data-category="acuarelas" data-budget="medio" data-level="intermedio">
+                                <td class="product-cell">
+                                    <div class="product-info">
+                                        <img src="../assets/images/materiales/winton-set.jpg" 
+                                             alt="Set de acuarelas Winsor Newton Winton" 
+                                             class="product-image"
+                                             loading="lazy">
+                                        <div class="product-details">
+                                            <strong class="product-name">Winton Watercolors Set 12</strong>
+                                            <small class="product-description">Tubos 14ml - Set básico</small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td data-label="Categoría">
+                                    <span class="category-badge acuarelas">Acuarelas</span>
+                                </td>
+                                <td data-label="Marca">Winsor & Newton</td>
+                                <td data-label="Precio" class="price-cell">
+                                    <span class="price">S/ 120</span>
+                                    <small class="price-note">Set completo</small>
+                                </td>
+                                <td data-label="Calificación" class="rating-cell">
+                                    <div class="star-rating" aria-label="4 de 5 estrellas">
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star">★</span>
+                                    </div>
+                                    <span class="rating-number">4/5</span>
+                                </td>
+                                <td data-label="Nivel">
+                                    <span class="level-badge intermedio">Intermedio</span>
+                                </td>
+                                <td data-label="Recomendación" class="recommendation-cell">
+                                    <p>Set completo con colores esenciales. Buena calidad de pigmento, ideal para el rango de precio.</p>
+                                </td>
+                            </tr>
+                            
+                            <!-- Accesorios -->
+                            <tr data-category="accesorios" data-budget="economico" data-level="principiante">
+                                <td class="product-cell">
+                                    <div class="product-info">
+                                        <img src="../assets/images/materiales/spray-bottle.jpg" 
+                                             alt="Spray atomizador para acuarela" 
+                                             class="product-image"
+                                             loading="lazy">
+                                        <div class="product-details">
+                                            <strong class="product-name">Spray Atomizador 100ml</strong>
+                                            <small class="product-description">Para humedecer papel y paleta</small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td data-label="Categoría">
+                                    <span class="category-badge accesorios">Accesorios</span>
+                                </td>
+                                <td data-label="Marca">Genérico</td>
+                                <td data-label="Precio" class="price-cell">
+                                    <span class="price">S/ 8</span>
+                                    <small class="price-note">Por unidad</small>
+                                </td>
+                                <td data-label="Calificación" class="rating-cell">
+                                    <div class="star-rating" aria-label="5 de 5 estrellas">
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                    </div>
+                                    <span class="rating-number">5/5</span>
+                                </td>
+                                <td data-label="Nivel">
+                                    <span class="level-badge principiante">Todos los niveles</span>
+                                </td>
+                                <td data-label="Recomendación" class="recommendation-cell">
+                                    <p>Herramienta indispensable y económica. Cambia completamente la forma de trabajar.</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="table-info">
+                    <p><strong>Nota:</strong> Los precios son aproximados y pueden variar según el proveedor. Calificaciones basadas en mi experiencia personal usando estos materiales.</p>
+                    <p><strong>Última actualización:</strong> Enero 2025</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Sección de consejos sobre materiales -->
+        <aside class="materials-tips" aria-labelledby="tips-title">
+            <div class="container">
+                <h2 id="tips-title" class="section-title">Consejos sobre Materiales</h2>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <h3>Invierte en Papel Primero</h3>
+                        <p>Un buen papel marca más diferencia que pinceles caros. El papel de mala calidad frustra y limita tu progreso.</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <h3>Pocos Colores, Mejores Resultados</h3>
+                        <p>Es mejor tener 6 colores de buena calidad que 24 de calidad pobre. Aprende a mezclar antes de expandir tu paleta.</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <h3>Cuida tus Pinceles</h3>
+                        <p>Lávalos bien después de cada uso y dales forma mientras están húmedos. Un buen pincel puede durar años con buen cuidado.</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <h3>Compra por Etapas</h3>
+                        <p>No necesitas todo desde el inicio. Comienza con lo básico y ve agregando materiales según tu progreso y necesidades.</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </main>
+    
+    <footer class="footer" role="contentinfo">
+        <div class="footer-container">
+            <p>&copy; 2025 AcuarelaArte. Proyecto educativo.</p>
+        </div>
+    </footer>
+    
+    <script src="../js/main.js" defer></script>
+</body>
+</html>
