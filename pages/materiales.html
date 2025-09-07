@@ -49,7 +49,7 @@
         <section class="page-header" aria-labelledby="materials-title">
             <div class="container">
                 <h1 id="materials-title" class="page-title">Materiales Recomendados</h1>
-                <p class="page-subtitle">Guía completa de pinceles, papeles, acuarelas y accesorios que uso y recomiendo</p>
+                <p class="page-subtitle">Guía completa de pinceles, papeles, acuarelas y accesorios que uso y recomiendo, basada en un año de experiencia</p>
             </div>
         </section>
         
@@ -63,7 +63,7 @@
                         <input type="search" 
                                id="searchMaterials" 
                                name="search"
-                               placeholder="Buscar materiales..." 
+                               placeholder="Buscar por producto, marca o descripción..." 
                                class="search-input"
                                aria-describedby="searchHelp">
                         <small id="searchHelp" class="sr-only">Busca por nombre, marca o categoría de material</small>
@@ -73,39 +73,40 @@
                         <label for="categoryFilter" class="filter-label">Categoría:</label>
                         <select id="categoryFilter" name="category" class="filter-select">
                             <option value="">Todas las categorías</option>
-                            <option value="pinceles">Pinceles</option>
-                            <option value="papeles">Papeles</option>
-                            <option value="acuarelas">Acuarelas</option>
-                            <option value="accesorios">Accesorios</option>
+                            <option value="pinceles">🖌️ Pinceles</option>
+                            <option value="papeles">📄 Papeles</option>
+                            <option value="acuarelas">🎨 Acuarelas</option>
+                            <option value="accesorios">🛠️ Accesorios</option>
                         </select>
                         
                         <label for="budgetFilter" class="filter-label">Presupuesto:</label>
                         <select id="budgetFilter" name="budget" class="filter-select">
                             <option value="">Todos los precios</option>
-                            <option value="economico">Económico (< S/50)</option>
-                            <option value="medio">Medio (S/50 - S/150)</option>
-                            <option value="premium">Premium (> S/150)</option>
+                            <option value="economico">💰 Económico (< S/50)</option>
+                            <option value="medio">💎 Medio (S/50 - S/150)</option>
+                            <option value="premium">👑 Premium (> S/150)</option>
                         </select>
                         
                         <label for="levelFilter" class="filter-label">Nivel:</label>
                         <select id="levelFilter" name="level" class="filter-select">
                             <option value="">Todos los niveles</option>
-                            <option value="principiante">Principiante</option>
-                            <option value="intermedio">Intermedio</option>
-                            <option value="avanzado">Avanzado</option>
+                            <option value="principiante">🌱 Principiante</option>
+                            <option value="intermedio">⭐ Intermedio</option>
+                            <option value="avanzado">🏆 Avanzado</option>
                         </select>
                     </div>
                 </div>
             </div>
         </section>
         
-        <!-- Tabla de materiales -->
+        <!-- Tabla de materiales expandida -->
         <section class="materials-table-section">
             <div class="container">
                 <div class="table-container">
                     <table class="materials-table" id="materialsTable">
                         <caption class="table-caption">
-                            Comparativa detallada de materiales para acuarela con precios, calificaciones y recomendaciones
+                            Comparativa detallada de 20+ materiales para acuarela con precios actualizados, 
+                            calificaciones personales y recomendaciones basadas en un año de experiencia
                         </caption>
                         
                         <thead>
@@ -131,34 +132,34 @@
                                     <span class="sort-icon" aria-hidden="true">↕</span>
                                 </th>
                                 <th scope="col">Nivel Recomendado</th>
-                                <th scope="col">Mi Recomendación</th>
+                                <th scope="col">Mi Experiencia</th>
                             </tr>
                         </thead>
                         
                         <tbody id="materialsTableBody">
-                            <!-- Pinceles -->
+                            <!-- PINCELES -->
                             <tr data-category="pinceles" data-budget="economico" data-level="principiante">
                                 <td class="product-cell">
                                     <div class="product-info">
                                         <img src="../assets/images/materiales/pincel-basico.jpg" 
-                                             alt="Pincel redondo básico" 
+                                             alt="Pincel redondo básico sintético" 
                                              class="product-image"
                                              loading="lazy">
                                         <div class="product-details">
-                                            <strong class="product-name">Pincel Redondo #8</strong>
-                                            <small class="product-description">Pincel sintético básico</small>
+                                            <strong class="product-name">Pincel Redondo Sintético #8</strong>
+                                            <small class="product-description">Pincel básico para empezar</small>
                                         </div>
                                     </div>
                                 </td>
                                 <td data-label="Categoría">
-                                    <span class="category-badge pinceles">Pinceles</span>
+                                    <span class="category-badge pinceles">🖌️ Pinceles</span>
                                 </td>
                                 <td data-label="Marca">Genérico</td>
-                                <td data-label="Precio" class="price-cell">
+                                <td data-label="Precio" class="price-cell" data-price="15">
                                     <span class="price">S/ 15</span>
                                     <small class="price-note">Por unidad</small>
                                 </td>
-                                <td data-label="Calificación" class="rating-cell">
+                                <td data-label="Calificación" class="rating-cell" data-rating="3">
                                     <div class="star-rating" aria-label="3 de 5 estrellas">
                                         <span class="star filled">★</span>
                                         <span class="star filled">★</span>
@@ -169,10 +170,10 @@
                                     <span class="rating-number">3/5</span>
                                 </td>
                                 <td data-label="Nivel">
-                                    <span class="level-badge principiante">Principiante</span>
+                                    <span class="level-badge principiante">🌱 Principiante</span>
                                 </td>
                                 <td data-label="Recomendación" class="recommendation-cell">
-                                    <p>Ideal para empezar. Económico pero funcional para aprender las bases.</p>
+                                    <p><strong>Para empezar:</strong> Cumple su función básica. Se desgasta rápido pero permite aprender sin gran inversión. Lo usé mis primeros 2 meses.</p>
                                 </td>
                             </tr>
                             
@@ -180,24 +181,24 @@
                                 <td class="product-cell">
                                     <div class="product-info">
                                         <img src="../assets/images/materiales/winsor-newton.jpg" 
-                                             alt="Pincel Winsor Newton Cotman" 
+                                             alt="Pincel Winsor Newton Cotman sintético" 
                                              class="product-image"
                                              loading="lazy">
                                         <div class="product-details">
                                             <strong class="product-name">Cotman Serie 111 #12</strong>
-                                            <small class="product-description">Pincel sintético de calidad</small>
+                                            <small class="product-description">Sintético de calidad media</small>
                                         </div>
                                     </div>
                                 </td>
                                 <td data-label="Categoría">
-                                    <span class="category-badge pinceles">Pinceles</span>
+                                    <span class="category-badge pinceles">🖌️ Pinceles</span>
                                 </td>
                                 <td data-label="Marca">Winsor & Newton</td>
-                                <td data-label="Precio" class="price-cell">
+                                <td data-label="Precio" class="price-cell" data-price="65">
                                     <span class="price">S/ 65</span>
                                     <small class="price-note">Por unidad</small>
                                 </td>
-                                <td data-label="Calificación" class="rating-cell">
+                                <td data-label="Calificación" class="rating-cell" data-rating="4">
                                     <div class="star-rating" aria-label="4 de 5 estrellas">
                                         <span class="star filled">★</span>
                                         <span class="star filled">★</span>
@@ -208,14 +209,92 @@
                                     <span class="rating-number">4/5</span>
                                 </td>
                                 <td data-label="Nivel">
-                                    <span class="level-badge intermedio">Intermedio</span>
+                                    <span class="level-badge intermedio">⭐ Intermedio</span>
                                 </td>
                                 <td data-label="Recomendación" class="recommendation-cell">
-                                    <p>Excelente relación calidad-precio. Mantiene la punta y dura mucho tiempo. ¡Mi favorito!</p>
+                                    <p><strong>Mi favorito:</strong> Relación precio-calidad excepcional. Mantiene la punta 6+ meses con uso regular. Perfecto para húmedo sobre húmedo.</p>
                                 </td>
                             </tr>
                             
-                            <!-- Papeles -->
+                            <tr data-category="pinceles" data-budget="premium" data-level="avanzado">
+                                <td class="product-cell">
+                                    <div class="product-info">
+                                        <img src="../assets/images/materiales/kolinsky-sable.jpg" 
+                                             alt="Pincel Kolinsky Sable premium" 
+                                             class="product-image"
+                                             loading="lazy">
+                                        <div class="product-details">
+                                            <strong class="product-name">Serie 7 Kolinsky Sable #10</strong>
+                                            <small class="product-description">Pelo natural premium</small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td data-label="Categoría">
+                                    <span class="category-badge pinceles">🖌️ Pinceles</span>
+                                </td>
+                                <td data-label="Marca">Winsor & Newton</td>
+                                <td data-label="Precio" class="price-cell" data-price="280">
+                                    <span class="price">S/ 280</span>
+                                    <small class="price-note">Por unidad</small>
+                                </td>
+                                <td data-label="Calificación" class="rating-cell" data-rating="5">
+                                    <div class="star-rating" aria-label="5 de 5 estrellas">
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                    </div>
+                                    <span class="rating-number">5/5</span>
+                                </td>
+                                <td data-label="Nivel">
+                                    <span class="level-badge avanzado">🏆 Avanzado</span>
+                                </td>
+                                <td data-label="Recomendación" class="recommendation-cell">
+                                    <p><strong>Inversión seria:</strong> El mejor pincel que he usado. Capacidad de agua perfecta, punta exacta. Solo para obras importantes por el precio.</p>
+                                </td>
+                            </tr>
+                            
+                            <tr data-category="pinceles" data-budget="medio" data-level="intermedio">
+                                <td class="product-cell">
+                                    <div class="product-info">
+                                        <img src="../assets/images/materiales/pincel-plano.jpg" 
+                                             alt="Pincel plano para lavados" 
+                                             class="product-image"
+                                             loading="lazy">
+                                        <div class="product-details">
+                                            <strong class="product-name">Pincel Plano 1/2"</strong>
+                                            <small class="product-description">Para lavados y fondos</small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td data-label="Categoría">
+                                    <span class="category-badge pinceles">🖌️ Pinceles</span>
+                                </td>
+                                <td data-label="Marca">Da Vinci</td>
+                                <td data-label="Precio" class="price-cell" data-price="85">
+                                    <span class="price">S/ 85</span>
+                                    <small class="price-note">Por unidad</small>
+                                </td>
+                                <td data-label="Calificación" class="rating-cell" data-rating="4">
+                                    <div class="star-rating" aria-label="4 de 5 estrellas">
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star">★</span>
+                                    </div>
+                                    <span class="rating-number">4/5</span>
+                                </td>
+                                <td data-label="Nivel">
+                                    <span class="level-badge intermedio">⭐ Intermedio</span>
+                                </td>
+                                <td data-label="Recomendación" class="recommendation-cell">
+                                    <p><strong>Indispensable:</strong> Para fondos grandes y lavados uniformes. Cambió mi forma de trabajar los cielos y bases.</p>
+                                </td>
+                            </tr>
+                            
+                            <!-- PAPELES -->
                             <tr data-category="papeles" data-budget="economico" data-level="principiante">
                                 <td class="product-cell">
                                     <div class="product-info">
@@ -230,14 +309,14 @@
                                     </div>
                                 </td>
                                 <td data-label="Categoría">
-                                    <span class="category-badge papeles">Papeles</span>
+                                    <span class="category-badge papeles">📄 Papeles</span>
                                 </td>
                                 <td data-label="Marca">Canson</td>
-                                <td data-label="Precio" class="price-cell">
+                                <td data-label="Precio" class="price-cell" data-price="45">
                                     <span class="price">S/ 45</span>
                                     <small class="price-note">Block 30 hojas</small>
                                 </td>
-                                <td data-label="Calificación" class="rating-cell">
+                                <td data-label="Calificación" class="rating-cell" data-rating="4">
                                     <div class="star-rating" aria-label="4 de 5 estrellas">
                                         <span class="star filled">★</span>
                                         <span class="star filled">★</span>
@@ -248,10 +327,49 @@
                                     <span class="rating-number">4/5</span>
                                 </td>
                                 <td data-label="Nivel">
-                                    <span class="level-badge principiante">Principiante</span>
+                                    <span class="level-badge principiante">🌱 Principiante</span>
                                 </td>
                                 <td data-label="Recomendación" class="recommendation-cell">
-                                    <p>Papel accesible y confiable. Perfecto para practicar sin preocuparse por el costo.</p>
+                                    <p><strong>Ideal para práctica:</strong> Mi papel de entrenamiento. Textura media, absorbe bien. Perfecto para experimentar sin preocuparse por el costo.</p>
+                                </td>
+                            </tr>
+                            
+                            <tr data-category="papeles" data-budget="medio" data-level="intermedio">
+                                <td class="product-cell">
+                                    <div class="product-info">
+                                        <img src="../assets/images/materiales/fabriano-artistico.jpg" 
+                                             alt="Papel Fabriano Artistico" 
+                                             class="product-image"
+                                             loading="lazy">
+                                        <div class="product-details">
+                                            <strong class="product-name">Fabriano Artistico 300gsm</strong>
+                                            <small class="product-description">100% algodón - Hoja suelta</small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td data-label="Categoría">
+                                    <span class="category-badge papeles">📄 Papeles</span>
+                                </td>
+                                <td data-label="Marca">Fabriano</td>
+                                <td data-label="Precio" class="price-cell" data-price="12">
+                                    <span class="price">S/ 12</span>
+                                    <small class="price-note">Por hoja A4</small>
+                                </td>
+                                <td data-label="Calificación" class="rating-cell" data-rating="4">
+                                    <div class="star-rating" aria-label="4 de 5 estrellas">
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star">★</span>
+                                    </div>
+                                    <span class="rating-number">4/5</span>
+                                </td>
+                                <td data-label="Nivel">
+                                    <span class="level-badge intermedio">⭐ Intermedio</span>
+                                </td>
+                                <td data-label="Recomendación" class="recommendation-cell">
+                                    <p><strong>Excelente relación calidad-precio:</strong> Algodón 100%, textura perfecta para técnicas intermedias. Mi papel regular para obras serias.</p>
                                 </td>
                             </tr>
                             
@@ -259,24 +377,24 @@
                                 <td class="product-cell">
                                     <div class="product-info">
                                         <img src="../assets/images/materiales/arches-paper.jpg" 
-                                             alt="Papel Arches 100% algodón" 
+                                             alt="Papel Arches 100% algodón premium" 
                                              class="product-image"
                                              loading="lazy">
                                         <div class="product-details">
                                             <strong class="product-name">Arches 100% Algodón 300gsm</strong>
-                                            <small class="product-description">Hoja suelta A4</small>
+                                            <small class="product-description">Grano fino - Hoja suelta</small>
                                         </div>
                                     </div>
                                 </td>
                                 <td data-label="Categoría">
-                                    <span class="category-badge papeles">Papeles</span>
+                                    <span class="category-badge papeles">📄 Papeles</span>
                                 </td>
                                 <td data-label="Marca">Arches</td>
-                                <td data-label="Precio" class="price-cell">
+                                <td data-label="Precio" class="price-cell" data-price="18">
                                     <span class="price">S/ 18</span>
-                                    <small class="price-note">Por hoja</small>
+                                    <small class="price-note">Por hoja A4</small>
                                 </td>
-                                <td data-label="Calificación" class="rating-cell">
+                                <td data-label="Calificación" class="rating-cell" data-rating="5">
                                     <div class="star-rating" aria-label="5 de 5 estrellas">
                                         <span class="star filled">★</span>
                                         <span class="star filled">★</span>
@@ -287,14 +405,92 @@
                                     <span class="rating-number">5/5</span>
                                 </td>
                                 <td data-label="Nivel">
-                                    <span class="level-badge avanzado">Avanzado</span>
+                                    <span class="level-badge avanzado">🏆 Avanzado</span>
                                 </td>
                                 <td data-label="Recomendación" class="recommendation-cell">
-                                    <p>El mejor papel que he usado. Textura perfecta, absorbe y seca de manera ideal. Para obras importantes.</p>
+                                    <p><strong>El mejor papel:</strong> Textura impecable, resistente a múltiples lavados. Solo para obras importantes. Vale cada sol invertido.</p>
                                 </td>
                             </tr>
                             
-                            <!-- Acuarelas -->
+                            <tr data-category="papeles" data-budget="economico" data-level="principiante">
+                                <td class="product-cell">
+                                    <div class="product-info">
+                                        <img src="../assets/images/materiales/papel-estudiante.jpg" 
+                                             alt="Papel para estudiantes económico" 
+                                             class="product-image"
+                                             loading="lazy">
+                                        <div class="product-details">
+                                            <strong class="product-name">Papel Estudiantil 200gsm</strong>
+                                            <small class="product-description">Block A4 - 20 hojas</small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td data-label="Categoría">
+                                    <span class="category-badge papeles">📄 Papeles</span>
+                                </td>
+                                <td data-label="Marca">Genérico</td>
+                                <td data-label="Precio" class="price-cell" data-price="25">
+                                    <span class="price">S/ 25</span>
+                                    <small class="price-note">Block 20 hojas</small>
+                                </td>
+                                <td data-label="Calificación" class="rating-cell" data-rating="2">
+                                    <div class="star-rating" aria-label="2 de 5 estrellas">
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                    </div>
+                                    <span class="rating-number">2/5</span>
+                                </td>
+                                <td data-label="Nivel">
+                                    <span class="level-badge principiante">🌱 Principiante</span>
+                                </td>
+                                <td data-label="Recomendación" class="recommendation-cell">
+                                    <p><strong>Solo para primeros pasos:</strong> Se deforma con agua, absorbe irregular. Usé al inicio, pero recomiendo invertir un poco más en Canson.</p>
+                                </td>
+                            </tr>
+                            
+                            <!-- ACUARELAS -->
+                            <tr data-category="acuarelas" data-budget="economico" data-level="principiante">
+                                <td class="product-cell">
+                                    <div class="product-info">
+                                        <img src="../assets/images/materiales/acuarelas-basicas.jpg" 
+                                             alt="Set de acuarelas básicas estudiantiles" 
+                                             class="product-image"
+                                             loading="lazy">
+                                        <div class="product-details">
+                                            <strong class="product-name">Set Acuarelas Básicas 12 colores</strong>
+                                            <small class="product-description">Calidad estudiantil - Pastillas</small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td data-label="Categoría">
+                                    <span class="category-badge acuarelas">🎨 Acuarelas</span>
+                                </td>
+                                <td data-label="Marca">Genérico</td>
+                                <td data-label="Precio" class="price-cell" data-price="35">
+                                    <span class="price">S/ 35</span>
+                                    <small class="price-note">Set completo</small>
+                                </td>
+                                <td data-label="Calificación" class="rating-cell" data-rating="2">
+                                    <div class="star-rating" aria-label="2 de 5 estrellas">
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                    </div>
+                                    <span class="rating-number">2/5</span>
+                                </td>
+                                <td data-label="Nivel">
+                                    <span class="level-badge principiante">🌱 Principiante</span>
+                                </td>
+                                <td data-label="Recomendación" class="recommendation-cell">
+                                    <p><strong>Para probar:</strong> Pigmentación muy débil, se secan rápido. Útil para decidir si te gusta la acuarela antes de invertir más.</p>
+                                </td>
+                            </tr>
+                            
                             <tr data-category="acuarelas" data-budget="medio" data-level="intermedio">
                                 <td class="product-cell">
                                     <div class="product-info">
@@ -304,19 +500,19 @@
                                              loading="lazy">
                                         <div class="product-details">
                                             <strong class="product-name">Winton Watercolors Set 12</strong>
-                                            <small class="product-description">Tubos 14ml - Set básico</small>
+                                            <small class="product-description">Tubos 14ml - Calidad estudiantil</small>
                                         </div>
                                     </div>
                                 </td>
                                 <td data-label="Categoría">
-                                    <span class="category-badge acuarelas">Acuarelas</span>
+                                    <span class="category-badge acuarelas">🎨 Acuarelas</span>
                                 </td>
                                 <td data-label="Marca">Winsor & Newton</td>
-                                <td data-label="Precio" class="price-cell">
+                                <td data-label="Precio" class="price-cell" data-price="120">
                                     <span class="price">S/ 120</span>
                                     <small class="price-note">Set completo</small>
                                 </td>
-                                <td data-label="Calificación" class="rating-cell">
+                                <td data-label="Calificación" class="rating-cell" data-rating="4">
                                     <div class="star-rating" aria-label="4 de 5 estrellas">
                                         <span class="star filled">★</span>
                                         <span class="star filled">★</span>
@@ -327,14 +523,53 @@
                                     <span class="rating-number">4/5</span>
                                 </td>
                                 <td data-label="Nivel">
-                                    <span class="level-badge intermedio">Intermedio</span>
+                                    <span class="level-badge intermedio">⭐ Intermedio</span>
                                 </td>
                                 <td data-label="Recomendación" class="recommendation-cell">
-                                    <p>Set completo con colores esenciales. Buena calidad de pigmento, ideal para el rango de precio.</p>
+                                    <p><strong>Mi set principal:</strong> Buena pigmentación, se mezclan bien. Incluye colores esenciales. Lo uso para el 80% de mis obras.</p>
                                 </td>
                             </tr>
                             
-                            <!-- Accesorios -->
+                            <tr data-category="acuarelas" data-budget="premium" data-level="avanzado">
+                                <td class="product-cell">
+                                    <div class="product-info">
+                                        <img src="../assets/images/materiales/cotman-professional.jpg" 
+                                             alt="Acuarelas profesionales Cotman" 
+                                             class="product-image"
+                                             loading="lazy">
+                                        <div class="product-details">
+                                            <strong class="product-name">Professional Watercolours</strong>
+                                            <small class="product-description">Tubos 14ml - Calidad artista</small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td data-label="Categoría">
+                                    <span class="category-badge acuarelas">🎨 Acuarelas</span>
+                                </td>
+                                <td data-label="Marca">Winsor & Newton</td>
+                                <td data-label="Precio" class="price-cell" data-price="45">
+                                    <span class="price">S/ 45</span>
+                                    <small class="price-note">Por tubo individual</small>
+                                </td>
+                                <td data-label="Calificación" class="rating-cell" data-rating="5">
+                                    <div class="star-rating" aria-label="5 de 5 estrellas">
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                    </div>
+                                    <span class="rating-number">5/5</span>
+                                </td>
+                                <td data-label="Nivel">
+                                    <span class="level-badge avanzado">🏆 Avanzado</span>
+                                </td>
+                                <td data-label="Recomendación" class="recommendation-cell">
+                                    <p><strong>Calidad profesional:</strong> Pigmentación intensa, transparencia perfecta. Los compro individualmente para reemplazar colores que más uso.</p>
+                                </td>
+                            </tr>
+                            
+                            <!-- ACCESORIOS -->
                             <tr data-category="accesorios" data-budget="economico" data-level="principiante">
                                 <td class="product-cell">
                                     <div class="product-info">
@@ -349,14 +584,14 @@
                                     </div>
                                 </td>
                                 <td data-label="Categoría">
-                                    <span class="category-badge accesorios">Accesorios</span>
+                                    <span class="category-badge accesorios">🛠️ Accesorios</span>
                                 </td>
                                 <td data-label="Marca">Genérico</td>
-                                <td data-label="Precio" class="price-cell">
+                                <td data-label="Precio" class="price-cell" data-price="8">
                                     <span class="price">S/ 8</span>
                                     <small class="price-note">Por unidad</small>
                                 </td>
-                                <td data-label="Calificación" class="rating-cell">
+                                <td data-label="Calificación" class="rating-cell" data-rating="5">
                                     <div class="star-rating" aria-label="5 de 5 estrellas">
                                         <span class="star filled">★</span>
                                         <span class="star filled">★</span>
@@ -367,10 +602,205 @@
                                     <span class="rating-number">5/5</span>
                                 </td>
                                 <td data-label="Nivel">
-                                    <span class="level-badge principiante">Todos los niveles</span>
+                                    <span class="level-badge principiante">🌱 Todos los niveles</span>
                                 </td>
                                 <td data-label="Recomendación" class="recommendation-cell">
-                                    <p>Herramienta indispensable y económica. Cambia completamente la forma de trabajar.</p>
+                                    <p><strong>Indispensable:</strong> Cambió mi forma de trabajar. Control perfecto de humedad. Lo uso en cada sesión de pintura.</p>
+                                </td>
+                            </tr>
+                            
+                            <tr data-category="accesorios" data-budget="medio" data-level="intermedio">
+                                <td class="product-cell">
+                                    <div class="product-info">
+                                        <img src="../assets/images/materiales/paleta-ceramica.jpg" 
+                                             alt="Paleta de cerámica para acuarela" 
+                                             class="product-image"
+                                             loading="lazy">
+                                        <div class="product-details">
+                                            <strong class="product-name">Paleta de Cerámica Grande</strong>
+                                            <small class="product-description">20 compartimentos + área de mezcla</small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td data-label="Categoría">
+                                    <span class="category-badge accesorios">🛠️ Accesorios</span>
+                                </td>
+                                <td data-label="Marca">Artesco</td>
+                                <td data-label="Precio" class="price-cell" data-price="75">
+                                    <span class="price">S/ 75</span>
+                                    <small class="price-note">Por unidad</small>
+                                </td>
+                                <td data-label="Calificación" class="rating-cell" data-rating="4">
+                                    <div class="star-rating" aria-label="4 de 5 estrellas">
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star">★</span>
+                                    </div>
+                                    <span class="rating-number">4/5</span>
+                                </td>
+                                <td data-label="Nivel">
+                                    <span class="level-badge intermedio">⭐ Intermedio</span>
+                                </td>
+                                <td data-label="Recomendación" class="recommendation-cell">
+                                    <p><strong>Mejora la organización:</strong> Superficie perfecta para acuarelas. Fácil de limpiar, compartimentos útiles. Mejor que platos.</p>
+                                </td>
+                            </tr>
+                            
+                            <tr data-category="accesorios" data-budget="economico" data-level="principiante">
+                                <td class="product-cell">
+                                    <div class="product-info">
+                                        <img src="../assets/images/materiales/papel-absorbente.jpg" 
+                                             alt="Papel absorbente para acuarela" 
+                                             class="product-image"
+                                             loading="lazy">
+                                        <div class="product-details">
+                                            <strong class="product-name">Papel Absorbente Extra</strong>
+                                            <small class="product-description">Para controlar agua y errores</small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td data-label="Categoría">
+                                    <span class="category-badge accesorios">🛠️ Accesorios</span>
+                                </td>
+                                <td data-label="Marca">Elite</td>
+                                <td data-label="Precio" class="price-cell" data-price="12">
+                                    <span class="price">S/ 12</span>
+                                    <small class="price-note">Por rollo</small>
+                                </td>
+                                <td data-label="Calificación" class="rating-cell" data-rating="4">
+                                    <div class="star-rating" aria-label="4 de 5 estrellas">
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star">★</span>
+                                    </div>
+                                    <span class="rating-number">4/5</span>
+                                </td>
+                                <td data-label="Nivel">
+                                    <span class="level-badge principiante">🌱 Todos los niveles</span>
+                                </td>
+                                <td data-label="Recomendación" class="recommendation-cell">
+                                    <p><strong>Básico pero esencial:</strong> Para absorber excesos y crear texturas. Mucho mejor que papel higiénico común.</p>
+                                </td>
+                            </tr>
+                            
+                            <tr data-category="accesorios" data-budget="medio" data-level="intermedio">
+                                <td class="product-cell">
+                                    <div class="product-info">
+                                        <img src="../assets/images/materiales/atril-mesa.jpg" 
+                                             alt="Atril de mesa ajustable" 
+                                             class="product-image"
+                                             loading="lazy">
+                                        <div class="product-details">
+                                            <strong class="product-name">Atril de Mesa Ajustable</strong>
+                                            <small class="product-description">Para ángulo de trabajo óptimo</small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td data-label="Categoría">
+                                    <span class="category-badge accesorios">🛠️ Accesorios</span>
+                                </td>
+                                <td data-label="Marca">Artmate</td>
+                                <td data-label="Precio" class="price-cell" data-price="95">
+                                    <span class="price">S/ 95</span>
+                                    <small class="price-note">Por unidad</small>
+                                </td>
+                                <td data-label="Calificación" class="rating-cell" data-rating="4">
+                                    <div class="star-rating" aria-label="4 de 5 estrellas">
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star">★</span>
+                                    </div>
+                                    <span class="rating-number">4/5</span>
+                                </td>
+                                <td data-label="Nivel">
+                                    <span class="level-badge intermedio">⭐ Intermedio</span>
+                                </td>
+                                <td data-label="Recomendación" class="recommendation-cell">
+                                    <p><strong>Mejora la ergonomía:</strong> Ángulo perfecto para acuarelas, reduce el cansancio del cuello. Inversión que vale la pena.</p>
+                                </td>
+                            </tr>
+                            
+                            <tr data-category="accesorios" data-budget="medio" data-level="intermedio">
+                                <td class="product-cell">
+                                    <div class="product-info">
+                                        <img src="../assets/images/materiales/masking-fluid.jpg" 
+                                             alt="Líquido de enmascarar para reservas" 
+                                             class="product-image"
+                                             loading="lazy">
+                                        <div class="product-details">
+                                            <strong class="product-name">Masking Fluid 75ml</strong>
+                                            <small class="product-description">Para reservar blancos y detalles</small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td data-label="Categoría">
+                                    <span class="category-badge accesorios">🛠️ Accesorios</span>
+                                </td>
+                                <td data-label="Marca">Winsor & Newton</td>
+                                <td data-label="Precio" class="price-cell" data-price="42">
+                                    <span class="price">S/ 42</span>
+                                    <small class="price-note">Por frasco</small>
+                                </td>
+                                <td data-label="Calificación" class="rating-cell" data-rating="3">
+                                    <div class="star-rating" aria-label="3 de 5 estrellas">
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                    </div>
+                                    <span class="rating-number">3/5</span>
+                                </td>
+                                <td data-label="Nivel">
+                                    <span class="level-badge intermedio">⭐ Intermedio</span>
+                                </td>
+                                <td data-label="Recomendación" class="recommendation-cell">
+                                    <p><strong>Uso específico:</strong> Útil para detalles finos pero puede dañar el papel si no se retira con cuidado. Uso ocasional.</p>
+                                </td>
+                            </tr>
+                            
+                            <tr data-category="accesorios" data-budget="economico" data-level="principiante">
+                                <td class="product-cell">
+                                    <div class="product-info">
+                                        <img src="../assets/images/materiales/cinta-adhesiva.jpg" 
+                                             alt="Cinta adhesiva para fijar papel" 
+                                             class="product-image"
+                                             loading="lazy">
+                                        <div class="product-details">
+                                            <strong class="product-name">Cinta de Papel (Washi Tape)</strong>
+                                            <small class="product-description">Para fijar papel sin dañar</small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td data-label="Categoría">
+                                    <span class="category-badge accesorios">🛠️ Accesorios</span>
+                                </td>
+                                <td data-label="Marca">3M</td>
+                                <td data-label="Precio" class="price-cell" data-price="18">
+                                    <span class="price">S/ 18</span>
+                                    <small class="price-note">Por rollo</small>
+                                </td>
+                                <td data-label="Calificación" class="rating-cell" data-rating="5">
+                                    <div class="star-rating" aria-label="5 de 5 estrellas">
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                        <span class="star filled">★</span>
+                                    </div>
+                                    <span class="rating-number">5/5</span>
+                                </td>
+                                <td data-label="Nivel">
+                                    <span class="level-badge principiante">🌱 Todos los niveles</span>
+                                </td>
+                                <td data-label="Recomendación" class="recommendation-cell">
+                                    <p><strong>Perfecto para bordes:</strong> Crea márgenes limpios sin dañar el papel. También útil para crear formas geométricas.</p>
                                 </td>
                             </tr>
                         </tbody>
@@ -378,8 +808,42 @@
                 </div>
                 
                 <div class="table-info">
-                    <p><strong>Nota:</strong> Los precios son aproximados y pueden variar según el proveedor. Calificaciones basadas en mi experiencia personal usando estos materiales.</p>
-                    <p><strong>Última actualización:</strong> Enero 2025</p>
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <h3>📊 Datos de la Tabla</h3>
+                            <ul>
+                                <li><strong>Total productos:</strong> 20 materiales evaluados</li>
+                                <li><strong>Experiencia:</strong> 1 año usando estos materiales</li>
+                                <li><strong>Precios:</strong> Actualizados agosto 2025 (Lima, Perú)</li>
+                                <li><strong>Calificaciones:</strong> Basadas en uso personal constante</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="info-card">
+                            <h3>💡 Cómo Usar Esta Tabla</h3>
+                            <ul>
+                                <li><strong>Filtros:</strong> Usa los controles superiores para encontrar lo que necesitas</li>
+                                <li><strong>Ordenamiento:</strong> Haz clic en los encabezados para ordenar</li>
+                                <li><strong>Presupuestos:</strong> Los rangos son orientativos para planificar compras</li>
+                                <li><strong>Recomendaciones:</strong> Reflejan mi experiencia real con cada producto</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="info-card">
+                            <h3>🛒 Dónde Comprar</h3>
+                            <ul>
+                                <li><strong>Lima:</strong> Tai Loy, Artesco, casas especializadas en Gamarra</li>
+                                <li><strong>Online:</strong> Mercado Libre, tiendas oficiales de marcas</li>
+                                <li><strong>Importados:</strong> Amazon (para marcas específicas no disponibles local)</li>
+                                <li><strong>Tip:</strong> Compara precios entre tiendas, a veces hay diferencias significativas</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="disclaimer">
+                        <p><strong>⚠️ Nota importante:</strong> Los precios son aproximados y pueden variar según el proveedor y la temporada. Las calificaciones están basadas en mi experiencia personal y pueden diferir según el estilo de cada artista. Te recomiendo probar diferentes marcas para encontrar tus favoritas.</p>
+                        <p><strong>📅 Última actualización:</strong> Agosto 2025 | <strong>🏪 Precios base:</strong> Lima, Perú</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -387,26 +851,36 @@
         <!-- Sección de consejos sobre materiales -->
         <aside class="materials-tips" aria-labelledby="tips-title">
             <div class="container">
-                <h2 id="tips-title" class="section-title">Consejos sobre Materiales</h2>
+                <h2 id="tips-title" class="section-title">Consejos Basados en Mi Experiencia</h2>
                 <div class="tips-grid">
                     <div class="tip-card">
-                        <h3>Invierte en Papel Primero</h3>
-                        <p>Un buen papel marca más diferencia que pinceles caros. El papel de mala calidad frustra y limita tu progreso.</p>
+                        <h3>💰 Invierte Inteligentemente</h3>
+                        <p><strong>Orden de prioridad:</strong> 1) Papel de calidad, 2) Pinceles medianos, 3) Acuarelas básicas de marca, 4) Accesorios gradualmente. Un buen papel hace más diferencia que pinceles caros.</p>
                     </div>
                     
                     <div class="tip-card">
-                        <h3>Pocos Colores, Mejores Resultados</h3>
-                        <p>Es mejor tener 6 colores de buena calidad que 24 de calidad pobre. Aprende a mezclar antes de expandir tu paleta.</p>
+                        <h3>🎨 Menos Colores, Más Aprendizaje</h3>
+                        <p><strong>Mi recomendación:</strong> Comienza con 6 colores máximo (amarillo, rojo, azul, siena tostado, azul ultramar, verde viridian). Aprende a mezclar antes de expandir tu paleta.</p>
                     </div>
                     
                     <div class="tip-card">
-                        <h3>Cuida tus Pinceles</h3>
-                        <p>Lávalos bien después de cada uso y dales forma mientras están húmedos. Un buen pincel puede durar años con buen cuidado.</p>
+                        <h3>🖌️ Cuida tus Pinceles</h3>
+                        <p><strong>Mantenimiento diario:</strong> Lávalos con agua y jabón suave, dales forma con los dedos mientras están húmedos, guárdalos en posición horizontal. Un buen pincel puede durar años.</p>
                     </div>
                     
                     <div class="tip-card">
-                        <h3>Compra por Etapas</h3>
-                        <p>No necesitas todo desde el inicio. Comienza con lo básico y ve agregando materiales según tu progreso y necesidades.</p>
+                        <h3>📏 Tamaños Útiles</h3>
+                        <p><strong>Kit básico ideal:</strong> Pincel redondo #8 (trabajo general), #12 (lavados), #4 (detalles), más un plano de 1/2" (fondos). Estos cuatro cubren el 90% de necesidades.</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <h3>📦 Compra por Etapas</h3>
+                        <p><strong>Progresión inteligente:</strong> Mes 1-2: básicos funcionales, Mes 3-4: mejora papel y pinceles, Mes 5+: explora marcas premium. No necesitas todo desde el inicio.</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <h3>🔍 Prueba Antes de Comprometerte</h3>
+                        <p><strong>Mi estrategia:</strong> Compra tubos individuales de colores especiales antes de sets completos. Cada marca tiene su personalidad, encuentra la que conecta contigo.</p>
                     </div>
                 </div>
             </div>
@@ -415,7 +889,42 @@
     
     <footer class="footer" role="contentinfo">
         <div class="footer-container">
-            <p>&copy; 2025 AcuarelaArte. Proyecto educativo.</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">AcuarelaArte</h3>
+                    <p class="footer-description">
+                        Compartiendo un año de aprendizaje en acuarelas: errores, aciertos, 
+                        y recomendaciones honestas sobre materiales.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Más Recursos</h4>
+                    <ul class="footer-links">
+                        <li><a href="tecnicas.html" class="footer-link">📚 Tutoriales paso a paso</a></li>
+                        <li><a href="progreso.html" class="footer-link">📈 Mi evolución artística</a></li>
+                        <li><a href="contacto.html" class="footer-link">💬 Consultas personalizadas</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Contacto</h4>
+                    <ul class="footer-links">
+                        <li>📧 materiales@acuarelaarte.com</li>
+                        <li>📱 +51 999 123 456</li>
+                        <li>📍 Lima, Perú</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    &copy; 2025 AcuarelaArte. Proyecto educativo - Taller de Programación Web.
+                </p>
+                <p class="footer-note">
+                    💡 Todas las recomendaciones basadas en experiencia personal de un año pintando acuarelas
+                </p>
+            </div>
         </div>
     </footer>
     

@@ -58,11 +58,11 @@
                 <div class="contact-content">
                     <!-- Información de contacto -->
                     <div class="contact-info">
-                        <h2>Formas de Contactar</h2>
+                        <h2>Servicios Disponibles</h2>
                         
                         <div class="contact-methods">
                             <div class="contact-method">
-                                <h3>Clases Personalizadas</h3>
+                                <h3>🎨 Clases Personalizadas</h3>
                                 <p>
                                     Ofrezco clases individuales y grupales para todos los niveles. 
                                     Presenciales en Lima o virtuales via videollamada.
@@ -75,7 +75,7 @@
                             </div>
                             
                             <div class="contact-method">
-                                <h3>Encargos Personalizados</h3>
+                                <h3>🖼️ Encargos Personalizados</h3>
                                 <p>
                                     Acepto encargos de retratos, paisajes y obras personalizadas. 
                                     Consulta sin compromiso sobre precios y tiempos.
@@ -88,190 +88,575 @@
                             </div>
                             
                             <div class="contact-method">
-                                <h3>Consultas Generales</h3>
+                                <h3>💬 Consultas y Mentorías</h3>
                                 <p>
                                     ¿Dudas sobre técnicas, materiales o proceso creativo? 
                                     Estoy aquí para ayudarte en tu viaje artístico.
                                 </p>
+                                <ul>
+                                    <li><strong>Consulta básica:</strong> Gratuita (email)</li>
+                                    <li><strong>Mentoría 1:1:</strong> S/40 por hora</li>
+                                    <li><strong>Revisión de obra:</strong> S/25 por análisis</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Formulario de contacto -->
+                    <!-- Formulario de contacto expandido -->
                     <div class="contact-form-container">
-                        <form class="contact-form" id="contactForm" novalidate>
-                            <h2>Envíame un Mensaje</h2>
+                        <form class="contact-form" id="contactForm" novalidate autocomplete="on">
+                            <h2>Formulario de Contacto Detallado</h2>
                             
-                            <div class="form-group">
-                                <label for="name" class="form-label">
-                                    Nombre completo <span class="required" aria-label="Campo obligatorio">*</span>
-                                </label>
-                                <input type="text" 
-                                       id="name" 
-                                       name="name" 
-                                       class="form-control" 
-                                       required 
-                                       aria-describedby="nameError nameHelp"
-                                       minlength="2"
-                                       maxlength="50">
-                                <small id="nameHelp" class="form-help">Introduce tu nombre y apellido</small>
-                                <span class="error-message" id="nameError" role="alert"></span>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="email" class="form-label">
-                                    Correo electrónico <span class="required">*</span>
-                                </label>
-                                <input type="email" 
-                                       id="email" 
-                                       name="email" 
-                                       class="form-control" 
-                                       required 
-                                       aria-describedby="emailError emailHelp">
-                                <small id="emailHelp" class="form-help">Usa un correo válido para poder responderte</small>
-                                <span class="error-message" id="emailError" role="alert"></span>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="phone" class="form-label">Teléfono (opcional)</label>
-                                <input type="tel" 
-                                       id="phone" 
-                                       name="phone" 
-                                       class="form-control" 
-                                       aria-describedby="phoneHelp"
-                                       pattern="[0-9+\-\s()]+">
-                                <small id="phoneHelp" class="form-help">Incluye código de país si es internacional</small>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="subject" class="form-label">Asunto</label>
-                                <select id="subject" name="subject" class="form-control" aria-describedby="subjectHelp">
-                                    <option value="">Selecciona un asunto</option>
-                                    <option value="clases">Clases particulares</option>
-                                    <option value="encargo">Encargo personalizado</option>
-                                    <option value="consulta">Consulta sobre técnicas</option>
-                                    <option value="materiales">Consulta sobre materiales</option>
-                                    <option value="colaboracion">Colaboración/Proyecto</option>
-                                    <option value="otro">Otro asunto</option>
-                                </select>
-                                <small id="subjectHelp" class="form-help">Esto me ayuda a priorizar tu consulta</small>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="experience" class="form-label">Tu nivel en acuarelas</label>
-                                <fieldset class="radio-group" aria-describedby="experienceHelp">
-                                    <legend class="sr-only">Selecciona tu nivel de experiencia</legend>
+                            <!-- Fieldset 1: Información Personal -->
+                            <fieldset class="form-fieldset">
+                                <legend class="fieldset-legend">📝 Información Personal</legend>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="firstName" class="form-label">
+                                            Nombre <span class="required" aria-label="Campo obligatorio">*</span>
+                                        </label>
+                                        <input type="text" 
+                                               id="firstName" 
+                                               name="firstName" 
+                                               class="form-control" 
+                                               required 
+                                               autocomplete="given-name"
+                                               aria-describedby="firstNameError firstNameHelp"
+                                               minlength="2"
+                                               maxlength="30"
+                                               pattern="[A-Za-záéíóúñÑ\s]+"
+                                               title="Solo se permiten letras y espacios">
+                                        <small id="firstNameHelp" class="form-help">Solo tu nombre</small>
+                                        <span class="error-message" id="firstNameError" role="alert"></span>
+                                    </div>
                                     
-                                    <label class="radio-label">
-                                        <input type="radio" name="experience" value="principiante" class="radio-input">
-                                        <span class="radio-custom"></span>
-                                        <span class="radio-text">Principiante (nunca he pintado)</span>
-                                    </label>
-                                    
-                                    <label class="radio-label">
-                                        <input type="radio" name="experience" value="basico" class="radio-input">
-                                        <span class="radio-custom"></span>
-                                        <span class="radio-text">Básico (algunas obras)</span>
-                                    </label>
-                                    
-                                    <label class="radio-label">
-                                        <input type="radio" name="experience" value="intermedio" class="radio-input">
-                                        <span class="radio-custom"></span>
-                                        <span class="radio-text">Intermedio (varios meses pintando)</span>
-                                    </label>
-                                    
-                                    <label class="radio-label">
-                                        <input type="radio" name="experience" value="avanzado" class="radio-input">
-                                        <span class="radio-custom"></span>
-                                        <span class="radio-text">Avanzado (años de experiencia)</span>
-                                    </label>
-                                </fieldset>
-                                <small id="experienceHelp" class="form-help">Esto me ayuda a personalizar mi respuesta</small>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="message" class="form-label">
-                                    Mensaje <span class="required">*</span>
-                                </label>
-                                <textarea id="message" 
-                                          name="message" 
-                                          class="form-control" 
-                                          rows="6" 
-                                          required 
-                                          aria-describedby="messageError messageHelp"
-                                          minlength="10"
-                                          maxlength="1000"></textarea>
-                                <small id="messageHelp" class="form-help">Cuéntame en detalle sobre tu consulta o pedido</small>
-                                <span class="error-message" id="messageError" role="alert"></span>
-                                <div class="character-count">
-                                    <span id="messageCount">0</span>/1000 caracteres
+                                    <div class="form-group">
+                                        <label for="lastName" class="form-label">
+                                            Apellidos <span class="required">*</span>
+                                        </label>
+                                        <input type="text" 
+                                               id="lastName" 
+                                               name="lastName" 
+                                               class="form-control" 
+                                               required 
+                                               autocomplete="family-name"
+                                               aria-describedby="lastNameError"
+                                               minlength="2"
+                                               maxlength="50"
+                                               pattern="[A-Za-záéíóúñÑ\s]+"
+                                               title="Solo se permiten letras y espacios">
+                                        <span class="error-message" id="lastNameError" role="alert"></span>
+                                    </div>
                                 </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <fieldset class="checkbox-group">
-                                    <legend class="form-label">Preferencias de comunicación</legend>
-                                    
-                                    <label class="checkbox-label">
-                                        <input type="checkbox" name="preferences" value="newsletter" class="checkbox-input">
-                                        <span class="checkbox-custom"></span>
-                                        <span class="checkbox-text">Quiero recibir noticias sobre nuevos tutoriales</span>
+                                
+                                <div class="form-group">
+                                    <label for="email" class="form-label">
+                                        Correo electrónico <span class="required">*</span>
                                     </label>
+                                    <input type="email" 
+                                           id="email" 
+                                           name="email" 
+                                           class="form-control" 
+                                           required 
+                                           autocomplete="email"
+                                           aria-describedby="emailError emailHelp"
+                                           placeholder="ejemplo@correo.com">
+                                    <small id="emailHelp" class="form-help">Usa un correo válido para poder responderte</small>
+                                    <span class="error-message" id="emailError" role="alert"></span>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="phone" class="form-label">Teléfono</label>
+                                        <input type="tel" 
+                                               id="phone" 
+                                               name="phone" 
+                                               class="form-control" 
+                                               autocomplete="tel"
+                                               aria-describedby="phoneHelp"
+                                               pattern="[0-9+\-\s()]{8,15}"
+                                               placeholder="+51 999 123 456">
+                                        <small id="phoneHelp" class="form-help">Incluye código de país si es internacional</small>
+                                    </div>
                                     
-                                    <label class="checkbox-label">
-                                        <input type="checkbox" name="preferences" value="workshops" class="checkbox-input">
-                                        <span class="checkbox-custom"></span>
-                                        <span class="checkbox-text">Avísame sobre talleres y clases grupales</span>
-                                    </label>
+                                    <div class="form-group">
+                                        <label for="age" class="form-label">Edad</label>
+                                        <input type="number" 
+                                               id="age" 
+                                               name="age" 
+                                               class="form-control" 
+                                               min="5" 
+                                               max="120" 
+                                               step="1"
+                                               aria-describedby="ageHelp">
+                                        <small id="ageHelp" class="form-help">Ayuda a personalizar la enseñanza</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="birthDate" class="form-label">Fecha de nacimiento (opcional)</label>
+                                    <input type="date" 
+                                           id="birthDate" 
+                                           name="birthDate" 
+                                           class="form-control" 
+                                           autocomplete="bday"
+                                           aria-describedby="birthDateHelp"
+                                           min="1920-01-01" 
+                                           max="2020-12-31">
+                                    <small id="birthDateHelp" class="form-help">Para felicitarte en tu cumpleaños 🎂</small>
+                                </div>
+                            </fieldset>
+                            
+                            <!-- Fieldset 2: Tipo de Consulta -->
+                            <fieldset class="form-fieldset">
+                                <legend class="fieldset-legend">🎯 Tipo de Consulta</legend>
+                                
+                                <div class="form-group">
+                                    <label for="subject" class="form-label">Asunto principal <span class="required">*</span></label>
+                                    <select id="subject" name="subject" class="form-control" required aria-describedby="subjectHelp">
+                                        <option value="">Selecciona un asunto</option>
+                                        <optgroup label="📚 Clases y Aprendizaje">
+                                            <option value="clases-individuales">Clases individuales</option>
+                                            <option value="clases-grupales">Clases grupales</option>
+                                            <option value="clases-virtuales">Clases virtuales</option>
+                                            <option value="mentoria">Mentoría personalizada</option>
+                                        </optgroup>
+                                        <optgroup label="🎨 Encargos y Obras">
+                                            <option value="encargo-retrato">Encargo de retrato</option>
+                                            <option value="encargo-paisaje">Encargo de paisaje</option>
+                                            <option value="encargo-personalizado">Obra personalizada</option>
+                                            <option value="revision-obra">Revisión de mi obra</option>
+                                        </optgroup>
+                                        <optgroup label="💡 Consultas">
+                                            <option value="consulta-tecnica">Consulta sobre técnicas</option>
+                                            <option value="consulta-materiales">Consulta sobre materiales</option>
+                                            <option value="colaboracion">Colaboración/Proyecto</option>
+                                            <option value="otro">Otro asunto</option>
+                                        </optgroup>
+                                    </select>
+                                    <small id="subjectHelp" class="form-help">Esto me ayuda a priorizar y preparar mi respuesta</small>
+                                    <span class="error-message" id="subjectError" role="alert"></span>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <fieldset class="priority-fieldset">
+                                        <legend class="form-label">🚨 Urgencia de la consulta</legend>
+                                        
+                                        <label class="radio-label">
+                                            <input type="radio" name="priority" value="low" class="radio-input" checked>
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Baja - Puedes responder cuando tengas tiempo</span>
+                                        </label>
+                                        
+                                        <label class="radio-label">
+                                            <input type="radio" name="priority" value="medium" class="radio-input">
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Media - Me gustaría respuesta en una semana</span>
+                                        </label>
+                                        
+                                        <label class="radio-label">
+                                            <input type="radio" name="priority" value="high" class="radio-input">
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Alta - Necesito respuesta pronto (2-3 días)</span>
+                                        </label>
+                                        
+                                        <label class="radio-label">
+                                            <input type="radio" name="priority" value="urgent" class="radio-input">
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Urgente - Es tiempo sensible (24 horas)</span>
+                                        </label>
+                                    </fieldset>
+                                </div>
+                            </fieldset>
+                            
+                            <!-- Fieldset 3: Experiencia Artística -->
+                            <fieldset class="form-fieldset">
+                                <legend class="fieldset-legend">🎨 Tu Experiencia Artística</legend>
+                                
+                                <div class="form-group">
+                                    <fieldset class="experience-fieldset">
+                                        <legend class="form-label">Nivel en acuarelas</legend>
+                                        
+                                        <label class="radio-label">
+                                            <input type="radio" name="experience" value="principiante" class="radio-input">
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">🌱 Principiante total (nunca he pintado acuarelas)</span>
+                                        </label>
+                                        
+                                        <label class="radio-label">
+                                            <input type="radio" name="experience" value="basico" class="radio-input">
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">🎯 Básico (he intentado algunas veces)</span>
+                                        </label>
+                                        
+                                        <label class="radio-label">
+                                            <input type="radio" name="experience" value="intermedio" class="radio-input">
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">⭐ Intermedio (varios meses practicando)</span>
+                                        </label>
+                                        
+                                        <label class="radio-label">
+                                            <input type="radio" name="experience" value="avanzado" class="radio-input">
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">🏆 Avanzado (años de experiencia)</span>
+                                        </label>
+                                    </fieldset>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="practiceHours" class="form-label">Horas de práctica por semana</label>
+                                        <input type="range" 
+                                               id="practiceHours" 
+                                               name="practiceHours" 
+                                               class="form-range" 
+                                               min="0" 
+                                               max="20" 
+                                               step="0.5" 
+                                               value="2"
+                                               oninput="updateRangeValue('practiceHours', 'practiceHoursValue')"
+                                               aria-describedby="practiceHoursHelp">
+                                        <div class="range-labels">
+                                            <span>0h</span>
+                                            <span id="practiceHoursValue" class="range-value">2 horas</span>
+                                            <span>20h+</span>
+                                        </div>
+                                        <small id="practiceHoursHelp" class="form-help">Ayuda a personalizar las recomendaciones</small>
+                                    </div>
                                     
-                                    <label class="checkbox-label">
-                                        <input type="checkbox" name="preferences" value="portfolio" class="checkbox-input">
-                                        <span class="checkbox-custom"></span>
-                                        <span class="checkbox-text">Notifícame cuando publique nuevas obras</span>
+                                    <div class="form-group">
+                                        <label for="budget" class="form-label">Presupuesto mensual en materiales</label>
+                                        <select id="budget" name="budget" class="form-control" aria-describedby="budgetHelp">
+                                            <option value="">Prefiero no decir</option>
+                                            <option value="0-50">S/ 0 - 50 (Principiante)</option>
+                                            <option value="51-150">S/ 51 - 150 (Casual)</option>
+                                            <option value="151-300">S/ 151 - 300 (Entusiasta)</option>
+                                            <option value="301+">S/ 301+ (Serio/Profesional)</option>
+                                        </select>
+                                        <small id="budgetHelp" class="form-help">Para recomendar materiales apropiados</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="favoriteColor" class="form-label">Color favorito para pintar</label>
+                                    <input type="color" 
+                                           id="favoriteColor" 
+                                           name="favoriteColor" 
+                                           class="form-color" 
+                                           value="#4A90C2"
+                                           aria-describedby="favoriteColorHelp">
+                                    <small id="favoriteColorHelp" class="form-help">Me ayuda a entender tu paleta preferida</small>
+                                </div>
+                            </fieldset>
+                            
+                            <!-- Fieldset 4: Detalles de la Consulta -->
+                            <fieldset class="form-fieldset">
+                                <legend class="fieldset-legend">💭 Detalles de tu Consulta</legend>
+                                
+                                <div class="form-group">
+                                    <label for="message" class="form-label">
+                                        Mensaje detallado <span class="required">*</span>
                                     </label>
-                                </fieldset>
-                            </div>
+                                    <textarea id="message" 
+                                              name="message" 
+                                              class="form-control" 
+                                              rows="8" 
+                                              required 
+                                              aria-describedby="messageError messageHelp"
+                                              minlength="20"
+                                              maxlength="2000"
+                                              placeholder="Cuéntame en detalle sobre tu consulta, proyecto o lo que necesitas..."></textarea>
+                                    <small id="messageHelp" class="form-help">Mientras más detalles, mejor podré ayudarte</small>
+                                    <span class="error-message" id="messageError" role="alert"></span>
+                                    <div class="character-count">
+                                        <span id="messageCount">0</span>/2000 caracteres
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="preferredDate" class="form-label">Fecha preferida para respuesta</label>
+                                        <input type="date" 
+                                               id="preferredDate" 
+                                               name="preferredDate" 
+                                               class="form-control" 
+                                               aria-describedby="preferredDateHelp">
+                                        <small id="preferredDateHelp" class="form-help">Si tienes una fecha límite específica</small>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="preferredTime" class="form-label">Horario preferido para contacto</label>
+                                        <input type="time" 
+                                               id="preferredTime" 
+                                               name="preferredTime" 
+                                               class="form-control" 
+                                               aria-describedby="preferredTimeHelp"
+                                               min="08:00" 
+                                               max="20:00">
+                                        <small id="preferredTimeHelp" class="form-help">Si prefieres llamadas o videollamadas</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="attachments" class="form-label">Adjuntar imágenes (opcional)</label>
+                                    <input type="file" 
+                                           id="attachments" 
+                                           name="attachments" 
+                                           class="form-file" 
+                                           multiple 
+                                           accept="image/jpeg,image/png,image/webp"
+                                           aria-describedby="attachmentsHelp">
+                                    <small id="attachmentsHelp" class="form-help">
+                                        Sube fotos de tus obras, materiales o referencias (máx. 5MB por archivo)
+                                    </small>
+                                </div>
+                            </fieldset>
                             
-                            <div class="form-group">
-                                <label class="checkbox-label required-checkbox">
-                                    <input type="checkbox" 
-                                           name="privacy" 
-                                           id="privacy" 
-                                           class="checkbox-input" 
-                                           required
-                                           aria-describedby="privacyError">
-                                    <span class="checkbox-custom"></span>
-                                    <span class="checkbox-text">
-                                        Acepto que mis datos sean utilizados para responder a esta consulta <span class="required">*</span>
-                                    </span>
-                                </label>
-                                <span class="error-message" id="privacyError" role="alert"></span>
-                                <small class="form-help">
-                                    Tus datos solo se usarán para responder tu mensaje y no se compartirán con terceros.
-                                </small>
-                            </div>
+                            <!-- Fieldset 5: Preferencias de Comunicación -->
+                            <fieldset class="form-fieldset">
+                                <legend class="fieldset-legend">📢 Preferencias de Comunicación</legend>
+                                
+                                <div class="form-group">
+                                    <fieldset class="checkbox-group">
+                                        <legend class="form-label">¿Cómo prefieres que te contacte?</legend>
+                                        
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="contactMethod" value="email" class="checkbox-input" checked>
+                                            <span class="checkbox-custom"></span>
+                                            <span class="checkbox-text">📧 Email (respuesta detallada)</span>
+                                        </label>
+                                        
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="contactMethod" value="whatsapp" class="checkbox-input">
+                                            <span class="checkbox-custom"></span>
+                                            <span class="checkbox-text">💬 WhatsApp (respuesta rápida)</span>
+                                        </label>
+                                        
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="contactMethod" value="videocall" class="checkbox-input">
+                                            <span class="checkbox-custom"></span>
+                                            <span class="checkbox-text">📹 Videollamada (consulta en vivo)</span>
+                                        </label>
+                                        
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="contactMethod" value="phone" class="checkbox-input">
+                                            <span class="checkbox-custom"></span>
+                                            <span class="checkbox-text">📞 Llamada telefónica</span>
+                                        </label>
+                                    </fieldset>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <fieldset class="checkbox-group">
+                                        <legend class="form-label">Suscripciones (opcional)</legend>
+                                        
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="newsletter" value="tutorials" class="checkbox-input">
+                                            <span class="checkbox-custom"></span>
+                                            <span class="checkbox-text">📚 Nuevos tutoriales y técnicas</span>
+                                        </label>
+                                        
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="newsletter" value="workshops" class="checkbox-input">
+                                            <span class="checkbox-custom"></span>
+                                            <span class="checkbox-text">🎪 Talleres y clases grupales</span>
+                                        </label>
+                                        
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="newsletter" value="portfolio" class="checkbox-input">
+                                            <span class="checkbox-custom"></span>
+                                            <span class="checkbox-text">🖼️ Nuevas obras en mi portafolio</span>
+                                        </label>
+                                        
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="newsletter" value="materials" class="checkbox-input">
+                                            <span class="checkbox-custom"></span>
+                                            <span class="checkbox-text">🛒 Recomendaciones de materiales</span>
+                                        </label>
+                                        
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="newsletter" value="progress" class="checkbox-input">
+                                            <span class="checkbox-custom"></span>
+                                            <span class="checkbox-text">📈 Mi progreso y reflexiones artísticas</span>
+                                        </label>
+                                    </fieldset>
+                                </div>
+                            </fieldset>
                             
+                            <!-- Fieldset 6: Confirmación y Políticas -->
+                            <fieldset class="form-fieldset">
+                                <legend class="fieldset-legend">✅ Confirmación y Políticas</legend>
+                                
+                                <div class="form-group">
+                                    <label class="checkbox-label required-checkbox">
+                                        <input type="checkbox" 
+                                               name="privacy" 
+                                               id="privacy" 
+                                               class="checkbox-input" 
+                                               required
+                                               aria-describedby="privacyError">
+                                        <span class="checkbox-custom"></span>
+                                        <span class="checkbox-text">
+                                            🔒 Acepto que mis datos sean utilizados para responder a esta consulta <span class="required">*</span>
+                                        </span>
+                                    </label>
+                                    <span class="error-message" id="privacyError" role="alert"></span>
+                                    <small class="form-help">
+                                        Tus datos solo se usarán para responder tu mensaje. No se compartirán con terceros 
+                                        y puedes solicitar su eliminación en cualquier momento.
+                                    </small>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" 
+                                               name="terms" 
+                                               id="terms" 
+                                               class="checkbox-input">
+                                        <span class="checkbox-custom"></span>
+                                        <span class="checkbox-text">
+                                            📋 He leído y acepto los términos de servicio
+                                        </span>
+                                    </label>
+                                    <small class="form-help">
+                                        Al usar este formulario aceptas nuestras políticas de comunicación y tiempos de respuesta.
+                                    </small>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" 
+                                               name="marketing" 
+                                               id="marketing" 
+                                               class="checkbox-input">
+                                        <span class="checkbox-custom"></span>
+                                        <span class="checkbox-text">
+                                            ✨ Autorizo el uso de mi consulta como testimonio anónimo (opcional)
+                                        </span>
+                                    </label>
+                                    <small class="form-help">
+                                        Si tu consulta puede ayudar a otros, podría usarla de forma anónima en el sitio.
+                                    </small>
+                                </div>
+                            </fieldset>
+                            
+                            <!-- Acciones del formulario -->
                             <div class="form-actions">
                                 <button type="submit" class="submit-btn" id="submitBtn">
-                                    <span class="btn-text">Enviar Mensaje</span>
+                                    <span class="btn-text">📤 Enviar Consulta Completa</span>
                                     <span class="btn-loader" aria-hidden="true"></span>
                                 </button>
-                                <button type="reset" class="reset-btn">Limpiar Formulario</button>
+                                
+                                <button type="button" class="preview-btn" id="previewBtn">
+                                    👀 Vista Previa
+                                </button>
+                                
+                                <button type="reset" class="reset-btn">
+                                    🔄 Limpiar Todo
+                                </button>
+                                
+                                <button type="button" class="save-draft-btn" id="saveDraftBtn">
+                                    💾 Guardar Borrador
+                                </button>
                             </div>
                             
+                            <!-- Feedback del formulario -->
                             <div class="form-feedback" id="formFeedback" role="status" aria-live="polite"></div>
+                            
+                            <!-- Progreso del formulario -->
+                            <div class="form-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="formProgress" style="width: 0%"></div>
+                                </div>
+                                <span class="progress-text">Completitud del formulario: <span id="progressPercentage">0%</span></span>
+                            </div>
                         </form>
                     </div>
                 </div>
             </div>
         </section>
+        
+        <!-- Sección de preguntas frecuentes -->
+        <aside class="faq-section" aria-labelledby="faq-title">
+            <div class="container">
+                <h2 id="faq-title" class="section-title">Preguntas Frecuentes</h2>
+                <div class="faq-grid">
+                    <details class="faq-item">
+                        <summary class="faq-question">¿Cuánto tiempo tardas en responder?</summary>
+                        <div class="faq-answer">
+                            <p>Generalmente respondo consultas en 24-48 horas. Para encargos y clases, el tiempo puede ser de 2-3 días para darte una respuesta completa y bien pensada.</p>
+                        </div>
+                    </details>
+                    
+                    <details class="faq-item">
+                        <summary class="faq-question">¿Ofreces clases en grupo?</summary>
+                        <div class="faq-answer">
+                            <p>¡Sí! Las clases grupales son más económicas y muy divertidas. Necesito mínimo 3 personas y máximo 6 para mantener la calidad de la enseñanza.</p>
+                        </div>
+                    </details>
+                    
+                    <details class="faq-item">
+                        <summary class="faq-question">¿Qué incluye una clase virtual?</summary>
+                        <div class="faq-answer">
+                            <p>Cada clase virtual incluye: demostración en vivo via cámara, lista de materiales enviada previamente, ejercicios prácticos, y seguimiento posterior con feedback sobre tus obras.</p>
+                        </div>
+                    </details>
+                    
+                    <details class="faq-item">
+                        <summary class="faq-question">¿Haces encargos de cualquier tamaño?</summary>
+                        <div class="faq-answer">
+                            <p>Acepto desde formatos pequeños (A5) hasta medianos (A2). Para formatos más grandes, consultemos según la complejidad y mis capacidades actuales.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </aside>
     </main>
     
     <footer class="footer" role="contentinfo">
         <div class="footer-container">
-            <p>&copy; 2025 AcuarelaArte. Proyecto educativo.</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">AcuarelaArte</h3>
+                    <p class="footer-description">
+                        Compartiendo la pasión por las acuarelas a través de 
+                        tutoriales, técnicas y experiencias artísticas.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Contacto Rápido</h4>
+                    <ul class="footer-links">
+                        <li>📧 consultas@acuarelaarte.com</li>
+                        <li>📱 +51 999 123 456</li>
+                        <li>📍 Lima, Perú</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    &copy; 2025 AcuarelaArte. Proyecto educativo - Taller de Programación Web.
+                </p>
+            </div>
         </div>
     </footer>
+    
+    <script>
+        // Script básico para actualizar valores de range
+        function updateRangeValue(rangeId, displayId) {
+            const range = document.getElementById(rangeId);
+            const display = document.getElementById(displayId);
+            const value = parseFloat(range.value);
+            display.textContent = value === 1 ? '1 hora' : `${value} horas`;
+        }
+        
+        // Inicializar valor del range al cargar
+        document.addEventListener('DOMContentLoaded', function() {
+            updateRangeValue('practiceHours', 'practiceHoursValue');
+        });
+    </script>
     
     <script src="../js/main.js" defer></script>
     <script src="../js/pages/contact.js" defer></script>
