@@ -1,14 +1,123 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Meta tags esenciales -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sigue mi evolución artística en acuarelas. Timeline de aprendizaje, errores, aciertos y reflexiones sobre el proceso creativo.">
-    <meta name="keywords" content="evolución artística, progreso acuarela, aprendizaje, reflexiones, proceso creativo">
-    <meta property="og:title" content="Mi Progreso Artístico - AcuarelaArte">
-    <meta property="og:description" content="Descubre mi evolución en acuarelas a través de un año de aprendizaje y práctica">
-    <link rel="stylesheet" href="../css/main.css">
-    <title>Mi Progreso | AcuarelaArte</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO Meta Tags (Personalizar por página) -->
+    <meta name="description" content="AcuarelaArte - Aprende técnicas de acuarela y explora mi portafolio artístico. Tutoriales paso a paso, materiales recomendados y evolución artística.">
+    <meta name="keywords" content="acuarela, arte, pintura, tutoriales, técnicas, portafolio, materiales, watercolor">
+    <meta name="author" content="AcuarelaArte">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags (Redes Sociales) -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="AcuarelaArte">
+    <meta property="og:title" content="AcuarelaArte | Técnicas y Portafolio de Acuarelas">
+    <meta property="og:description" content="Descubre el mundo de las acuarelas con tutoriales, técnicas y mi portafolio artístico">
+    <meta property="og:image" content="assets/images/og-image.jpg">
+    <meta property="og:url" content="https://acuarelaarte.com">
+    <meta property="og:locale" content="es_ES">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AcuarelaArte | Técnicas y Portafolio de Acuarelas">
+    <meta name="twitter:description" content="Descubre el mundo de las acuarelas con tutoriales, técnicas y mi portafolio artístico">
+    <meta name="twitter:image" content="assets/images/og-image.jpg">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="assets/images/icons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/icons/favicon-16x16.png">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#4A90C2" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1A1A1A" media="(prefers-color-scheme: dark)">
+    
+    <!-- ===================================================================
+         FUENTES TIPOGRÁFICAS - Google Fonts
+         =================================================================== -->
+    
+    <!-- DNS Prefetch para Google Fonts -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    
+    <!-- Preconnect para mejor performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts - Poppins (Primary) + Open Sans (Secondary) + Dancing Script (Decorative) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- ===================================================================
+         PRELOAD DE RECURSOS CRÍTICOS
+         =================================================================== -->
+    
+    <!-- Preload CSS principal -->
+    <link rel="preload" href="css/main.css" as="style">
+    
+    <!-- Preload fuente principal (woff2 es el formato más eficiente) -->
+    <!-- Nota: Descomentar cuando tengas las fuentes locales -->
+    <!-- <link rel="preload" href="assets/fonts/poppins-regular.woff2" as="font" type="font/woff2" crossorigin> -->
+    
+    <!-- Preload imagen hero si existe -->
+    <!-- <link rel="preload" href="assets/images/hero-watercolor.jpg" as="image"> -->
+    
+    <!-- ===================================================================
+         STYLESHEETS
+         =================================================================== -->
+    
+    <!-- Estilos principales -->
+    <link rel="stylesheet" href="css/main.css">
+    
+    <!-- ===================================================================
+         SCRIPTS
+         =================================================================== -->
+    
+    <!-- JavaScript principal (type="module" para ES6 modules) -->
+    <script src="js/main.js" type="module" defer></script>
+    
+    <!-- ===================================================================
+         TÍTULO DE LA PÁGINA (Personalizar por página)
+         =================================================================== -->
+    <title>AcuarelaArte | Mi progreso</title>
+    
+    <!-- ===================================================================
+         CANONICAL URL (Prevenir contenido duplicado)
+         =================================================================== -->
+    <link rel="canonical" href="https://acuarelaarte.com/">
+    
+    <!-- ===================================================================
+         ALTERNATE LANGUAGE (Si tienes versión en otros idiomas)
+         =================================================================== -->
+    <!-- <link rel="alternate" hreflang="en" href="https://acuarelaarte.com/en/"> -->
+    <!-- <link rel="alternate" hreflang="es" href="https://acuarelaarte.com/"> -->
+    
+    <!-- ===================================================================
+         SCHEMA.ORG - Structured Data (JSON-LD)
+         Opcional pero recomendado para SEO
+         =================================================================== -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "AcuarelaArte",
+        "description": "Aprende técnicas de acuarela con tutoriales paso a paso y explora mi portafolio artístico",
+        "url": "https://acuarelaarte.com",
+        "author": {
+            "@type": "Person",
+            "name": "AcuarelaArte"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "AcuarelaArte"
+        },
+        "inLanguage": "es-ES"
+    }
+    </script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Saltar al contenido principal</a>

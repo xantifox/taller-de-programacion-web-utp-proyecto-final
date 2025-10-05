@@ -1,0 +1,575 @@
+/* ===================================================================
+   TYPOGRAPHY.CSS - Sistema Tipográfico
+   Estilos de tipografía y texto del proyecto
+   =================================================================== */
+
+/* ===================================================================
+   BASE TYPOGRAPHY
+   =================================================================== */
+
+body {
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-relaxed);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===================================================================
+   HEADINGS
+   =================================================================== */
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-tight);
+    color: var(--text-primary);
+    margin-top: 0;
+    margin-bottom: var(--spacing-4);
+}
+
+h1, .h1 {
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: var(--letter-spacing-tight);
+}
+
+h2, .h2 {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-semibold);
+}
+
+h3, .h3 {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-semibold);
+}
+
+h4, .h4 {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-medium);
+}
+
+h5, .h5 {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-medium);
+}
+
+h6, .h6 {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-wide);
+}
+
+/* Responsive headings */
+@media (max-width: 767px) {
+    h1, .h1 {
+        font-size: var(--font-size-3xl);
+    }
+    
+    h2, .h2 {
+        font-size: var(--font-size-2xl);
+    }
+    
+    h3, .h3 {
+        font-size: var(--font-size-xl);
+    }
+}
+
+/* ===================================================================
+   PARAGRAPH & TEXT
+   =================================================================== */
+
+p {
+    margin-top: 0;
+    margin-bottom: var(--spacing-4);
+    line-height: var(--line-height-relaxed);
+}
+
+.lead {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-loose);
+    color: var(--text-secondary);
+}
+
+.small,
+small {
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-normal);
+}
+
+.text-xs {
+    font-size: var(--font-size-xs);
+}
+
+.text-sm {
+    font-size: var(--font-size-sm);
+}
+
+.text-base {
+    font-size: var(--font-size-base);
+}
+
+.text-lg {
+    font-size: var(--font-size-lg);
+}
+
+.text-xl {
+    font-size: var(--font-size-xl);
+}
+
+.text-2xl {
+    font-size: var(--font-size-2xl);
+}
+
+/* ===================================================================
+   FONT FAMILIES
+   =================================================================== */
+
+/* Fuente principal (Headings, navegación) */
+.font-primary {
+    font-family: var(--font-primary);
+}
+
+/* Fuente secundaria (Body text, párrafos) */
+.font-secondary {
+    font-family: var(--font-secondary);
+}
+
+/* Fuente decorativa (Títulos artísticos especiales) */
+.font-decorative,
+.artistic-title {
+    font-family: var(--font-decorative);
+    font-weight: var(--font-weight-normal);
+}
+
+/* Fuente monoespaciada (Código) */
+.font-mono {
+    font-family: var(--font-mono);
+}
+
+/* ===================================================================
+   FONT WEIGHTS
+   =================================================================== */
+
+.font-light {
+    font-weight: var(--font-weight-light);
+}
+
+.font-normal {
+    font-weight: var(--font-weight-normal);
+}
+
+.font-medium {
+    font-weight: var(--font-weight-medium);
+}
+
+.font-semibold {
+    font-weight: var(--font-weight-semibold);
+}
+
+.font-bold {
+    font-weight: var(--font-weight-bold);
+}
+
+.font-extrabold {
+    font-weight: var(--font-weight-extrabold);
+}
+
+/* ===================================================================
+   TEXT COLORS
+   =================================================================== */
+
+.text-primary {
+    color: var(--text-primary);
+}
+
+.text-secondary {
+    color: var(--text-secondary);
+}
+
+.text-disabled {
+    color: var(--text-disabled);
+}
+
+.text-inverse {
+    color: var(--text-inverse);
+}
+
+/* Brand colors */
+.text-brand-primary {
+    color: var(--primary-color);
+}
+
+.text-brand-secondary {
+    color: var(--secondary-color);
+}
+
+.text-accent {
+    color: var(--accent-color);
+}
+
+/* Status colors */
+.text-success {
+    color: var(--success-color);
+}
+
+.text-warning {
+    color: var(--warning-color);
+}
+
+.text-error {
+    color: var(--error-color);
+}
+
+.text-info {
+    color: var(--info-color);
+}
+
+/* ===================================================================
+   TEXT ALIGNMENT
+   =================================================================== */
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+/* ===================================================================
+   TEXT TRANSFORM
+   =================================================================== */
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-lowercase {
+    text-transform: lowercase;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+.text-normal-case {
+    text-transform: none;
+}
+
+/* ===================================================================
+   TEXT DECORATION
+   =================================================================== */
+
+.text-underline {
+    text-decoration: underline;
+}
+
+.text-line-through {
+    text-decoration: line-through;
+}
+
+.text-no-underline {
+    text-decoration: none;
+}
+
+/* ===================================================================
+   LINE HEIGHT
+   =================================================================== */
+
+.leading-tight {
+    line-height: var(--line-height-tight);
+}
+
+.leading-normal {
+    line-height: var(--line-height-normal);
+}
+
+.leading-relaxed {
+    line-height: var(--line-height-relaxed);
+}
+
+.leading-loose {
+    line-height: var(--line-height-loose);
+}
+
+/* ===================================================================
+   LETTER SPACING
+   =================================================================== */
+
+.tracking-tight {
+    letter-spacing: var(--letter-spacing-tight);
+}
+
+.tracking-normal {
+    letter-spacing: var(--letter-spacing-normal);
+}
+
+.tracking-wide {
+    letter-spacing: var(--letter-spacing-wide);
+}
+
+.tracking-wider {
+    letter-spacing: var(--letter-spacing-wider);
+}
+
+/* ===================================================================
+   LINKS
+   =================================================================== */
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: var(--transition-colors);
+}
+
+a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+a:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+}
+
+a:active {
+    color: var(--accent-color);
+}
+
+/* Link variants */
+.link-muted {
+    color: var(--text-secondary);
+}
+
+.link-muted:hover {
+    color: var(--text-primary);
+}
+
+.link-inverse {
+    color: var(--text-inverse);
+}
+
+.link-inverse:hover {
+    opacity: 0.8;
+}
+
+/* ===================================================================
+   LISTS
+   =================================================================== */
+
+ul, ol {
+    margin-top: 0;
+    margin-bottom: var(--spacing-4);
+    padding-left: var(--spacing-6);
+}
+
+li {
+    margin-bottom: var(--spacing-2);
+}
+
+ul ul, ul ol,
+ol ul, ol ol {
+    margin-bottom: 0;
+}
+
+/* Listas sin estilo */
+.list-none {
+    list-style: none;
+    padding-left: 0;
+}
+
+.list-none li {
+    margin-bottom: var(--spacing-1);
+}
+
+/* Lista inline */
+.list-inline {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-4);
+}
+
+.list-inline li {
+    margin-bottom: 0;
+}
+
+/* ===================================================================
+   BLOCKQUOTE
+   =================================================================== */
+
+blockquote {
+    margin: var(--spacing-6) 0;
+    padding: var(--spacing-4) var(--spacing-6);
+    border-left: 4px solid var(--primary-color);
+    background: var(--surface-color);
+    border-radius: var(--radius-base);
+    font-style: italic;
+}
+
+blockquote p {
+    margin-bottom: var(--spacing-2);
+}
+
+blockquote cite {
+    display: block;
+    margin-top: var(--spacing-2);
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    font-style: normal;
+}
+
+blockquote cite::before {
+    content: "— ";
+}
+
+/* ===================================================================
+   CODE & PREFORMATTED
+   =================================================================== */
+
+code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    padding: 0.2em 0.4em;
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    color: var(--accent-color);
+}
+
+pre {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-sm);
+    padding: var(--spacing-4);
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-base);
+    overflow-x: auto;
+    margin: var(--spacing-4) 0;
+}
+
+pre code {
+    padding: 0;
+    background: none;
+    border: none;
+    color: inherit;
+}
+
+/* ===================================================================
+   MARKS & HIGHLIGHTS
+   =================================================================== */
+
+mark,
+.mark {
+    background: rgba(255, 235, 59, 0.5);
+    padding: 0.1em 0.3em;
+    border-radius: var(--radius-sm);
+}
+
+/* ===================================================================
+   SPECIAL TEXT STYLES
+   =================================================================== */
+
+/* Texto truncado con ellipsis */
+.text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Limitar líneas */
+.line-clamp-1 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Word break */
+.break-words {
+    word-break: break-word;
+}
+
+.break-all {
+    word-break: break-all;
+}
+
+/* White space */
+.whitespace-normal {
+    white-space: normal;
+}
+
+.whitespace-nowrap {
+    white-space: nowrap;
+}
+
+.whitespace-pre {
+    white-space: pre;
+}
+
+.whitespace-pre-wrap {
+    white-space: pre-wrap;
+}
+
+/* ===================================================================
+   SELECTION
+   =================================================================== */
+
+::selection {
+    background: var(--primary-color);
+    color: var(--text-inverse);
+}
+
+::-moz-selection {
+    background: var(--primary-color);
+    color: var(--text-inverse);
+}
+
+/* ===================================================================
+   ACCESSIBILITY
+   =================================================================== */
+
+/* Focus visible para navegación por teclado */
+:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Reducir animaciones para usuarios con preferencias */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

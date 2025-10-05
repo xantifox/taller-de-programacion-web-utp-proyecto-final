@@ -1,0 +1,322 @@
+/* ===================================================================
+   PLACEHOLDERS.CSS - Sistema de Placeholders Temporales
+   Estilos para imágenes placeholder mientras se obtienen las reales
+   =================================================================== */
+
+/* ===================================================================
+   PLACEHOLDER IMAGE BACKGROUNDS
+   =================================================================== */
+
+.placeholder-image {
+    background: linear-gradient(45deg, #f0f0f0 25%, transparent 25%),
+                linear-gradient(-45deg, #f0f0f0 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, #f0f0f0 75%),
+                linear-gradient(-45deg, transparent 75%, #f0f0f0 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+    background-color: #fafafa;
+    position: relative;
+    overflow: hidden;
+    min-height: 200px;
+}
+
+.placeholder-image::before {
+    content: "🎨 Imagen temporal";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(74, 144, 194, 0.9);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+    z-index: 1;
+}
+
+/* Variantes por tipo de contenido */
+.placeholder-image.hero::before {
+    content: "🖼️ Hero Image";
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+}
+
+.placeholder-image.artwork::before {
+    content: "🎨 Obra de Arte";
+}
+
+.placeholder-image.tutorial::before {
+    content: "📚 Tutorial";
+}
+
+.placeholder-image.product::before {
+    content: "🛒 Producto";
+}
+
+.placeholder-image.timeline::before {
+    content: "📅 Timeline";
+}
+
+/* ===================================================================
+   LAZY LOADING SHIMMER EFFECT
+   =================================================================== */
+
+.lazy-placeholder {
+    background: linear-gradient(
+        90deg, 
+        #f0f0f0 0%, 
+        #e0e0e0 20%, 
+        #f0f0f0 40%, 
+        #f0f0f0 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s ease-in-out infinite;
+    min-height: 200px;
+    position: relative;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* Shimmer con overlay sutil */
+.lazy-placeholder::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.6) 50%,
+        transparent 100%
+    );
+    animation: shimmer-overlay 2s ease-in-out infinite;
+}
+
+@keyframes shimmer-overlay {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* ===================================================================
+   LOADING STATES
+   =================================================================== */
+
+/* Estado de carga */
+.image-loading {
+    opacity: 0.6;
+    pointer-events: none;
+    position: relative;
+}
+
+.image-loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    margin: -20px 0 0 -20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid var(--primary-color, #4A90C2);
+    border-radius: 50%;
+    animation: spinner 1s linear infinite;
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Estado cargado con fade-in */
+.image-loaded {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ===================================================================
+   PLACEHOLDER ESPECÍFICOS POR TAMAÑO
+   =================================================================== */
+
+/* Hero principal - Grande */
+.placeholder-hero {
+    min-height: 400px;
+    background-color: #e8f4fd;
+}
+
+.placeholder-hero::before {
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+}
+
+/* Galería - Mediano */
+.placeholder-gallery {
+    min-height: 300px;
+    aspect-ratio: 4 / 3;
+}
+
+/* Thumbnails - Pequeño */
+.placeholder-thumbnail {
+    min-height: 100px;
+    aspect-ratio: 1 / 1;
+}
+
+.placeholder-thumbnail::before {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.5rem;
+}
+
+/* ===================================================================
+   ESTADOS DE ERROR
+   =================================================================== */
+
+.image-error {
+    background: linear-gradient(135deg, #fff5f5 0%, #ffe5e5 100%);
+    border: 2px dashed #ff6b6b;
+    position: relative;
+    min-height: 200px;
+}
+
+.image-error::before {
+    content: "⚠️ Error al cargar imagen";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 107, 107, 0.9);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* ===================================================================
+   RESPONSIVE PLACEHOLDERS
+   =================================================================== */
+
+/* Mobile */
+@media (max-width: 767px) {
+    .placeholder-image {
+        min-height: 150px;
+    }
+    
+    .placeholder-image::before {
+        font-size: 0.7rem;
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .placeholder-hero {
+        min-height: 250px;
+    }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .placeholder-image {
+        min-height: 180px;
+    }
+    
+    .placeholder-hero {
+        min-height: 350px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .placeholder-hero {
+        min-height: 500px;
+    }
+}
+
+/* ===================================================================
+   ACCESSIBILITY
+   =================================================================== */
+
+/* Reducir animaciones para usuarios con preferencias de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+    .lazy-placeholder,
+    .lazy-placeholder::after,
+    .image-loading::after {
+        animation: none;
+    }
+    
+    .image-loaded {
+        animation: none;
+        opacity: 1;
+    }
+}
+
+/* ===================================================================
+   PRINT STYLES
+   =================================================================== */
+
+@media print {
+    .placeholder-image::before,
+    .lazy-placeholder::after,
+    .image-loading::after,
+    .image-error::before {
+        display: none;
+    }
+}
+
+/* ===================================================================
+   UTILITY CLASSES
+   =================================================================== */
+
+/* Forzar aspect ratio en placeholders */
+.placeholder-16-9 {
+    aspect-ratio: 16 / 9;
+}
+
+.placeholder-4-3 {
+    aspect-ratio: 4 / 3;
+}
+
+.placeholder-1-1 {
+    aspect-ratio: 1 / 1;
+}
+
+.placeholder-3-2 {
+    aspect-ratio: 3 / 2;
+}
+
+/* Ocultar placeholder cuando imagen carga */
+img.loaded + .placeholder-image {
+    display: none;
+}
+
+/* Mostrar solo durante carga inicial */
+.loading-initial .placeholder-image {
+    display: block;
+}
+
+.loading-initial img {
+    display: none;
+}
