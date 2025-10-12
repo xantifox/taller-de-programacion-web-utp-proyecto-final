@@ -1,148 +1,103 @@
 <!DOCTYPE html>
 <html lang="es">
+
+<!DOCTYPE html>
+<html lang="es">
 <head>
     <!-- Meta tags esenciales -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
-    <!-- SEO Meta Tags (Personalizar por página) -->
-    <meta name="description" content="AcuarelaArte - Aprende técnicas de acuarela y explora mi portafolio artístico. Tutoriales paso a paso, materiales recomendados y evolución artística.">
-    <meta name="keywords" content="acuarela, arte, pintura, tutoriales, técnicas, portafolio, materiales, watercolor">
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Aprende técnicas de acuarela paso a paso: mojado sobre mojado, lavados, degradados y más. Tutoriales en video para principiantes y avanzados con materiales necesarios.">
+    <meta name="keywords" content="técnicas acuarela, tutoriales acuarela, mojado sobre mojado, lavados acuarela, degradados pintura, como pintar acuarela, curso acuarela, videos tutoriales">
     <meta name="author" content="AcuarelaArte">
     <meta name="robots" content="index, follow">
+    <meta name="language" content="Spanish">
     
-    <!-- Open Graph Meta Tags (Redes Sociales) -->
-    <meta property="og:type" content="website">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="article">
     <meta property="og:site_name" content="AcuarelaArte">
-    <meta property="og:title" content="AcuarelaArte | Técnicas y Portafolio de Acuarelas">
-    <meta property="og:description" content="Descubre el mundo de las acuarelas con tutoriales, técnicas y mi portafolio artístico">
-    <meta property="og:image" content="assets/images/og-image.jpg">
-    <meta property="og:url" content="https://acuarelaarte.com">
+    <meta property="og:title" content="Técnicas de Acuarela | Tutoriales Paso a Paso - AcuarelaArte">
+    <meta property="og:description" content="Domina las técnicas esenciales de acuarela con tutoriales en video: mojado sobre mojado, lavados, degradados y más. Para todos los niveles.">
+    <meta property="og:image" content="https://acuarelaarte.com/assets/images/og-image-tecnicas.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://acuarelaarte.com/pages/tecnicas.html">
     <meta property="og:locale" content="es_ES">
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="AcuarelaArte | Técnicas y Portafolio de Acuarelas">
-    <meta name="twitter:description" content="Descubre el mundo de las acuarelas con tutoriales, técnicas y mi portafolio artístico">
-    <meta name="twitter:image" content="assets/images/og-image.jpg">
+    <meta name="twitter:title" content="Técnicas de Acuarela | Tutoriales Paso a Paso">
+    <meta name="twitter:description" content="Domina las técnicas esenciales de acuarela con tutoriales en video: mojado sobre mojado, lavados y más.">
+    <meta name="twitter:image" content="https://acuarelaarte.com/assets/images/og-image-tecnicas.jpg">
+    <meta name="twitter:image:alt" content="Tutoriales de técnicas de acuarela">
     
     <!-- Favicons -->
-    <link rel="icon" type="image/x-icon" href="assets/images/icons/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/icons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/icons/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="../assets/images/icons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/icons/favicon-16x16.png">
     
     <!-- Theme Color -->
     <meta name="theme-color" content="#4A90C2" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#1A1A1A" media="(prefers-color-scheme: dark)">
     
-    <!-- ===================================================================
-         FUENTES TIPOGRÁFICAS - Google Fonts
-         =================================================================== -->
+    <title>Técnicas de Acuarela | Tutoriales Paso a Paso - AcuarelaArte</title>
     
-    <!-- DNS Prefetch para Google Fonts -->
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://acuarelaarte.com/pages/tecnicas.html">
     
-    <!-- Preconnect para mejor performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <!-- Google Fonts - Poppins (Primary) + Open Sans (Secondary) + Dancing Script (Decorative) -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
-    
-    <!-- ===================================================================
-         PRELOAD DE RECURSOS CRÍTICOS
-         =================================================================== -->
-    
-    <!-- Preload CSS principal -->
-    <link rel="preload" href="css/main.css" as="style">
-    
-    <!-- Preload fuente principal (woff2 es el formato más eficiente) -->
-    <!-- Nota: Descomentar cuando tengas las fuentes locales -->
-    <!-- <link rel="preload" href="assets/fonts/poppins-regular.woff2" as="font" type="font/woff2" crossorigin> -->
-    
-    <!-- Preload imagen hero si existe -->
-    <!-- <link rel="preload" href="assets/images/hero-watercolor.jpg" as="image"> -->
-    
-    <!-- ===================================================================
-         STYLESHEETS
-         =================================================================== -->
-    
-    <!-- Estilos principales -->
-    <link rel="stylesheet" href="css/main.css">
-    
-    <!-- ===================================================================
-         SCRIPTS
-         =================================================================== -->
-    
-    <!-- JavaScript principal (type="module" para ES6 modules) -->
-    <script src="js/main.js" type="module" defer></script>
-    
-    <!-- ===================================================================
-         TÍTULO DE LA PÁGINA (Personalizar por página)
-         =================================================================== -->
-    <title>AcuarelaArte | Técnicas</title>
-    
-    <!-- ===================================================================
-         CANONICAL URL (Prevenir contenido duplicado)
-         =================================================================== -->
-    <link rel="canonical" href="https://acuarelaarte.com/">
-    
-    <!-- ===================================================================
-         ALTERNATE LANGUAGE (Si tienes versión en otros idiomas)
-         =================================================================== -->
-    <!-- <link rel="alternate" hreflang="en" href="https://acuarelaarte.com/en/"> -->
-    <!-- <link rel="alternate" hreflang="es" href="https://acuarelaarte.com/"> -->
-    
-    <!-- ===================================================================
-         SCHEMA.ORG - Structured Data (JSON-LD)
-         Opcional pero recomendado para SEO
-         =================================================================== -->
+    <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "AcuarelaArte",
-        "description": "Aprende técnicas de acuarela con tutoriales paso a paso y explora mi portafolio artístico",
-        "url": "https://acuarelaarte.com",
+        "@type": "HowTo",
+        "name": "Técnicas de Acuarela",
+        "description": "Aprende técnicas esenciales de acuarela paso a paso con tutoriales en video",
+        "url": "https://acuarelaarte.com/pages/tecnicas.html",
+        "inLanguage": "es-ES",
         "author": {
             "@type": "Person",
             "name": "AcuarelaArte"
         },
-        "publisher": {
-            "@type": "Organization",
-            "name": "AcuarelaArte"
-        },
-        "inLanguage": "es-ES"
+        "tool": [
+            {
+                "@type": "HowToTool",
+                "name": "Pinceles de acuarela"
+            },
+            {
+                "@type": "HowToTool",
+                "name": "Papel de acuarela"
+            },
+            {
+                "@type": "HowToTool",
+                "name": "Pinturas de acuarela"
+            }
+        ]
     }
     </script>
 </head>
+
 <body>
+    <!-- Skip to main content (Accesibilidad) -->
     <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
     
-    <header class="header" role="banner">
-        <nav class="navbar" role="navigation" aria-label="Navegación principal">
-            <div class="navbar-container">
-                <div class="navbar-brand">
-                    <a href="../index.html" class="brand-link">
-                        <h1 class="brand-text">AcuarelaArte</h1>
-                    </a>
-                </div>
-                
-                <div class="navbar-controls">
-                    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Cambiar tema">
-                        <span class="theme-icon" aria-hidden="true"></span>
-                    </button>
-                    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-expanded="false">
-                        <span class="hamburger-line"></span>
-                        <span class="hamburger-line"></span>
-                        <span class="hamburger-line"></span>
-                    </button>
-                </div>
-                
-                <ul class="nav-menu" id="navMenu" role="menubar">
+    <header class="site-header" role="banner">
+        <nav class="nav" role="navigation" aria-label="Navegación principal">
+            <div class="nav-brand">
+                <a href="../index.html" class="brand-link">
+                    <span class="brand-name">AcuarelaArte</span>
+                </a>
+            </div>
+            
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Abrir menú de navegación">
+                <span class="hamburger"></span>
+            </button>
+            
+            <div class="nav-menu">
+                <ul class="nav-list" role="list">
                     <li class="nav-item"><a href="../index.html" class="nav-link">Inicio</a></li>
                     <li class="nav-item"><a href="portafolio.html" class="nav-link">Mi Portafolio</a></li>
                     <li class="nav-item"><a href="tecnicas.html" class="nav-link active" aria-current="page">Técnicas y Tutoriales</a></li>
@@ -165,7 +120,8 @@
         <section class="techniques-section">
             <div class="container">
                 <div class="techniques-grid">
-                    <!-- Técnica 1: Húmedo sobre Húmedo -->
+                    
+                    <!-- TÉCNICA 1: Húmedo sobre Húmedo -->
                     <article class="technique-card" tabindex="0">
                         <header class="technique-header">
                             <img src="../assets/images/tutoriales/tecnica01.jpg" 
@@ -178,66 +134,54 @@
                         </header>
                         
                         <div class="technique-content">
-                            <h3 class="technique-title">Húmedo sobre Húmedo</h3>
+                            <h3 class="technique-title">Húmedo sobre Húmedo (Wet-on-Wet)</h3>
                             <p class="technique-description">
                                 Técnica fundamental que permite crear efectos suaves y transiciones 
                                 naturales dejando que los colores se mezclen en el papel húmedo.
                             </p>
                             
-                            <div class="technique-details">
-                                <div class="materials-needed">
-                                    <h4>Materiales necesarios:</h4>
-                                    <ul>
-                                        <li>Papel de acuarela 300gsm</li>
-                                        <li>Pinceles redondos #8 y #12</li>
-                                        <li>Acuarelas básicas (azul, amarillo, rojo)</li>
-                                        <li>Spray con agua limpia</li>
-                                    </ul>
+                            <!-- Video Tutorial 1 -->
+                            <div class="video-tutorial">
+                                <h4>Fundamentos de Húmedo sobre Húmedo</h4>
+                                <div class="video-container">
+                                    <iframe 
+                                        src="https://www.youtube.com/embed/VIDEO_ID_1" 
+                                        title="Tutorial: Fundamentos de Húmedo sobre Húmedo"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                        allowfullscreen>
+                                    </iframe>
                                 </div>
-                                
-                                <div class="technique-steps">
-                                    <h4>Pasos principales:</h4>
-                                    <ol>
-                                        <li>Humedece el papel uniformemente con agua limpia</li>
-                                        <li>Aplica el primer color mientras el papel está húmedo</li>
-                                        <li>Agrega el segundo color y observa la mezcla natural</li>
-                                        <li>Controla la humedad para diferentes efectos</li>
-                                    </ol>
-                                </div>
+                                <p class="video-description">
+                                    Aprende los principios básicos de la técnica húmedo sobre húmedo, 
+                                    controlando el agua y la carga de pigmento para crear difusiones perfectas.
+                                </p>
                             </div>
                             
-                            <button class="expand-technique" type="button" aria-expanded="false">
-                                Ver Tutorial Completo
-                            </button>
-                        </div>
-                    </article>
-                    
-                    <!-- Técnica 2: Seco sobre Húmedo -->
-                    <article class="technique-card" tabindex="0">
-                        <header class="technique-header">
-                            <img src="../assets/images/tutoriales/tecnica02.jpg" 
-                                 alt="Demostración de técnica seco sobre húmedo" 
-                                 class="technique-image">
-                            <div class="technique-meta">
-                                <span class="difficulty-badge intermediate">Intermedio</span>
-                                <span class="time-badge">45 min</span>
+                            <!-- Video Tutorial 2 -->
+                            <div class="video-tutorial">
+                                <h4>Práctica: Cielos con Húmedo sobre Húmedo</h4>
+                                <div class="video-container">
+                                    <iframe 
+                                        src="https://www.youtube.com/embed/VIDEO_ID_2" 
+                                        title="Tutorial: Cielos con Húmedo sobre Húmedo"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                        allowfullscreen>
+                                    </iframe>
+                                </div>
+                                <p class="video-description">
+                                    Tutorial paso a paso para pintar cielos atmosféricos utilizando 
+                                    la técnica húmedo sobre húmedo con múltiples colores.
+                                </p>
                             </div>
-                        </header>
-                        
-                        <div class="technique-content">
-                            <h3 class="technique-title">Seco sobre Húmedo</h3>
-                            <p class="technique-description">
-                                Técnica que combina precisión y fluidez, permitiendo crear 
-                                detalles definidos sobre bases húmedas con efectos controlados.
-                            </p>
                             
                             <div class="technique-details">
                                 <div class="materials-needed">
                                     <h4>Materiales necesarios:</h4>
                                     <ul>
                                         <li>Papel de acuarela 300gsm</li>
-                                        <li>Pinceles redondos #6, #10 y #14</li>
+                                        <li>Pinceles redondos #8, #12</li>
                                         <li>Acuarelas de buena calidad</li>
+                                        <li>Spray con agua limpia</li>
                                         <li>Papel absorbente</li>
                                     </ul>
                                 </div>
@@ -245,21 +189,96 @@
                                 <div class="technique-steps">
                                     <h4>Pasos principales:</h4>
                                     <ol>
-                                        <li>Crea una base húmeda con el primer color</li>
-                                        <li>Espera el momento adecuado (semi-húmedo)</li>
-                                        <li>Aplica pinceladas secas con precisión</li>
-                                        <li>Controla la absorción y difusión</li>
+                                        <li>Humedece uniformemente el papel con agua limpia</li>
+                                        <li>Espera hasta que el brillo del agua disminuya ligeramente</li>
+                                        <li>Aplica el color con pincel cargado</li>
+                                        <li>Observa cómo el pigmento se difunde naturalmente</li>
+                                        <li>Añade más colores mientras está húmedo para crear mezclas</li>
                                     </ol>
                                 </div>
                             </div>
-                            
-                            <button class="expand-technique" type="button" aria-expanded="false">
-                                Ver Tutorial Completo
-                            </button>
                         </div>
                     </article>
                     
-                    <!-- Técnica 3: Glazing (Veladuras) -->
+                    <!-- TÉCNICA 2: Degradados y Transiciones -->
+                    <article class="technique-card" tabindex="0">
+                        <header class="technique-header">
+                            <img src="../assets/images/tutoriales/tecnica02.jpg" 
+                                 alt="Demostración de degradados de color" 
+                                 class="technique-image">
+                            <div class="technique-meta">
+                                <span class="difficulty-badge beginner">Principiante</span>
+                                <span class="time-badge">45 min</span>
+                            </div>
+                        </header>
+                        
+                        <div class="technique-content">
+                            <h3 class="technique-title">Degradados y Transiciones</h3>
+                            <p class="technique-description">
+                                Los degradados son esenciales en acuarela. Aprende a crear transiciones 
+                                suaves y uniformes entre colores para dar profundidad a tus obras.
+                            </p>
+                            
+                            <!-- Video Tutorial 3 -->
+                            <div class="video-tutorial">
+                                <h4>Degradados Básicos en Acuarela</h4>
+                                <div class="video-container">
+                                    <iframe 
+                                        src="https://www.youtube.com/embed/VIDEO_ID_3" 
+                                        title="Tutorial: Degradados Básicos"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                        allowfullscreen>
+                                    </iframe>
+                                </div>
+                                <p class="video-description">
+                                    Domina la técnica del degradado uniforme, desde oscuro a claro, 
+                                    controlando la cantidad de agua y pigmento en tu pincel.
+                                </p>
+                            </div>
+                            
+                            <!-- Video Tutorial 4 -->
+                            <div class="video-tutorial">
+                                <h4>Transiciones Entre Múltiples Colores</h4>
+                                <div class="video-container">
+                                    <iframe 
+                                        src="https://www.youtube.com/embed/VIDEO_ID_4" 
+                                        title="Tutorial: Transiciones Entre Colores"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                        allowfullscreen>
+                                    </iframe>
+                                </div>
+                                <p class="video-description">
+                                    Aprende a fusionar dos o más colores creando transiciones armoniosas, 
+                                    perfectas para atardeceres y paisajes degradados.
+                                </p>
+                            </div>
+                            
+                            <div class="technique-details">
+                                <div class="materials-needed">
+                                    <h4>Materiales necesarios:</h4>
+                                    <ul>
+                                        <li>Papel de acuarela 300gsm</li>
+                                        <li>Pinceles planos o redondos medianos</li>
+                                        <li>Paleta de mezclas</li>
+                                        <li>Agua limpia en dos recipientes</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="technique-steps">
+                                    <h4>Pasos principales:</h4>
+                                    <ol>
+                                        <li>Prepara tus colores en la paleta con suficiente pigmento</li>
+                                        <li>Aplica el primer color en una banda horizontal</li>
+                                        <li>Limpia el pincel y añade agua para diluir</li>
+                                        <li>Continúa hacia abajo diluyendo progresivamente</li>
+                                        <li>Trabaja rápido antes de que seque la primera capa</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- TÉCNICA 3: Glazing (Veladuras) -->
                     <article class="technique-card" tabindex="0">
                         <header class="technique-header">
                             <img src="../assets/images/tutoriales/tecnica03.jpg" 
@@ -278,63 +297,244 @@
                                 profundidad, luminosidad y colores complejos únicos.
                             </p>
                             
+                            <!-- Video Tutorial 5 -->
+                            <div class="video-tutorial">
+                                <h4>Construyendo Profundidad con Veladuras</h4>
+                                <div class="video-container">
+                                    <iframe 
+                                        src="https://www.youtube.com/embed/VIDEO_ID_5" 
+                                        title="Tutorial: Veladuras y Capas"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                        allowfullscreen>
+                                    </iframe>
+                                </div>
+                                <p class="video-description">
+                                    Tutorial completo sobre cómo aplicar capas sucesivas de acuarela 
+                                    para crear sombras realistas y riqueza cromática en tus pinturas.
+                                </p>
+                            </div>
+                            
                             <div class="technique-details">
                                 <div class="materials-needed">
                                     <h4>Materiales necesarios:</h4>
                                     <ul>
-                                        <li>Papel de acuarela 300gsm o superior</li>
-                                        <li>Pinceles planos y redondos variados</li>
-                                        <li>Acuarelas transparentes de calidad</li>
-                                        <li>Médium para glazing (opcional)</li>
+                                        <li>Papel de acuarela 300gsm prensado en frío</li>
+                                        <li>Pinceles suaves de buena calidad</li>
+                                        <li>Acuarelas transparentes (no opacas)</li>
+                                        <li>Paciencia para dejar secar entre capas</li>
                                     </ul>
                                 </div>
                                 
                                 <div class="technique-steps">
                                     <h4>Pasos principales:</h4>
                                     <ol>
-                                        <li>Aplica y seca completamente la primera capa</li>
-                                        <li>Prepara veladuras muy diluidas</li>
-                                        <li>Aplica capas transparentes sucesivas</li>
-                                        <li>Respeta los tiempos de secado entre capas</li>
+                                        <li>Aplica la primera capa de color muy diluido</li>
+                                        <li>Deja secar COMPLETAMENTE (crucial)</li>
+                                        <li>Aplica una segunda capa transparente sobre la primera</li>
+                                        <li>Observa cómo se crea un nuevo color por superposición</li>
+                                        <li>Repite el proceso para construir profundidad</li>
                                     </ol>
                                 </div>
                             </div>
-                            
-                            <button class="expand-technique" type="button" aria-expanded="false">
-                                Ver Tutorial Completo
-                            </button>
                         </div>
                     </article>
+                    
+                    <!-- TÉCNICA 4: Texturas Especiales -->
+                    <article class="technique-card" tabindex="0">
+                        <header class="technique-header">
+                            <img src="../assets/images/tutoriales/tecnica04.jpg" 
+                                 alt="Demostración de técnicas de texturización" 
+                                 class="technique-image">
+                            <div class="technique-meta">
+                                <span class="difficulty-badge intermediate">Intermedio</span>
+                                <span class="time-badge">40 min</span>
+                            </div>
+                        </header>
+                        
+                        <div class="technique-content">
+                            <h3 class="technique-title">Técnicas de Texturización</h3>
+                            <p class="technique-description">
+                                Agrega interés visual a tus pinturas con técnicas especiales como 
+                                salpicado, sal, y otras herramientas para crear texturas únicas.
+                            </p>
+                            
+                            <!-- Video Tutorial 6 -->
+                            <div class="video-tutorial">
+                                <h4>Salpicado y Efectos con Sal</h4>
+                                <div class="video-container">
+                                    <iframe 
+                                        src="https://www.youtube.com/embed/VIDEO_ID_6" 
+                                        title="Tutorial: Texturas con Sal y Salpicado"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                        allowfullscreen>
+                                    </iframe>
+                                </div>
+                                <p class="video-description">
+                                    Descubre cómo crear texturas orgánicas usando sal, salpicado con pincel 
+                                    y otros trucos para efectos especiales en acuarela.
+                                </p>
+                            </div>
+                            
+                            <!-- Video Tutorial 7 -->
+                            <div class="video-tutorial">
+                                <h4>Texturas con Herramientas Alternativas</h4>
+                                <div class="video-container">
+                                    <iframe 
+                                        src="https://www.youtube.com/embed/VIDEO_ID_7" 
+                                        title="Tutorial: Herramientas para Texturas"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                        allowfullscreen>
+                                    </iframe>
+                                </div>
+                                <p class="video-description">
+                                    Aprende a usar esponjas, tarjetas de crédito, film plástico y 
+                                    otros materiales para crear texturas fascinantes en tus obras.
+                                </p>
+                            </div>
+                            
+                            <div class="technique-details">
+                                <div class="materials-needed">
+                                    <h4>Materiales necesarios:</h4>
+                                    <ul>
+                                        <li>Papel de acuarela 300gsm</li>
+                                        <li>Sal de mesa o sal gruesa</li>
+                                        <li>Cepillo de dientes viejo</li>
+                                        <li>Esponjas naturales</li>
+                                        <li>Tarjetas de plástico o crédito</li>
+                                        <li>Film plástico transparente</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="technique-steps">
+                                    <h4>Pasos para salpicado:</h4>
+                                    <ol>
+                                        <li>Carga un cepillo con pintura diluida</li>
+                                        <li>Golpea suavemente el cepillo sobre tu dedo</li>
+                                        <li>Controla la distancia para el tamaño de gotas</li>
+                                        <li>Para sal: espolvorea sobre pintura húmeda</li>
+                                        <li>Deja secar completamente antes de remover la sal</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- TÉCNICA 5: Levantado de Color -->
+                    <article class="technique-card" tabindex="0">
+                        <header class="technique-header">
+                            <img src="../assets/images/tutoriales/tecnica05.jpg" 
+                                 alt="Demostración de técnica de levantado de color" 
+                                 class="technique-image">
+                            <div class="technique-meta">
+                                <span class="difficulty-badge intermediate">Intermedio</span>
+                                <span class="time-badge">35 min</span>
+                            </div>
+                        </header>
+                        
+                        <div class="technique-content">
+                            <h3 class="technique-title">Levantado de Color (Lifting)</h3>
+                            <p class="technique-description">
+                                El levantado permite crear luces y correcciones removiendo pigmento 
+                                del papel, tanto en húmedo como en seco.
+                            </p>
+                            
+                            <!-- Video Tutorial 8 -->
+                            <div class="video-tutorial">
+                                <h4>Técnicas de Levantado para Luces y Detalles</h4>
+                                <div class="video-container">
+                                    <iframe 
+                                        src="https://www.youtube.com/embed/VIDEO_ID_8" 
+                                        title="Tutorial: Levantado de Color"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                        allowfullscreen>
+                                    </iframe>
+                                </div>
+                                <p class="video-description">
+                                    Tutorial sobre cómo levantar color con pinceles limpios, esponjas 
+                                    y papel absorbente para crear luces dramáticas y correcciones.
+                                </p>
+                            </div>
+                            
+                            <div class="technique-details">
+                                <div class="materials-needed">
+                                    <h4>Materiales necesarios:</h4>
+                                    <ul>
+                                        <li>Papel de acuarela de buena calidad</li>
+                                        <li>Pinceles limpios sintéticos o naturales</li>
+                                        <li>Esponja húmeda</li>
+                                        <li>Papel absorbente o toallas</li>
+                                        <li>Agua limpia</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="technique-steps">
+                                    <h4>Pasos principales:</h4>
+                                    <ol>
+                                        <li>En húmedo: usa papel absorbente para absorber color</li>
+                                        <li>En seco: humedece el área con pincel limpio</li>
+                                        <li>Espera 10-15 segundos para que se ablande el pigmento</li>
+                                        <li>Absorbe con papel o esponja húmeda</li>
+                                        <li>Repite si es necesario para luces más brillantes</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    
                 </div>
                 
-                <!-- Sección de consejos generales -->
-                <aside class="tips-section" aria-labelledby="tips-title">
-                    <h2 id="tips-title" class="section-title">Consejos Generales</h2>
+                <!-- Sección de Consejos Generales -->
+                <section class="tips-section">
+                    <h2>Consejos Generales para Todas las Técnicas</h2>
                     <div class="tips-grid">
                         <div class="tip-card">
-                            <h3>Control del Agua</h3>
-                            <p>El agua es tu aliado principal. Aprende a controlar su cantidad y distribución para dominar cualquier técnica.</p>
+                            <h3>🎨 Practica Constantemente</h3>
+                            <p>Practica cada técnica en papel de prueba antes de aplicarla en tu obra final. La práctica desarrolla la memoria muscular.</p>
                         </div>
+                        
                         <div class="tip-card">
-                            <h3>Paciencia en el Secado</h3>
-                            <p>Respetar los tiempos de secado es crucial, especialmente en técnicas como glazing. La prisa puede arruinar horas de trabajo.</p>
+                            <h3>💧 Control del Agua</h3>
+                            <p>La cantidad de agua es crucial en acuarela. Aprende a controlarla con práctica constante observando cómo se comporta.</p>
                         </div>
+                        
                         <div class="tip-card">
-                            <h3>Practica Constante</h3>
-                            <p>Dedica tiempo regular a practicar. Incluso 15 minutos diarios pueden generar mejoras significativas.</p>
+                            <h3>⏰ Paciencia en Capas</h3>
+                            <p>Deja secar completamente entre capas cuando trabajes con veladuras. Una capa húmeda sobre otra puede arruinar el trabajo.</p>
+                        </div>
+                        
+                        <div class="tip-card">
+                            <h3>🧪 Experimenta Libremente</h3>
+                            <p>No temas experimentar - algunos de los mejores efectos surgen por accidente. Mantén una actitud de exploración.</p>
+                        </div>
+                        
+                        <div class="tip-card">
+                            <h3>📄 Usa Papel de Calidad</h3>
+                            <p>Usa papel de acuarela de calidad (mínimo 200g/m², ideal 300g/m²) para mejores resultados y mayor durabilidad.</p>
+                        </div>
+                        
+                        <div class="tip-card">
+                            <h3>🖌️ Cuida tus Pinceles</h3>
+                            <p>Lava bien tus pinceles después de cada sesión y guárdalos en posición horizontal o con las cerdas hacia arriba.</p>
                         </div>
                     </div>
-                </aside>
+                </section>
             </div>
         </section>
     </main>
     
-    <footer class="footer" role="contentinfo">
-        <div class="footer-container">
-            <p>&copy; 2025 AcuarelaArte. Proyecto educativo.</p>
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <p class="copyright">&copy; 2025 AcuarelaArte - Proyecto Académico | Taller de Programación Web</p>
+                <nav class="footer-nav" aria-label="Navegación del pie de página">
+                    <ul>
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="#main-content">Volver arriba</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </footer>
-    
-    <script src="../js/main.js" defer></script>
 </body>
 </html>
