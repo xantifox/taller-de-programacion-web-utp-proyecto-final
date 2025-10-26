@@ -1,0 +1,200 @@
+/* css/components/buttons */
+
+/* ===================================================================
+   BUTTONS.CSS - Estilos de Botones
+   Incluye: Theme Toggle, Botones primarios, secundarios, etc.
+   =================================================================== */
+
+/* ===================================================================
+   BOTÓN TOGGLE DE TEMA
+   =================================================================== */
+
+.theme-toggle {
+    /* Posicionamiento y tamaño */
+    position: relative;
+    width: 60px;
+    height: 30px;
+    
+    /* Apariencia */
+    background: var(--border-color);
+    border: 2px solid var(--border-color);
+    border-radius: 15px;
+    
+    /* Comportamiento */
+    cursor: pointer;
+    overflow: hidden;
+    
+    /* Transiciones */
+    transition: background-color var(--duration-normal) var(--ease-out),
+                border-color var(--duration-normal) var(--ease-out),
+                box-shadow var(--duration-normal) var(--ease-out);
+    
+    /* Reset de estilos de botón */
+    padding: 0;
+    outline: none;
+    
+    /* Accesibilidad */
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Estados interactivos */
+.theme-toggle:hover {
+    background: var(--border-hover);
+    border-color: var(--border-hover);
+    box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+.theme-toggle:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+    box-shadow: var(--shadow-outline);
+}
+
+.theme-toggle:focus:not(:focus-visible) {
+    outline: none;
+}
+
+.theme-toggle:active {
+    transform: scale(0.98);
+}
+
+/* Círculo deslizante */
+.theme-toggle::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 22px;
+    height: 22px;
+    
+    background: var(--primary-color);
+    border-radius: 50%;
+    
+    transition: transform var(--duration-normal) var(--ease-out),
+                background-color var(--duration-normal) var(--ease-out),
+                box-shadow var(--duration-normal) var(--ease-out);
+    
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+[data-theme="dark"] .theme-toggle::before {
+    transform: translateX(30px);
+    background: var(--secondary-color);
+    box-shadow: 0 2px 8px rgba(187, 143, 206, 0.4);
+}
+
+/* Iconos */
+.theme-toggle::after {
+    content: '☀️';
+    position: absolute;
+    top: 50%;
+    left: 8px;
+    transform: translateY(-50%);
+    font-size: 14px;
+    line-height: 1;
+    transition: opacity var(--duration-fast) var(--ease-out);
+    user-select: none;
+    pointer-events: none;
+}
+
+[data-theme="dark"] .theme-toggle::after {
+    content: '🌙';
+    left: auto;
+    right: 8px;
+}
+
+/* Animación al hacer clic */
+.theme-toggle-active {
+    animation: toggleBounce var(--duration-normal) var(--ease-bounce);
+}
+
+@keyframes toggleBounce {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(0.95); }
+}
+
+/* Desactivar transiciones para carga inicial */
+.theme-transition-disabled,
+.theme-transition-disabled *,
+.theme-transition-disabled *::before,
+.theme-transition-disabled *::after {
+    transition: none !important;
+    animation: none !important;
+}
+
+/* Estilos específicos por tema */
+[data-theme="light"] .theme-toggle {
+    background: linear-gradient(135deg, 
+        rgba(74, 144, 194, 0.1) 0%, 
+        rgba(123, 104, 238, 0.1) 100%);
+    border-color: rgba(74, 144, 194, 0.3);
+}
+
+[data-theme="light"] .theme-toggle:hover {
+    background: linear-gradient(135deg, 
+        rgba(74, 144, 194, 0.15) 0%, 
+        rgba(123, 104, 238, 0.15) 100%);
+    border-color: rgba(74, 144, 194, 0.4);
+}
+
+[data-theme="dark"] .theme-toggle {
+    background: linear-gradient(135deg, 
+        rgba(93, 173, 226, 0.15) 0%, 
+        rgba(187, 143, 206, 0.15) 100%);
+    border-color: rgba(93, 173, 226, 0.3);
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+    background: linear-gradient(135deg, 
+        rgba(93, 173, 226, 0.2) 0%, 
+        rgba(187, 143, 206, 0.2) 100%);
+    border-color: rgba(93, 173, 226, 0.4);
+}
+
+/* Accesibilidad - Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .theme-toggle,
+    .theme-toggle::before,
+    .theme-toggle::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+
+/* ===================================================================
+   BOTONES GENERALES (para uso futuro)
+   =================================================================== */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-2);
+    
+    padding: var(--button-padding-y) var(--button-padding-x);
+    border-radius: var(--button-border-radius);
+    
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    font-weight: var(--button-font-weight);
+    line-height: 1;
+    text-decoration: none;
+    
+    min-height: var(--button-min-height);
+    border: none;
+    cursor: pointer;
+    
+    transition: all var(--duration-normal) var(--ease-out);
+    
+    user-select: none;
+}
+
+.btn:focus {
+    outline: 2px solid var(--border-focus);
+    outline-offset: 2px;
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}

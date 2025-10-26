@@ -1,73 +1,123 @@
 /* ===================================================================
-   VARIABLES.CSS - Design System Tokens
-   Variables CSS centralizadas para todo el proyecto
+   TEMA CLARO - Variables por Defecto (:root)
+   Inspirado en acuarelas: azules, violetas y rosas suaves
    =================================================================== */
 
 :root {
-    /* ===================================================================
-       COLORES - Tema Claro (Watercolor Light)
-       =================================================================== */
+    /* ===============================================================
+       COLORES PRINCIPALES - Paleta Acuarela
+       =============================================================== */
     
-    /* Colores principales */
-    --primary-color: #4A90C2;        /* Azul acuarela */
+    /* Colores de marca */
+    --primary-color: #4A90C2;        /* Azul acuarela principal */
+    --primary-light: #6BA8D4;        /* Azul acuarela claro */
+    --primary-dark: #3A7AA8;         /* Azul acuarela oscuro */
+    
     --secondary-color: #7B68EE;      /* Violeta suave */
-    --accent-color: #FF6B6B;         /* Rosa coral */
+    --secondary-light: #9B8CF5;      /* Violeta más claro */
+    --secondary-dark: #5E4FBD;       /* Violeta más oscuro */
     
-    /* Colores de superficie */
-    --background-color: #FEFEFE;     /* Blanco papel */
-    --surface-color: #F8F9FA;        /* Gris muy claro */
-    --surface-hover: #F0F2F5;        /* Gris hover */
+    --accent-color: #FF6B6B;         /* Rosa coral/salmón */
+    --accent-light: #FF8A8A;         /* Rosa coral claro */
+    --accent-dark: #E55555;          /* Rosa coral oscuro */
     
-    /* Colores de texto */
-    --text-primary: #2C3E50;         /* Azul oscuro */
-    --text-secondary: #5D6D7E;       /* Gris medio */
-    --text-disabled: #95A5A6;        /* Gris claro */
-    --text-inverse: #FFFFFF;         /* Blanco */
+    /* ===============================================================
+       COLORES DE SUPERFICIE - Fondos y Capas
+       =============================================================== */
     
-    /* Colores de borde */
-    --border-color: #E8ECEF;         /* Gris borde */
-    --border-hover: #D1D8DD;         /* Gris borde hover */
-    --border-focus: #4A90C2;         /* Azul focus */
+    --background-color: #FEFEFE;     /* Blanco papel casi puro */
+    --surface-color: #F8F9FA;        /* Superficie gris muy claro */
+    --surface-elevated: #FFFFFF;     /* Superficie elevada (cards) */
+    --surface-hover: #F0F2F5;        /* Estado hover en superficies */
+    --surface-active: #E8ECEF;       /* Estado activo en superficies */
     
-    /* Colores de sombra */
-    --shadow-color: rgba(0, 0, 0, 0.1);
-    --shadow-color-md: rgba(0, 0, 0, 0.15);
-    --shadow-color-lg: rgba(0, 0, 0, 0.2);
+    /* ===============================================================
+       COLORES DE TEXTO - Jerarquía Tipográfica
+       =============================================================== */
     
-    /* Colores de estado */
+    --text-primary: #2C3E50;         /* Texto principal (azul oscuro) */
+    --text-secondary: #5D6D7E;       /* Texto secundario (gris medio) */
+    --text-tertiary: #7F8C8D;        /* Texto terciario (gris) */
+    --text-disabled: #95A5A6;        /* Texto deshabilitado (gris claro) */
+    --text-inverse: #FFFFFF;         /* Texto sobre fondos oscuros */
+    --text-link: #4A90C2;            /* Enlaces */
+    --text-link-hover: #3A7AA8;      /* Enlaces hover */
+    
+    /* ===============================================================
+       COLORES DE BORDE - Divisores y Contornos
+       =============================================================== */
+    
+    --border-color: #E8ECEF;         /* Borde normal */
+    --border-color-light: #F0F2F5;   /* Borde suave */
+    --border-color-medium: #D1D8DD;  /* Borde medio */
+    --border-color-strong: #BDC3C7;  /* Borde fuerte */
+    --border-hover: #D1D8DD;         /* Borde hover */
+    --border-focus: #4A90C2;         /* Borde focus (azul) */
+    --border-error: #E74C3C;         /* Borde error */
+    
+    /* ===============================================================
+       COLORES DE ESTADO - Feedback Visual
+       =============================================================== */
+    
+    /* Estados de éxito */
     --success-color: #2ECC71;
-    --warning-color: #F39C12;
-    --error-color: #E74C3C;
-    --info-color: #3498DB;
-    
-    /* Colores de estado - Fondos */
     --success-bg: #D5F4E6;
+    --success-border: #A9DFBF;
+    
+    /* Estados de advertencia */
+    --warning-color: #F39C12;
     --warning-bg: #FCF3CF;
+    --warning-border: #F9E79F;
+    
+    /* Estados de error */
+    --error-color: #E74C3C;
     --error-bg: #FADBD8;
+    --error-border: #F5B7B1;
+    
+    /* Estados de información */
+    --info-color: #3498DB;
     --info-bg: #D6EAF8;
+    --info-border: #AED6F1;
     
-    /* ===================================================================
-       TIPOGRAFÍA
-       =================================================================== */
+    /* ===============================================================
+       COLORES DE SOMBRA - Elevación y Profundidad
+       =============================================================== */
     
-    /* Familias de fuentes */
-    --font-primary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    --font-secondary: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    --font-decorative: 'Dancing Script', cursive;
-    --font-mono: 'Monaco', 'Courier New', monospace;
+    --shadow-color: rgba(0, 0, 0, 0.08);
+    --shadow-color-sm: rgba(0, 0, 0, 0.05);
+    --shadow-color-md: rgba(0, 0, 0, 0.12);
+    --shadow-color-lg: rgba(0, 0, 0, 0.16);
+    --shadow-color-xl: rgba(0, 0, 0, 0.20);
     
-    /* Tamaños de fuente */
+    /* ===============================================================
+       TIPOGRAFÍA - Familias de Fuentes
+       =============================================================== */
+    
+    --font-primary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-secondary: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-decorative: 'Dancing Script', cursive, serif;
+    --font-monospace: 'Fira Code', 'Courier New', monospace;
+    
+    /* ===============================================================
+       TIPOGRAFÍA - Tamaños de Fuente (Escala Modular 1.250 - Mayor Third)
+       =============================================================== */
+    
     --font-size-xs: 0.75rem;         /* 12px */
     --font-size-sm: 0.875rem;        /* 14px */
-    --font-size-base: 1rem;          /* 16px */
-    --font-size-lg: 1.125rem;        /* 18px */
-    --font-size-xl: 1.25rem;         /* 20px */
-    --font-size-2xl: 1.5rem;         /* 24px */
-    --font-size-3xl: 1.875rem;       /* 30px */
-    --font-size-4xl: 2.25rem;        /* 36px */
-    --font-size-5xl: 3rem;           /* 48px */
+    --font-size-base: 1rem;          /* 16px - Base */
+    --font-size-md: 1.125rem;        /* 18px */
+    --font-size-lg: 1.25rem;         /* 20px */
+    --font-size-xl: 1.5rem;          /* 24px */
+    --font-size-2xl: 1.875rem;       /* 30px */
+    --font-size-3xl: 2.25rem;        /* 36px */
+    --font-size-4xl: 3rem;           /* 48px */
+    --font-size-5xl: 3.75rem;        /* 60px */
+    --font-size-6xl: 4.5rem;         /* 72px */
     
-    /* Pesos de fuente */
+    /* ===============================================================
+       TIPOGRAFÍA - Pesos de Fuente
+       =============================================================== */
+    
     --font-weight-light: 300;
     --font-weight-normal: 400;
     --font-weight-medium: 500;
@@ -75,23 +125,30 @@
     --font-weight-bold: 700;
     --font-weight-extrabold: 800;
     
-    /* Altura de línea */
-    --line-height-tight: 1.2;
-    --line-height-normal: 1.5;
-    --line-height-relaxed: 1.6;
-    --line-height-loose: 1.8;
+    /* ===============================================================
+       TIPOGRAFÍA - Altura de Línea
+       =============================================================== */
     
-    /* Espaciado de letras */
+    --line-height-tight: 1.25;
+    --line-height-snug: 1.375;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.625;
+    --line-height-loose: 2;
+    
+    /* ===============================================================
+       TIPOGRAFÍA - Espaciado de Letras
+       =============================================================== */
+    
     --letter-spacing-tight: -0.025em;
     --letter-spacing-normal: 0;
     --letter-spacing-wide: 0.025em;
     --letter-spacing-wider: 0.05em;
+    --letter-spacing-widest: 0.1em;
     
-    /* ===================================================================
-       ESPACIADO
-       =================================================================== */
+    /* ===============================================================
+       ESPACIADO - Sistema de 4px Base
+       =============================================================== */
     
-    /* Espaciado basado en escala 8px */
     --spacing-0: 0;
     --spacing-1: 0.25rem;            /* 4px */
     --spacing-2: 0.5rem;             /* 8px */
@@ -99,30 +156,48 @@
     --spacing-4: 1rem;               /* 16px */
     --spacing-5: 1.25rem;            /* 20px */
     --spacing-6: 1.5rem;             /* 24px */
+    --spacing-7: 1.75rem;            /* 28px */
     --spacing-8: 2rem;               /* 32px */
     --spacing-10: 2.5rem;            /* 40px */
     --spacing-12: 3rem;              /* 48px */
     --spacing-16: 4rem;              /* 64px */
     --spacing-20: 5rem;              /* 80px */
     --spacing-24: 6rem;              /* 96px */
+    --spacing-32: 8rem;              /* 128px */
+    --spacing-40: 10rem;             /* 160px */
+    --spacing-48: 12rem;             /* 192px */
+    --spacing-64: 16rem;             /* 256px */
     
-    /* Espaciado semántico */
-    --spacing-xs: var(--spacing-2);   /* 8px */
-    --spacing-sm: var(--spacing-4);   /* 16px */
-    --spacing-md: var(--spacing-6);   /* 24px */
-    --spacing-lg: var(--spacing-8);   /* 32px */
-    --spacing-xl: var(--spacing-12);  /* 48px */
+    /* ===============================================================
+       TAMAÑOS - Dimensiones Comunes
+       =============================================================== */
     
-    /* ===================================================================
-       BORDES Y RADIOS
-       =================================================================== */
+    --size-xs: 20rem;                /* 320px */
+    --size-sm: 24rem;                /* 384px */
+    --size-md: 28rem;                /* 448px */
+    --size-lg: 32rem;                /* 512px */
+    --size-xl: 36rem;                /* 576px */
+    --size-2xl: 42rem;               /* 672px */
+    --size-3xl: 48rem;               /* 768px */
+    --size-4xl: 56rem;               /* 896px */
+    --size-5xl: 64rem;               /* 1024px */
+    --size-6xl: 72rem;               /* 1152px */
+    --size-7xl: 80rem;               /* 1280px */
     
-    /* Anchos de borde */
-    --border-width-thin: 1px;
-    --border-width-normal: 2px;
-    --border-width-thick: 3px;
+    /* ===============================================================
+       BORDES - Anchos
+       =============================================================== */
     
-    /* Radios de borde */
+    --border-width-0: 0;
+    --border-width-1: 1px;
+    --border-width-2: 2px;
+    --border-width-4: 4px;
+    --border-width-8: 8px;
+    
+    /* ===============================================================
+       BORDES - Radios de Borde (Border Radius)
+       =============================================================== */
+    
     --radius-none: 0;
     --radius-sm: 0.25rem;            /* 4px */
     --radius-base: 0.375rem;         /* 6px */
@@ -130,27 +205,33 @@
     --radius-lg: 0.75rem;            /* 12px */
     --radius-xl: 1rem;               /* 16px */
     --radius-2xl: 1.5rem;            /* 24px */
-    --radius-full: 9999px;           /* Completamente redondo */
+    --radius-3xl: 2rem;              /* 32px */
+    --radius-full: 9999px;           /* Completamente redondeado */
     
-    /* ===================================================================
-       SOMBRAS
-       =================================================================== */
+    /* ===============================================================
+       SOMBRAS - Elevación y Profundidad
+       =============================================================== */
     
-    --shadow-sm: 0 1px 2px 0 var(--shadow-color);
-    --shadow-base: 0 2px 4px 0 var(--shadow-color);
-    --shadow-md: 0 4px 6px -1px var(--shadow-color-md);
-    --shadow-lg: 0 10px 15px -3px var(--shadow-color-md);
-    --shadow-xl: 0 20px 25px -5px var(--shadow-color-lg);
-    --shadow-2xl: 0 25px 50px -12px var(--shadow-color-lg);
+    --shadow-none: none;
+    --shadow-xs: 0 1px 2px 0 var(--shadow-color-sm);
+    --shadow-sm: 0 1px 3px 0 var(--shadow-color), 0 1px 2px 0 var(--shadow-color-sm);
+    --shadow-base: 0 2px 4px 0 var(--shadow-color), 0 2px 3px -1px var(--shadow-color-sm);
+    --shadow-md: 0 4px 6px -1px var(--shadow-color-md), 0 2px 4px -1px var(--shadow-color-sm);
+    --shadow-lg: 0 10px 15px -3px var(--shadow-color-md), 0 4px 6px -2px var(--shadow-color-sm);
+    --shadow-xl: 0 20px 25px -5px var(--shadow-color-lg), 0 10px 10px -5px var(--shadow-color-sm);
+    --shadow-2xl: 0 25px 50px -12px var(--shadow-color-xl);
     
     /* Sombras especiales */
     --shadow-inner: inset 0 2px 4px 0 var(--shadow-color);
-    --shadow-outline: 0 0 0 3px rgba(74, 144, 194, 0.1);
+    --shadow-outline: 0 0 0 3px rgba(74, 144, 194, 0.15);
+    --shadow-outline-error: 0 0 0 3px rgba(231, 76, 60, 0.15);
+    --shadow-outline-success: 0 0 0 3px rgba(46, 204, 113, 0.15);
     
-    /* ===================================================================
-       Z-INDEX
-       =================================================================== */
+    /* ===============================================================
+       Z-INDEX - Capas de Profundidad
+       =============================================================== */
     
+    --z-base: 0;
     --z-dropdown: 1000;
     --z-sticky: 1020;
     --z-fixed: 1030;
@@ -158,140 +239,193 @@
     --z-modal: 1050;
     --z-popover: 1060;
     --z-tooltip: 1070;
+    --z-notification: 1080;
     
-    /* ===================================================================
-       TRANSICIONES Y ANIMACIONES
-       =================================================================== */
+    /* ===============================================================
+       TRANSICIONES Y ANIMACIONES - Duraciones
+       =============================================================== */
     
-    /* Duraciones */
+    --duration-instant: 0ms;
     --duration-fast: 150ms;
     --duration-normal: 300ms;
     --duration-slow: 500ms;
     --duration-slower: 700ms;
+    --duration-slowest: 1000ms;
     
-    /* Timing functions */
+    /* ===============================================================
+       TRANSICIONES Y ANIMACIONES - Timing Functions (Easing)
+       =============================================================== */
+    
     --ease-linear: linear;
     --ease-in: cubic-bezier(0.4, 0, 1, 1);
     --ease-out: cubic-bezier(0, 0, 0.2, 1);
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
-    --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --ease-elastic: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --ease-bounce: cubic-bezier(0.175, 0.885, 0.32, 1.275);
     
-    /* Transiciones comunes */
-    --transition-base: all var(--duration-normal) var(--ease-in-out);
-    --transition-colors: background-color var(--duration-normal) var(--ease-in-out),
-                         border-color var(--duration-normal) var(--ease-in-out),
-                         color var(--duration-normal) var(--ease-in-out);
-    --transition-shadow: box-shadow var(--duration-normal) var(--ease-in-out);
-    --transition-transform: transform var(--duration-normal) var(--ease-in-out);
+    /* ===============================================================
+       BREAKPOINTS - Responsive Design (Para uso en media queries)
+       =============================================================== */
     
-    /* ===================================================================
-       BREAKPOINTS (para uso en calc())
-       =================================================================== */
+    --breakpoint-xs: 320px;          /* Móvil pequeño */
+    --breakpoint-sm: 576px;          /* Móvil grande */
+    --breakpoint-md: 768px;          /* Tablet */
+    --breakpoint-lg: 1024px;         /* Desktop pequeño */
+    --breakpoint-xl: 1280px;         /* Desktop grande */
+    --breakpoint-2xl: 1536px;        /* Desktop extra grande */
     
-    --breakpoint-xs: 320px;
-    --breakpoint-sm: 576px;
-    --breakpoint-md: 768px;
-    --breakpoint-lg: 1024px;
-    --breakpoint-xl: 1200px;
-    --breakpoint-2xl: 1400px;
-    
-    /* ===================================================================
-       LAYOUT
-       =================================================================== */
-    
-    /* Contenedores */
-    --container-xs: 540px;
-    --container-sm: 720px;
-    --container-md: 960px;
-    --container-lg: 1140px;
-    --container-xl: 1320px;
-    
-    /* Header */
-    --header-height: 70px;
-    --header-height-mobile: 60px;
-    
-    /* Footer */
-    --footer-height: auto;
-    
-    /* Sidebar */
-    --sidebar-width: 280px;
-    --sidebar-width-collapsed: 70px;
-    
-    /* ===================================================================
-       COMPONENTES ESPECÍFICOS
-       =================================================================== */
+    /* ===============================================================
+       COMPONENTES - Tokens Específicos
+       =============================================================== */
     
     /* Botones */
-    --btn-padding-x: var(--spacing-4);
-    --btn-padding-y: var(--spacing-2);
-    --btn-border-radius: var(--radius-base);
-    --btn-font-weight: var(--font-weight-medium);
-    
-    /* Inputs */
-    --input-padding-x: var(--spacing-3);
-    --input-padding-y: var(--spacing-2);
-    --input-border-radius: var(--radius-base);
-    --input-border-width: var(--border-width-thin);
-    --input-focus-ring: 0 0 0 3px rgba(74, 144, 194, 0.1);
+    --button-padding-x: var(--spacing-6);
+    --button-padding-y: var(--spacing-3);
+    --button-border-radius: var(--radius-md);
+    --button-font-weight: var(--font-weight-semibold);
+    --button-min-height: 44px;       /* Accesibilidad táctil WCAG */
     
     /* Cards */
     --card-padding: var(--spacing-6);
     --card-border-radius: var(--radius-lg);
     --card-shadow: var(--shadow-base);
+    --card-shadow-hover: var(--shadow-lg);
+    
+    /* Inputs */
+    --input-padding-x: var(--spacing-4);
+    --input-padding-y: var(--spacing-3);
+    --input-border-radius: var(--radius-md);
+    --input-border-width: var(--border-width-1);
+    --input-min-height: 44px;        /* Accesibilidad táctil WCAG */
     
     /* Modals */
-    --modal-padding: var(--spacing-6);
-    --modal-border-radius: var(--radius-xl);
+    --modal-padding: var(--spacing-8);
+    --modal-border-radius: var(--radius-2xl);
     --modal-backdrop: rgba(0, 0, 0, 0.5);
+    --modal-max-width: var(--size-2xl);
     
-    /* Badges */
-    --badge-padding-x: var(--spacing-2);
-    --badge-padding-y: var(--spacing-1);
-    --badge-border-radius: var(--radius-full);
-    --badge-font-size: var(--font-size-xs);
+    /* Navigation */
+    --nav-height: 72px;
+    --nav-padding: var(--spacing-4);
+    
+    /* Headers */
+    --header-height: 80px;
+    
+    /* Footer */
+    --footer-padding: var(--spacing-12);
+    
+    /* Container */
+    --container-max-width: var(--size-7xl);
+    --container-padding: var(--spacing-4);
 }
 
 /* ===================================================================
-   TEMA OSCURO - Variables Override
+   TEMA OSCURO - Variables Override ([data-theme="dark"])
+   Ajustes para modo nocturno con paleta adaptada
    =================================================================== */
 
 [data-theme="dark"] {
-    /* Colores principales */
-    --primary-color: #5DADE2;
-    --secondary-color: #BB8FCE;
-    --accent-color: #F1948A;
+    /* ===============================================================
+       COLORES PRINCIPALES - Paleta Acuarela Nocturna
+       =============================================================== */
     
-    /* Colores de superficie */
-    --background-color: #1A1A1A;
-    --surface-color: #2C2C2C;
-    --surface-hover: #363636;
+    --primary-color: #5DADE2;        /* Azul más brillante */
+    --primary-light: #7FC4EC;
+    --primary-dark: #4A9BD4;
     
-    /* Colores de texto */
-    --text-primary: #FAFAFA;
-    --text-secondary: #B0B0B0;
-    --text-disabled: #6B6B6B;
-    --text-inverse: #1A1A1A;
+    --secondary-color: #BB8FCE;      /* Violeta más suave */
+    --secondary-light: #D2ACE6;
+    --secondary-dark: #A67CB5;
     
-    /* Colores de borde */
-    --border-color: #404040;
-    --border-hover: #505050;
-    --border-focus: #5DADE2;
+    --accent-color: #F1948A;         /* Rosa salmón más suave */
+    --accent-light: #F5ABA5;
+    --accent-dark: #E57A6E;
     
-    /* Colores de sombra */
-    --shadow-color: rgba(0, 0, 0, 0.3);
-    --shadow-color-md: rgba(0, 0, 0, 0.4);
-    --shadow-color-lg: rgba(0, 0, 0, 0.5);
+    /* ===============================================================
+       COLORES DE SUPERFICIE - Fondos Oscuros
+       =============================================================== */
     
-    /* Ajustes para tema oscuro */
-    --shadow-outline: 0 0 0 3px rgba(93, 173, 226, 0.2);
+    --background-color: #1A1A1A;     /* Negro suave principal */
+    --surface-color: #2C2C2C;        /* Superficie elevada */
+    --surface-elevated: #363636;     /* Cards y elementos elevados */
+    --surface-hover: #404040;        /* Hover sobre superficies */
+    --surface-active: #4A4A4A;       /* Estado activo */
+    
+    /* ===============================================================
+       COLORES DE TEXTO - Invertidos para Oscuro
+       =============================================================== */
+    
+    --text-primary: #FAFAFA;         /* Texto principal blanco */
+    --text-secondary: #B0B0B0;       /* Texto secundario gris claro */
+    --text-tertiary: #8A8A8A;        /* Texto terciario */
+    --text-disabled: #6B6B6B;        /* Texto deshabilitado */
+    --text-inverse: #1A1A1A;         /* Texto sobre fondos claros */
+    --text-link: #5DADE2;            /* Enlaces azul claro */
+    --text-link-hover: #7FC4EC;      /* Enlaces hover más claro */
+    
+    /* ===============================================================
+       COLORES DE BORDE - Ajustados para Contraste
+       =============================================================== */
+    
+    --border-color: #404040;         /* Borde normal */
+    --border-color-light: #353535;   /* Borde suave */
+    --border-color-medium: #4A4A4A;  /* Borde medio */
+    --border-color-strong: #555555;  /* Borde fuerte */
+    --border-hover: #505050;         /* Borde hover */
+    --border-focus: #5DADE2;         /* Borde focus */
+    --border-error: #E57A6E;         /* Borde error suavizado */
+    
+    /* ===============================================================
+       COLORES DE ESTADO - Versiones Nocturnas
+       =============================================================== */
+    
+    /* Estados de éxito */
+    --success-color: #58D68D;
+    --success-bg: #1E5631;
+    --success-border: #2E7D47;
+    
+    /* Estados de advertencia */
+    --warning-color: #F5B041;
+    --warning-bg: #6B4D1F;
+    --warning-border: #8E6529;
+    
+    /* Estados de error */
+    --error-color: #EC7063;
+    --error-bg: #5D1F1A;
+    --error-border: #7D2A24;
+    
+    /* Estados de información */
+    --info-color: #5DADE2;
+    --info-bg: #1A3A52;
+    --info-border: #2A4D6B;
+    
+    /* ===============================================================
+       COLORES DE SOMBRA - Más Pronunciadas en Oscuro
+       =============================================================== */
+    
+    --shadow-color: rgba(0, 0, 0, 0.25);
+    --shadow-color-sm: rgba(0, 0, 0, 0.15);
+    --shadow-color-md: rgba(0, 0, 0, 0.35);
+    --shadow-color-lg: rgba(0, 0, 0, 0.45);
+    --shadow-color-xl: rgba(0, 0, 0, 0.55);
+    
+    /* Sombras especiales en tema oscuro */
+    --shadow-outline: 0 0 0 3px rgba(93, 173, 226, 0.25);
+    --shadow-outline-error: 0 0 0 3px rgba(236, 112, 99, 0.25);
+    --shadow-outline-success: 0 0 0 3px rgba(88, 214, 141, 0.25);
+    
+    /* ===============================================================
+       COMPONENTES - Ajustes para Tema Oscuro
+       =============================================================== */
+    
     --modal-backdrop: rgba(0, 0, 0, 0.7);
 }
 
 /* ===================================================================
-   UTILIDADES
+   UTILIDADES DE ACCESIBILIDAD
    =================================================================== */
 
-/* Screen reader only */
+/* Screen reader only - Ocultar visualmente pero accesible */
 .sr-only {
     position: absolute;
     width: 1px;
@@ -301,10 +435,10 @@
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
-    border: 0;
+    border-width: 0;
 }
 
-/* Skip to content */
+/* Skip link - Para navegación con teclado */
 .skip-link {
     position: absolute;
     top: -40px;
@@ -313,9 +447,29 @@
     color: var(--text-inverse);
     padding: var(--spacing-2) var(--spacing-4);
     text-decoration: none;
+    border-radius: 0 0 var(--radius-md) 0;
     z-index: var(--z-tooltip);
+    font-weight: var(--font-weight-semibold);
+    transition: top var(--duration-fast) var(--ease-out);
 }
 
 .skip-link:focus {
     top: 0;
+    outline: var(--border-width-2) solid var(--text-inverse);
+    outline-offset: 2px;
+}
+
+/* ===================================================================
+   TRANSICIONES SUAVES PARA CAMBIO DE TEMA
+   =================================================================== */
+
+* {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-duration: var(--duration-normal);
+    transition-timing-function: var(--ease-in-out);
+}
+
+/* Desactivar transiciones para elementos animados o interactivos */
+*:where([class*="animate"], [class*="transition"]) {
+    transition-property: none;
 }

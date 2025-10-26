@@ -1,0 +1,501 @@
+/* ===================================================================
+   ESTILOS GLOBALES - TEMA CLARO
+   =================================================================== */
+
+[data-theme="light"] body,
+body:not([data-theme]) {
+    background-color: var(--background-color);
+    color: var(--text-primary);
+}
+
+/* ===================================================================
+   HEADER Y NAVEGACIÓN - TEMA CLARO
+   =================================================================== */
+
+[data-theme="light"] .site-header,
+body:not([data-theme]) .site-header {
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.98) 0%, 
+        rgba(248, 249, 250, 0.95) 100%);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    backdrop-filter: blur(10px);
+}
+
+[data-theme="light"] .nav-link,
+body:not([data-theme]) .nav-link {
+    color: var(--text-secondary);
+    position: relative;
+}
+
+[data-theme="light"] .nav-link:hover,
+body:not([data-theme]) .nav-link:hover {
+    color: var(--primary-color);
+}
+
+[data-theme="light"] .nav-link.active,
+body:not([data-theme]) .nav-link.active {
+    color: var(--primary-color);
+    font-weight: var(--font-weight-semibold);
+}
+
+/* Efecto de subrayado en navegación */
+[data-theme="light"] .nav-link::after,
+body:not([data-theme]) .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    transition: width var(--duration-normal) var(--ease-out);
+}
+
+[data-theme="light"] .nav-link:hover::after,
+[data-theme="light"] .nav-link.active::after,
+body:not([data-theme]) .nav-link:hover::after,
+body:not([data-theme]) .nav-link.active::after {
+    width: 100%;
+}
+
+/* ===================================================================
+   HERO SECTION - TEMA CLARO
+   =================================================================== */
+
+[data-theme="light"] .hero,
+body:not([data-theme]) .hero {
+    background: linear-gradient(135deg, 
+        rgba(74, 144, 194, 0.08) 0%,
+        rgba(123, 104, 238, 0.08) 50%,
+        rgba(255, 107, 107, 0.08) 100%);
+}
+
+[data-theme="light"] .hero-title,
+body:not([data-theme]) .hero-title {
+    color: var(--text-primary);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .hero-subtitle,
+body:not([data-theme]) .hero-subtitle {
+    color: var(--text-secondary);
+}
+
+/* ===================================================================
+   CARDS - TEMA CLARO
+   =================================================================== */
+
+[data-theme="light"] .card,
+body:not([data-theme]) .card {
+    background: var(--surface-elevated);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-base);
+    transition: transform var(--duration-normal) var(--ease-out),
+                box-shadow var(--duration-normal) var(--ease-out);
+}
+
+[data-theme="light"] .card:hover,
+body:not([data-theme]) .card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--border-hover);
+}
+
+[data-theme="light"] .card-header,
+body:not([data-theme]) .card-header {
+    background: linear-gradient(135deg, 
+        var(--surface-color) 0%, 
+        var(--surface-elevated) 100%);
+    border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme="light"] .card-title,
+body:not([data-theme]) .card-title {
+    color: var(--text-primary);
+}
+
+[data-theme="light"] .card-text,
+body:not([data-theme]) .card-text {
+    color: var(--text-secondary);
+}
+
+/* ===================================================================
+   BOTONES - TEMA CLARO
+   =================================================================== */
+
+/* Botón primario */
+[data-theme="light"] .btn-primary,
+body:not([data-theme]) .btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: var(--text-inverse);
+    border: none;
+    box-shadow: 0 4px 12px rgba(74, 144, 194, 0.3);
+}
+
+[data-theme="light"] .btn-primary:hover,
+body:not([data-theme]) .btn-primary:hover {
+    background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+    box-shadow: 0 6px 16px rgba(74, 144, 194, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Botón secundario */
+[data-theme="light"] .btn-secondary,
+body:not([data-theme]) .btn-secondary {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+[data-theme="light"] .btn-secondary:hover,
+body:not([data-theme]) .btn-secondary:hover {
+    background: var(--primary-color);
+    color: var(--text-inverse);
+}
+
+/* Botón de acento */
+[data-theme="light"] .btn-accent,
+body:not([data-theme]) .btn-accent {
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-dark));
+    color: var(--text-inverse);
+    border: none;
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+}
+
+[data-theme="light"] .btn-accent:hover,
+body:not([data-theme]) .btn-accent:hover {
+    background: linear-gradient(135deg, var(--accent-light), var(--accent-color));
+    box-shadow: 0 6px 16px rgba(255, 107, 107, 0.4);
+}
+
+/* ===================================================================
+   FORMULARIOS - TEMA CLARO
+   =================================================================== */
+
+[data-theme="light"] .form-group label,
+body:not([data-theme]) .form-group label {
+    color: var(--text-primary);
+    font-weight: var(--font-weight-medium);
+}
+
+[data-theme="light"] .form-control,
+body:not([data-theme]) .form-control {
+    background: var(--surface-elevated);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+}
+
+[data-theme="light"] .form-control:focus,
+body:not([data-theme]) .form-control:focus {
+    border-color: var(--border-focus);
+    box-shadow: var(--shadow-outline);
+    background: var(--background-color);
+}
+
+[data-theme="light"] .form-control::placeholder,
+body:not([data-theme]) .form-control::placeholder {
+    color: var(--text-disabled);
+}
+
+[data-theme="light"] .form-control:disabled,
+body:not([data-theme]) .form-control:disabled {
+    background: var(--surface-color);
+    color: var(--text-disabled);
+    cursor: not-allowed;
+}
+
+/* Estados de validación */
+[data-theme="light"] .form-control.is-valid,
+body:not([data-theme]) .form-control.is-valid {
+    border-color: var(--success-color);
+}
+
+[data-theme="light"] .form-control.is-invalid,
+body:not([data-theme]) .form-control.is-invalid {
+    border-color: var(--error-color);
+}
+
+/* ===================================================================
+   GALERÍA - TEMA CLARO
+   =================================================================== */
+
+[data-theme="light"] .gallery-item,
+body:not([data-theme]) .gallery-item {
+    background: var(--surface-elevated);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-base);
+    overflow: hidden;
+}
+
+[data-theme="light"] .gallery-item:hover,
+body:not([data-theme]) .gallery-item:hover {
+    box-shadow: var(--shadow-xl);
+    border-color: var(--primary-color);
+}
+
+[data-theme="light"] .gallery-item img,
+body:not([data-theme]) .gallery-item img {
+    filter: brightness(1) contrast(1);
+    transition: transform var(--duration-normal) var(--ease-out),
+                filter var(--duration-normal) var(--ease-out);
+}
+
+[data-theme="light"] .gallery-item:hover img,
+body:not([data-theme]) .gallery-item:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.05) contrast(1.05);
+}
+
+[data-theme="light"] .gallery-overlay,
+body:not([data-theme]) .gallery-overlay {
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.7) 0%,
+        rgba(0, 0, 0, 0) 50%
+    );
+}
+
+/* Filtros de galería */
+[data-theme="light"] .gallery-filters,
+body:not([data-theme]) .gallery-filters {
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-4);
+}
+
+[data-theme="light"] .filter-btn,
+body:not([data-theme]) .filter-btn {
+    background: var(--surface-elevated);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="light"] .filter-btn.active,
+body:not([data-theme]) .filter-btn.active {
+    background: var(--primary-color);
+    color: var(--text-inverse);
+    border-color: var(--primary-color);
+}
+
+[data-theme="light"] .filter-btn:hover,
+body:not([data-theme]) .filter-btn:hover {
+    background: var(--primary-light);
+    color: var(--text-inverse);
+    border-color: var(--primary-light);
+}
+
+/* ===================================================================
+   TABLA - TEMA CLARO
+   =================================================================== */
+
+[data-theme="light"] .table,
+body:not([data-theme]) .table {
+    background: var(--surface-elevated);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="light"] .table thead,
+body:not([data-theme]) .table thead {
+    background: linear-gradient(135deg, var(--surface-color), var(--surface-elevated));
+    border-bottom: 2px solid var(--border-color);
+}
+
+[data-theme="light"] .table th,
+body:not([data-theme]) .table th {
+    color: var(--text-primary);
+    font-weight: var(--font-weight-semibold);
+}
+
+[data-theme="light"] .table td,
+body:not([data-theme]) .table td {
+    color: var(--text-secondary);
+    border-top: 1px solid var(--border-color);
+}
+
+[data-theme="light"] .table tbody tr:hover,
+body:not([data-theme]) .table tbody tr:hover {
+    background: var(--surface-hover);
+}
+
+[data-theme="light"] .table tbody tr:nth-child(even),
+body:not([data-theme]) .table tbody tr:nth-child(even) {
+    background: rgba(248, 249, 250, 0.5);
+}
+
+/* ===================================================================
+   MODAL / LIGHTBOX - TEMA CLARO
+   =================================================================== */
+
+[data-theme="light"] .modal-backdrop,
+body:not([data-theme]) .modal-backdrop {
+    background: rgba(44, 62, 80, 0.5);
+    backdrop-filter: blur(4px);
+}
+
+[data-theme="light"] .modal-content,
+body:not([data-theme]) .modal-content {
+    background: var(--surface-elevated);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-2xl);
+}
+
+[data-theme="light"] .modal-header,
+body:not([data-theme]) .modal-header {
+    background: linear-gradient(135deg, var(--surface-color), var(--surface-elevated));
+    border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme="light"] .modal-title,
+body:not([data-theme]) .modal-title {
+    color: var(--text-primary);
+}
+
+[data-theme="light"] .modal-body,
+body:not([data-theme]) .modal-body {
+    color: var(--text-secondary);
+}
+
+[data-theme="light"] .modal-close,
+body:not([data-theme]) .modal-close {
+    color: var(--text-secondary);
+    background: transparent;
+}
+
+[data-theme="light"] .modal-close:hover,
+body:not([data-theme]) .modal-close:hover {
+    color: var(--text-primary);
+    background: var(--surface-hover);
+}
+
+/* ===================================================================
+   BADGES Y ETIQUETAS - TEMA CLARO
+   =================================================================== */
+
+[data-theme="light"] .badge,
+body:not([data-theme]) .badge {
+    background: var(--surface-color);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="light"] .badge-primary,
+body:not([data-theme]) .badge-primary {
+    background: var(--primary-color);
+    color: var(--text-inverse);
+}
+
+[data-theme="light"] .badge-success,
+body:not([data-theme]) .badge-success {
+    background: var(--success-bg);
+    color: var(--success-color);
+    border-color: var(--success-border);
+}
+
+[data-theme="light"] .badge-warning,
+body:not([data-theme]) .badge-warning {
+    background: var(--warning-bg);
+    color: var(--warning-color);
+    border-color: var(--warning-border);
+}
+
+[data-theme="light"] .badge-error,
+body:not([data-theme]) .badge-error {
+    background: var(--error-bg);
+    color: var(--error-color);
+    border-color: var(--error-border);
+}
+
+/* ===================================================================
+   FOOTER - TEMA CLARO
+   =================================================================== */
+
+[data-theme="light"] .site-footer,
+body:not([data-theme]) .site-footer {
+    background: linear-gradient(135deg, 
+        var(--surface-color) 0%, 
+        var(--surface-elevated) 100%);
+    border-top: 1px solid var(--border-color);
+    color: var(--text-secondary);
+}
+
+[data-theme="light"] .footer-link,
+body:not([data-theme]) .footer-link {
+    color: var(--text-secondary);
+}
+
+[data-theme="light"] .footer-link:hover,
+body:not([data-theme]) .footer-link:hover {
+    color: var(--primary-color);
+}
+
+/* ===================================================================
+   CÓDIGO Y PRE - TEMA CLARO
+   =================================================================== */
+
+[data-theme="light"] code,
+body:not([data-theme]) code {
+    background: var(--surface-color);
+    color: var(--accent-color);
+    border: 1px solid var(--border-color);
+    padding: 0.125rem 0.375rem;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-monospace);
+}
+
+[data-theme="light"] pre,
+body:not([data-theme]) pre {
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    padding: var(--spacing-4);
+    border-radius: var(--radius-md);
+    overflow-x: auto;
+}
+
+/* ===================================================================
+   SCROLLBAR - TEMA CLARO
+   =================================================================== */
+
+[data-theme="light"] ::-webkit-scrollbar,
+body:not([data-theme]) ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+[data-theme="light"] ::-webkit-scrollbar-track,
+body:not([data-theme]) ::-webkit-scrollbar-track {
+    background: var(--surface-color);
+}
+
+[data-theme="light"] ::-webkit-scrollbar-thumb,
+body:not([data-theme]) ::-webkit-scrollbar-thumb {
+    background: var(--border-color-medium);
+    border-radius: var(--radius-full);
+    border: 3px solid var(--surface-color);
+}
+
+[data-theme="light"] ::-webkit-scrollbar-thumb:hover,
+body:not([data-theme]) ::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+}
+
+/* ===================================================================
+   SELECCIÓN DE TEXTO - TEMA CLARO
+   =================================================================== */
+
+[data-theme="light"] ::selection,
+body:not([data-theme]) ::selection {
+    background: rgba(74, 144, 194, 0.25);
+    color: var(--text-primary);
+}
+
+[data-theme="light"] ::-moz-selection,
+body:not([data-theme]) ::-moz-selection {
+    background: rgba(74, 144, 194, 0.25);
+    color: var(--text-primary);
+}
+
+/* ===================================================================
+   FIN DEL ARCHIVO LIGHT-THEME.CSS
+   =================================================================== */

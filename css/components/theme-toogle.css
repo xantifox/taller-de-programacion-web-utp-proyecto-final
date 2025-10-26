@@ -1,0 +1,385 @@
+/* ===================================================================
+   THEME-TOGGLE.CSS - Estilos del Botón de Tema
+   Proyecto: AcuarelaArte
+   Descripción: Estilos para el botón de cambio de tema claro/oscuro
+   Características:
+   - Toggle switch animado
+   - Iconos de sol y luna
+   - Transiciones suaves
+   - Estados hover y focus
+   - Accesibilidad
+   =================================================================== */
+
+/* ===================================================================
+   BOTÓN TOGGLE - BASE
+   =================================================================== */
+
+.theme-toggle {
+    /* Posicionamiento y tamaño */
+    position: relative;
+    width: 60px;
+    height: 30px;
+    
+    /* Apariencia */
+    background: var(--border-color);
+    border: 2px solid var(--border-color);
+    border-radius: 15px;
+    
+    /* Comportamiento */
+    cursor: pointer;
+    overflow: hidden;
+    
+    /* Transiciones */
+    transition: background-color var(--duration-normal) var(--ease-out),
+                border-color var(--duration-normal) var(--ease-out),
+                box-shadow var(--duration-normal) var(--ease-out);
+    
+    /* Reset de estilos de botón */
+    padding: 0;
+    outline: none;
+    
+    /* Accesibilidad */
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* ===================================================================
+   ESTADOS INTERACTIVOS
+   =================================================================== */
+
+/* Hover */
+.theme-toggle:hover {
+    background: var(--border-hover);
+    border-color: var(--border-hover);
+    box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+/* Focus - Accesibilidad */
+.theme-toggle:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+    box-shadow: var(--shadow-outline);
+}
+
+.theme-toggle:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Active */
+.theme-toggle:active {
+    transform: scale(0.98);
+}
+
+/* ===================================================================
+   CÍRCULO DESLIZANTE (::before)
+   =================================================================== */
+
+.theme-toggle::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 22px;
+    height: 22px;
+    
+    /* Apariencia */
+    background: var(--primary-color);
+    border-radius: 50%;
+    
+    /* Transiciones */
+    transition: transform var(--duration-normal) var(--ease-out),
+                background-color var(--duration-normal) var(--ease-out),
+                box-shadow var(--duration-normal) var(--ease-out);
+    
+    /* Sombra */
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+/* Tema oscuro: círculo se mueve a la derecha */
+[data-theme="dark"] .theme-toggle::before {
+    transform: translateX(30px);
+    background: var(--secondary-color);
+    box-shadow: 0 2px 8px rgba(187, 143, 206, 0.4);
+}
+
+/* ===================================================================
+   ICONOS (::after)
+   =================================================================== */
+
+.theme-toggle::after {
+    content: '☀️';
+    position: absolute;
+    top: 50%;
+    left: 8px;
+    transform: translateY(-50%);
+    
+    /* Tipografía */
+    font-size: 14px;
+    line-height: 1;
+    
+    /* Transiciones */
+    transition: opacity var(--duration-fast) var(--ease-out),
+                transform var(--duration-fast) var(--ease-out);
+    
+    /* Prevenir selección */
+    user-select: none;
+    pointer-events: none;
+}
+
+/* Tema oscuro: cambiar a icono de luna */
+[data-theme="dark"] .theme-toggle::after {
+    content: '🌙';
+    left: auto;
+    right: 8px;
+}
+
+/* ===================================================================
+   ANIMACIÓN AL HACER CLIC
+   =================================================================== */
+
+.theme-toggle-active {
+    animation: toggleBounce var(--duration-normal) var(--ease-bounce);
+}
+
+@keyframes toggleBounce {
+    0%, 100% { 
+        transform: scale(1); 
+    }
+    50% { 
+        transform: scale(0.95); 
+    }
+}
+
+/* ===================================================================
+   VARIANTES DE TAMAÑO
+   =================================================================== */
+
+/* Versión pequeña */
+.theme-toggle--sm {
+    width: 48px;
+    height: 24px;
+    border-radius: 12px;
+}
+
+.theme-toggle--sm::before {
+    width: 18px;
+    height: 18px;
+}
+
+[data-theme="dark"] .theme-toggle--sm::before {
+    transform: translateX(24px);
+}
+
+.theme-toggle--sm::after {
+    font-size: 11px;
+    left: 6px;
+}
+
+[data-theme="dark"] .theme-toggle--sm::after {
+    right: 6px;
+}
+
+/* Versión grande */
+.theme-toggle--lg {
+    width: 72px;
+    height: 36px;
+    border-radius: 18px;
+}
+
+.theme-toggle--lg::before {
+    width: 28px;
+    height: 28px;
+    top: 2px;
+    left: 2px;
+}
+
+[data-theme="dark"] .theme-toggle--lg::before {
+    transform: translateX(36px);
+}
+
+.theme-toggle--lg::after {
+    font-size: 16px;
+    left: 10px;
+}
+
+[data-theme="dark"] .theme-toggle--lg::after {
+    right: 10px;
+}
+
+/* ===================================================================
+   DESACTIVAR TRANSICIONES (Para carga inicial)
+   =================================================================== */
+
+.theme-transition-disabled,
+.theme-transition-disabled *,
+.theme-transition-disabled *::before,
+.theme-transition-disabled *::after {
+    transition: none !important;
+    animation: none !important;
+}
+
+/* ===================================================================
+   ESTILOS ESPECÍFICOS POR TEMA
+   =================================================================== */
+
+/* Tema claro */
+[data-theme="light"] .theme-toggle {
+    background: linear-gradient(135deg, 
+        rgba(74, 144, 194, 0.1) 0%, 
+        rgba(123, 104, 238, 0.1) 100%);
+    border-color: rgba(74, 144, 194, 0.3);
+}
+
+[data-theme="light"] .theme-toggle:hover {
+    background: linear-gradient(135deg, 
+        rgba(74, 144, 194, 0.15) 0%, 
+        rgba(123, 104, 238, 0.15) 100%);
+    border-color: rgba(74, 144, 194, 0.4);
+}
+
+/* Tema oscuro */
+[data-theme="dark"] .theme-toggle {
+    background: linear-gradient(135deg, 
+        rgba(93, 173, 226, 0.15) 0%, 
+        rgba(187, 143, 206, 0.15) 100%);
+    border-color: rgba(93, 173, 226, 0.3);
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+    background: linear-gradient(135deg, 
+        rgba(93, 173, 226, 0.2) 0%, 
+        rgba(187, 143, 206, 0.2) 100%);
+    border-color: rgba(93, 173, 226, 0.4);
+}
+
+/* ===================================================================
+   POSICIONAMIENTO EN LA NAVEGACIÓN
+   =================================================================== */
+
+/* En el header */
+.site-header .theme-toggle {
+    margin-left: var(--spacing-4);
+}
+
+/* En navegación móvil */
+@media (max-width: 767px) {
+    .nav-menu .theme-toggle {
+        margin: var(--spacing-4) auto;
+        display: block;
+    }
+}
+
+/* ===================================================================
+   ACCESIBILIDAD - PREFERS REDUCED MOTION
+   =================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .theme-toggle,
+    .theme-toggle::before,
+    .theme-toggle::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+
+/* ===================================================================
+   TOOLTIP OPCIONAL (Si se desea agregar)
+   =================================================================== */
+
+.theme-toggle[data-tooltip] {
+    position: relative;
+}
+
+.theme-toggle[data-tooltip]::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    
+    /* Apariencia */
+    background: var(--surface-elevated);
+    color: var(--text-primary);
+    padding: var(--spacing-2) var(--spacing-3);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    
+    /* Tipografía */
+    font-size: var(--font-size-sm);
+    white-space: nowrap;
+    
+    /* Shadow */
+    box-shadow: var(--shadow-lg);
+    
+    /* Transitions */
+    transition: transform var(--duration-fast) var(--ease-out),
+                opacity var(--duration-fast) var(--ease-out);
+    opacity: 0;
+    pointer-events: none;
+    z-index: var(--z-tooltip);
+}
+
+.theme-toggle[data-tooltip]:hover::before,
+.theme-toggle[data-tooltip]:focus::before {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+}
+
+/* Flecha del tooltip */
+.theme-toggle[data-tooltip]::after {
+    content: '';
+    position: absolute;
+    bottom: calc(100% + 2px);
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    
+    /* Triángulo */
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid var(--border-color);
+    
+    transition: transform var(--duration-fast) var(--ease-out),
+                opacity var(--duration-fast) var(--ease-out);
+    opacity: 0;
+    z-index: var(--z-tooltip);
+}
+
+.theme-toggle[data-tooltip]:hover::after,
+.theme-toggle[data-tooltip]:focus::after {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+}
+
+/* ===================================================================
+   VERSIÓN ALTERNATIVA - ICONOS SVG (Opcional)
+   Para usar iconos SVG en lugar de emojis
+   =================================================================== */
+
+/*
+.theme-toggle--svg {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--spacing-2);
+}
+
+.theme-toggle--svg .icon-sun,
+.theme-toggle--svg .icon-moon {
+    width: 16px;
+    height: 16px;
+    transition: opacity var(--duration-fast) var(--ease-out);
+}
+
+[data-theme="light"] .theme-toggle--svg .icon-moon {
+    opacity: 0.5;
+}
+
+[data-theme="dark"] .theme-toggle--svg .icon-sun {
+    opacity: 0.5;
+}
+*/
+
+/* ===================================================================
+   FIN DEL ARCHIVO THEME-TOGGLE.CSS
+   =================================================================== */

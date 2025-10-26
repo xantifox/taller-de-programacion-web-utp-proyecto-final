@@ -1,0 +1,1 @@
+/* js/components/Gallery.js */
