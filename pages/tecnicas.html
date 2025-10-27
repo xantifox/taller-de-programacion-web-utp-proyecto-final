@@ -45,6 +45,15 @@
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://acuarelaarte.com/pages/tecnicas.html">
+
+    <!-- CSS - Sistema de Temas y Estilos -->
+    <link rel="stylesheet" href="../css/base/variables.css">
+    <link rel="stylesheet" href="../css/base/reset.css">
+    <link rel="stylesheet" href="../css/base/typography.css">
+    <link rel="stylesheet" href="../css/themes/light-theme.css">
+    <link rel="stylesheet" href="../css/themes/dark-theme.css">
+    <link rel="stylesheet" href="../css/components/buttons.css">
+    <link rel="stylesheet" href="../css/main.css">
     
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
@@ -81,23 +90,30 @@
     <!-- Skip to main content (Accesibilidad) -->
     <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
     
-    <header class="site-header" role="banner">
-        <nav class="nav" role="navigation" aria-label="Navegación principal">
-            <div class="nav-brand">
-                <a href="../index.html" class="brand-link">
-                    <span class="brand-name">AcuarelaArte</span>
-                </a>
-            </div>
-            
-            <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Abrir menú de navegación">
-                <span class="hamburger"></span>
-            </button>
-            
-            <div class="nav-menu">
-                <ul class="nav-list" role="list">
+    <header class="header" role="banner">
+        <nav class="navbar" role="navigation" aria-label="Navegación principal">
+            <div class="navbar-container">
+                <div class="navbar-brand">
+                    <a href="../index.html" class="brand-link">
+                        <h1 class="brand-text">AcuarelaArte</h1>
+                    </a>
+                </div>
+                
+                <div class="navbar-controls">
+                    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Cambiar tema">
+                        <span class="theme-icon" aria-hidden="true"></span>
+                    </button>
+                    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-expanded="false">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
+                </div>
+                
+                <ul class="nav-menu" id="navMenu" role="menubar">
                     <li class="nav-item"><a href="../index.html" class="nav-link">Inicio</a></li>
                     <li class="nav-item"><a href="portafolio.html" class="nav-link">Mi Portafolio</a></li>
-                    <li class="nav-item"><a href="tecnicas.html" class="nav-link active" aria-current="page">Técnicas y Tutoriales</a></li>
+                    <li class="nav-item"><a href="tecnicas.html" class="nav-link active aria-current="page"">Técnicas y Tutoriales</a></li>
                     <li class="nav-item"><a href="progreso.html" class="nav-link">Mi Progreso</a></li>
                     <li class="nav-item"><a href="contacto.html" class="nav-link">Contacto</a></li>
                     <li class="nav-item"><a href="materiales.html" class="nav-link">Materiales Recomendados</a></li>
@@ -533,5 +549,7 @@
             </div>
         </div>
     </footer>
+
+    <script type="module" src="../js/main.js" defer></script>
 </body>
 </html>

@@ -1,1 +1,469 @@
-/* css/base/reset.css */
+/* css/base/reset.css *//* ===================================================================
+   RESET.CSS - Normalización Moderna de Estilos
+   Proyecto: AcuarelaArte
+   Descripción: Reset CSS moderno basado en best practices
+   Inspirado en: Normalize.css, CSS Remedy, Modern CSS Reset
+   =================================================================== */
+
+/* ===================================================================
+   BOX MODEL Y HERENCIA
+   =================================================================== */
+
+/* Box-sizing universal */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* ===================================================================
+   RESET DE MÁRGENES Y PADDING
+   =================================================================== */
+
+/* Remover márgenes y padding por defecto */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* ===================================================================
+   DOCUMENTO - HTML Y BODY
+   =================================================================== */
+
+html {
+    /* Smooth scroll para navegación fluida */
+    scroll-behavior: smooth;
+    
+    /* Mejorar renderizado de fuentes */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
+    /* Prevenir ajuste de tamaño de texto en orientación */
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    
+    /* Altura completa */
+    height: 100%;
+}
+
+body {
+    /* Altura mínima de viewport */
+    min-height: 100vh;
+    min-height: 100dvh; /* Dynamic Viewport Height */
+    
+    /* Line height base para legibilidad */
+    line-height: 1.5;
+    
+    /* Renderizado de texto optimizado */
+    text-rendering: optimizeSpeed;
+    
+    /* Prevenir overflow horizontal */
+    overflow-x: hidden;
+    
+    /* Flex para sticky footer */
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===================================================================
+   TIPOGRAFÍA - HEADINGS Y TEXTO
+   =================================================================== */
+
+/* Headings sin font-weight bold por defecto */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: inherit;
+    font-size: inherit;
+    line-height: 1.2;
+}
+
+/* Párrafos con espacio óptimo */
+p {
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+/* Texto seleccionable */
+::selection {
+    background-color: var(--primary-color, #4A90C2);
+    color: var(--text-inverse, #FFFFFF);
+}
+
+::-moz-selection {
+    background-color: var(--primary-color, #4A90C2);
+    color: var(--text-inverse, #FFFFFF);
+}
+
+/* ===================================================================
+   LISTAS
+   =================================================================== */
+
+/* Remover estilos de lista por defecto */
+ul, ol {
+    list-style: none;
+}
+
+/* Restaurar estilos para listas con clase */
+ul[class],
+ol[class] {
+    list-style: none;
+}
+
+/* ===================================================================
+   ENLACES
+   =================================================================== */
+
+a {
+    /* Sin decoración por defecto */
+    text-decoration: none;
+    color: inherit;
+    
+    /* Mejorar tap target en móviles */
+    cursor: pointer;
+}
+
+a:focus-visible {
+    outline: 2px solid var(--primary-color, #4A90C2);
+    outline-offset: 2px;
+}
+
+/* ===================================================================
+   IMÁGENES Y MEDIA
+   =================================================================== */
+
+img,
+picture,
+video,
+canvas,
+svg {
+    /* Responsive por defecto */
+    max-width: 100%;
+    height: auto;
+    
+    /* Display block para evitar espacios */
+    display: block;
+    
+    /* Prevenir overflow */
+    vertical-align: middle;
+}
+
+/* Imágenes sin arrastrar */
+img {
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/* ===================================================================
+   FORMULARIOS
+   =================================================================== */
+
+/* Inputs y controles de formulario */
+input,
+button,
+textarea,
+select {
+    /* Heredar fuente del padre */
+    font: inherit;
+    color: inherit;
+    
+    /* Remover estilos nativos */
+    background: none;
+    border: none;
+    outline: none;
+}
+
+/* Textarea sin resize por defecto */
+textarea {
+    resize: vertical;
+    overflow: auto;
+}
+
+/* Botones como cursor pointer */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    cursor: pointer;
+    user-select: none;
+    -webkit-appearance: button;
+}
+
+/* Deshabilitar estilos de botón en iOS */
+button,
+input,
+select,
+textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* Estados disabled */
+button:disabled,
+input:disabled,
+select:disabled,
+textarea:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Remover spinner de inputs numéricos */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* Remover X de inputs de búsqueda en Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+}
+
+/* ===================================================================
+   TABLAS
+   =================================================================== */
+
+table {
+    /* Collapse borders */
+    border-collapse: collapse;
+    border-spacing: 0;
+    
+    /* Ancho completo por defecto */
+    width: 100%;
+}
+
+/* ===================================================================
+   ELEMENTOS INTERACTIVOS
+   =================================================================== */
+
+/* Summary con cursor pointer */
+summary {
+    cursor: pointer;
+    list-style: none;
+}
+
+/* Remover marcador de details */
+summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Dialog reset */
+dialog {
+    border: none;
+    padding: 0;
+}
+
+/* ===================================================================
+   ELEMENTOS SEMÁNTICOS
+   =================================================================== */
+
+/* Main con flex-grow para sticky footer */
+main {
+    flex: 1 0 auto;
+}
+
+/* Article, Section, Aside sin estilos extras */
+article,
+section,
+aside,
+footer,
+header,
+nav {
+    display: block;
+}
+
+/* ===================================================================
+   ELEMENTOS INLINE
+   =================================================================== */
+
+/* Strong y bold */
+b,
+strong {
+    font-weight: bolder;
+}
+
+/* Small text */
+small {
+    font-size: 0.875em;
+}
+
+/* Subscript y superscript */
+sub,
+sup {
+    font-size: 0.75em;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+sup {
+    top: -0.5em;
+}
+
+/* ===================================================================
+   CODE Y PRE
+   =================================================================== */
+
+code,
+kbd,
+samp,
+pre {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9em;
+}
+
+pre {
+    overflow: auto;
+    white-space: pre;
+    word-wrap: normal;
+}
+
+/* ===================================================================
+   HR - SEPARADOR HORIZONTAL
+   =================================================================== */
+
+hr {
+    border: none;
+    border-top: 1px solid var(--border-color, #E8ECEF);
+    margin: var(--spacing-8, 2rem) 0;
+    height: 0;
+    overflow: visible;
+}
+
+/* ===================================================================
+   IFRAME
+   =================================================================== */
+
+iframe {
+    border: none;
+}
+
+/* ===================================================================
+   ACCESIBILIDAD
+   =================================================================== */
+
+/* Screen reader only */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Skip link para navegación por teclado */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-color, #4A90C2);
+    color: var(--text-inverse, #FFFFFF);
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Focus visible para navegación por teclado */
+:focus-visible {
+    outline: 2px solid var(--primary-color, #4A90C2);
+    outline-offset: 2px;
+}
+
+/* ===================================================================
+   REDUCED MOTION
+   Respetar preferencias de animación del usuario
+   =================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ===================================================================
+   PRINT STYLES
+   Estilos básicos para impresión
+   =================================================================== */
+
+@media print {
+    *,
+    *::before,
+    *::after {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+    
+    a[href]::after {
+        content: " (" attr(href) ")";
+    }
+    
+    abbr[title]::after {
+        content: " (" attr(title) ")";
+    }
+    
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+    
+    thead {
+        display: table-header-group;
+    }
+    
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+    
+    img {
+        max-width: 100% !important;
+    }
+    
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+    
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
+
+/* ===================================================================
+   FIN DEL ARCHIVO RESET.CSS
+   =================================================================== */

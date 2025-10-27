@@ -13,7 +13,7 @@
 // Utils
 import { initImageLoader, preloadCriticalImages, getLoadingStats } from './utils/imageLoader.js';
 
-// Components (se importarÃ¡n segÃºn se necesiten)
+// Components (se importarán segÃºn se necesiten)
 // import ThemeToggle from './components/ThemeToggle.js';
 // import ResponsiveMenu from './components/ResponsiveMenu.js';
 // import FormValidator from './components/FormValidator.js';
@@ -21,7 +21,7 @@ import { initImageLoader, preloadCriticalImages, getLoadingStats } from './utils
 // import Lightbox from './components/Lightbox.js';
 
 // ===================================================================
-// CONFIGURACIÃ“N GLOBAL
+// CONFIGURACIÓN GLOBAL
 // ===================================================================
 
 const APP_CONFIG = {
@@ -36,7 +36,7 @@ const APP_CONFIG = {
 };
 
 // ===================================================================
-// CLASE PRINCIPAL DE LA APLICACIÃ“N
+// CLASE PRINCIPAL DE LA APLICACIÓN
 // ===================================================================
 
 class AcuarelaArteApp {
@@ -71,12 +71,12 @@ class AcuarelaArteApp {
      */
     async init() {
         try {
-            this.log('ðŸš€ Inicializando AcuarelaArte App...');
+            this.log('😎 Inicializando AcuarelaArte App...');
 
-            // 1. Cargar módulos core (para todas las pÃ¡ginas)
+            // 1. Cargar módulos core (para todas las páginas)
             await this.loadCoreModules();
 
-            // 2. Cargar módulos especÃ­ficos de la pÃ¡gina
+            // 2. Cargar módulos especÃ­ficos de la página
             await this.loadPageModules();
 
             // 3. Inicializar event listeners globales
@@ -88,8 +88,8 @@ class AcuarelaArteApp {
             // Marcar como inicializado
             this.state.isInitialized = true;
 
-            // this.log('âœ… App inicializada correctamente');
-            this.log(`ðŸ“„ PÃ¡gina actual: ${this.state.currentPage}`);
+            // this.log('💚 App inicializada correctamente');
+            this.log(`😎 Página actual: ${this.state.currentPage}`);
 
             // Trigger evento custom
             document.dispatchEvent(new CustomEvent('appInitialized', {
@@ -97,22 +97,22 @@ class AcuarelaArteApp {
             }));
 
         } catch (error) {
-            console.error('âŒ Error inicializando aplicación:', error);
+            console.error('😎 Error inicializando aplicación:', error);
             this.handleInitError(error);
         }
     }
 
     /**
-     * Carga módulos core (presentes en todas las pÃ¡ginas)
+     * Carga módulos core (presentes en todas las páginas)
      */
     async loadCoreModules() {
-        this.log('ðŸ“¦ Cargando módulos core...');
+        this.log('💚 Cargando módulos core...');
 
-        // 1. Image Loader - Sistema de carga de imÃ¡genes
+        // 1. Image Loader - Sistema de carga de imágenes
         if (APP_CONFIG.features.lazyLoading) {
             initImageLoader();
             
-            // Precargar imÃ¡genes crÃ­ticas
+            // Precargar imágenes crÃ­ticas
             const criticalImages = this.getCriticalImages();
             if (criticalImages.length > 0) {
                 preloadCriticalImages(criticalImages);
@@ -122,7 +122,7 @@ class AcuarelaArteApp {
         // 2. Theme Toggle - Control de temas (si el elemento existe)
         const themeToggle = document.getElementById('themeToggle');
         if (themeToggle && APP_CONFIG.features.darkMode) {
-            // Importar dinÃ¡micamente solo si existe
+            // Importar dinámicamente solo si existe
             const { default: ThemeToggle } = await import('./components/ThemeToggle.js');
             this.modules.themeToggle = new ThemeToggle();
         }
@@ -134,14 +134,14 @@ class AcuarelaArteApp {
         //     this.modules.responsiveMenu = new ResponsiveMenu();
         // }
 
-        this.log('âœ… Módulos core cargados');
+        this.log('💚 Módulos core cargados');
     }
 
     /**
-     * Carga módulos especÃ­ficos segÃºn la pÃ¡gina actual
+     * Carga módulos especÃ­ficos segÃºn la página actual
      */
     async loadPageModules() {
-        this.log(`ðŸ“„ Cargando módulos para: ${this.state.currentPage}`);
+        this.log(`😎 Cargando módulos para: ${this.state.currentPage}`);
 
         switch (this.state.currentPage) {
             case 'index':
@@ -169,15 +169,15 @@ class AcuarelaArteApp {
                 break;
 
             default:
-                this.log('âš ï¸ PÃ¡gina sin módulos especÃ­ficos');
+                this.log('✅ Página sin módulos especÃ­ficos');
         }
     }
 
     /**
-     * Módulos especÃ­ficos para la pÃ¡gina de inicio
+     * Módulos especÃ­ficos para la página de inicio
      */
     async loadHomeModules() {
-        this.log('ðŸ  Cargando módulos de Home...');
+        this.log('💚  Cargando módulos de Home...');
         
         // Animaciones de scroll
         this.initScrollAnimations();
@@ -193,28 +193,28 @@ class AcuarelaArteApp {
      * Módulos especÃ­ficos para portafolio
      */
     async loadPortfolioModules() {
-        this.log('ðŸ–¼ï¸ Cargando módulos de Portafolio...');
+        this.log('🔥 Cargando módulos de Portafolio...');
         
         // GalerÃ­a con filtros
-        const galleryElement = document.getElementById('galleryGrid');
-        if (galleryElement) {
-            const { default: Gallery } = await import('./components/Gallery.js');
-            this.modules.gallery = new Gallery();
-        }
+        // const galleryElement = document.getElementById('galleryGrid');
+        // if (galleryElement) {
+        //     const { default: Gallery } = await import('./components/Gallery.js');
+        //     this.modules.gallery = new Gallery();
+        // }
 
         // Lightbox para visualización de obras
-        const lightboxElement = document.getElementById('lightbox');
-        if (lightboxElement) {
-            const { default: Lightbox } = await import('./components/Lightbox.js');
-            this.modules.lightbox = new Lightbox();
-        }
+        // const lightboxElement = document.getElementById('lightbox');
+        // if (lightboxElement) {
+        //     const { default: Lightbox } = await import('./components/Lightbox.js');
+        //     this.modules.lightbox = new Lightbox();
+        // }
     }
 
     /**
      * Módulos especÃ­ficos para tÃ©cnicas
      */
     async loadTechniquesModules() {
-        this.log('ðŸ“š Cargando módulos de TÃ©cnicas...');
+        this.log('🔥 Cargando módulos de TÃ©cnicas...');
         
         // Acordeones para expandir tÃ©cnicas
         this.initAccordions();
@@ -224,7 +224,7 @@ class AcuarelaArteApp {
      * Módulos especÃ­ficos para progreso
      */
     async loadProgressModules() {
-        this.log('ðŸ“ˆ Cargando módulos de Progreso...');
+        this.log('🔥 Cargando módulos de Progreso...');
         
         // Timeline interactiva si es necesario
         this.initTimeline();
@@ -234,13 +234,13 @@ class AcuarelaArteApp {
      * Módulos especÃ­ficos para contacto
      */
     async loadContactModules() {
-        this.log('ðŸ“§ Cargando módulos de Contacto...');
+        this.log('🔥 Cargando módulos de Contacto...');
         
         // Validación de formulario
         const contactForm = document.getElementById('contactForm');
         if (contactForm) {
-            const { default: FormValidator } = await import('./components/FormValidator.js');
-            this.modules.formValidator = new FormValidator('contactForm');
+            // const { default: FormValidator } = await import('./components/FormValidator.js');
+            // this.modules.formValidator = new FormValidator('contactForm');
         }
     }
 
@@ -248,10 +248,10 @@ class AcuarelaArteApp {
      * Módulos especÃ­ficos para materiales
      */
     async loadMaterialsModules() {
-        this.log('ðŸ›’ Cargando módulos de Materiales...');
+        this.log('🔥 Cargando módulos de Materiales...');
         
         // Tabla interactiva (ordenamiento, filtrado)
-        // Se implementarÃ¡ con JavaScript vanilla en Issue #8
+        // Se implementará con JavaScript vanilla en Issue #8
     }
 
     /**
@@ -261,7 +261,7 @@ class AcuarelaArteApp {
         // Smooth scroll para enlaces internos
         this.initSmoothScroll();
 
-        // Manejo de errores de imÃ¡genes
+        // Manejo de errores de imágenes
         this.handleImageErrors();
 
         // Performance monitoring en desarrollo
@@ -295,11 +295,11 @@ class AcuarelaArteApp {
     }
 
     /**
-     * Manejo global de errores de imÃ¡genes
+     * Manejo global de errores de imágenes
      */
     handleImageErrors() {
         document.addEventListener('imageError', (e) => {
-            this.log('âš ï¸ Error cargando imagen:', e.detail);
+            this.log('✅ Error cargando imagen:', e.detail);
         });
     }
 
@@ -327,7 +327,7 @@ class AcuarelaArteApp {
     }
 
     /**
-     * Parallax bÃ¡sico
+     * Parallax básico
      */
     initParallax() {
         const parallaxElements = document.querySelectorAll('[data-parallax]');
@@ -362,7 +362,7 @@ class AcuarelaArteApp {
     }
 
     /**
-     * Timeline bÃ¡sica
+     * Timeline básica
      */
     initTimeline() {
         // Animaciones de timeline si es necesario
@@ -373,15 +373,15 @@ class AcuarelaArteApp {
      * Performance monitoring (solo desarrollo)
      */
     initPerformanceMonitoring() {
-        // Log de estadÃ­sticas de carga de imÃ¡genes cada 5 segundos
+        // Log de estadÃ­sticas de carga de imágenes cada 5 segundos
         setInterval(() => {
             const stats = getLoadingStats();
-            this.log('ðŸ“Š Image Loading Stats:', stats);
+            this.log('🔥 Image Loading Stats:', stats);
         }, 5000);
     }
 
     /**
-     * Obtiene la pÃ¡gina actual
+     * Obtiene la página actual
      */
     getCurrentPage() {
         const path = window.location.pathname;
@@ -390,7 +390,7 @@ class AcuarelaArteApp {
     }
 
     /**
-     * Obtiene imÃ¡genes crÃ­ticas para precargar
+     * Obtiene imágenes crÃ­ticas para precargar
      */
     getCriticalImages() {
         const criticalImages = [];
@@ -420,7 +420,7 @@ class AcuarelaArteApp {
         const errorDiv = document.createElement('div');
         errorDiv.className = 'init-error';
         errorDiv.innerHTML = `
-            <p>âš ï¸ Error al cargar la aplicación. Por favor, recarga la pÃ¡gina.</p>
+            <p>❌ Error al cargar la aplicación. Por favor, recarga la página.</p>
             <button onclick="location.reload()">Recargar</button>
         `;
         document.body.prepend(errorDiv);
@@ -449,7 +449,7 @@ class AcuarelaArteApp {
 }
 
 // ===================================================================
-// INICIALIZACIÃ“N
+// INICIALIZACIÓN
 // ===================================================================
 
 // Crear instancia global de la app
