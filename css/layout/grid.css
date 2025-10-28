@@ -1,1 +1,708 @@
 /* css/layout/grid.css */
+
+/* ===================================================================
+   GRID.CSS - Sistema de Grid y Layout Responsive
+   AcuarelaArte - Portafolio de Acuarelas
+   
+   Sistema completo de grid basado en CSS Grid y Flexbox con:
+   - Grid de 12 columnas responsive
+   - Containers con anchos máximos
+   - Flexbox utilities
+   - Auto-layout con CSS Grid moderno
+   - Mobile-first approach
+   
+   Breakpoints utilizados:
+   - Mobile:  Base (320px+) - Sin media query
+   - Tablet:  768px+
+   - Desktop: 1024px+
+   =================================================================== */
+
+/* ===================================================================
+   CONTAINERS - Contenedores Responsive
+   =================================================================== */
+
+.container,
+.container-fluid,
+.container-sm,
+.container-md,
+.container-lg,
+.container-xl,
+.container-2xl {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--container-padding-mobile);
+    padding-right: var(--container-padding-mobile);
+}
+
+/* Container estándar - Ancho máximo 1280px */
+.container {
+    max-width: var(--container-2xl);
+}
+
+/* Container fluido - Sin ancho máximo */
+.container-fluid {
+    max-width: 100%;
+}
+
+/* Containers con anchos específicos */
+.container-sm {
+    max-width: var(--container-sm);  /* 384px */
+}
+
+.container-md {
+    max-width: var(--container-md);  /* 768px */
+}
+
+.container-lg {
+    max-width: var(--container-lg);  /* 1024px */
+}
+
+.container-xl {
+    max-width: var(--container-xl);  /* 1152px */
+}
+
+.container-2xl {
+    max-width: var(--container-2xl); /* 1280px */
+}
+
+/* Tablet: Aumentar padding */
+@media (min-width: 768px) {
+    .container,
+    .container-fluid,
+    .container-sm,
+    .container-md,
+    .container-lg,
+    .container-xl,
+    .container-2xl {
+        padding-left: var(--container-padding-tablet);
+        padding-right: var(--container-padding-tablet);
+    }
+}
+
+/* Desktop: Aumentar padding */
+@media (min-width: 1024px) {
+    .container,
+    .container-fluid,
+    .container-sm,
+    .container-md,
+    .container-lg,
+    .container-xl,
+    .container-2xl {
+        padding-left: var(--container-padding-desktop);
+        padding-right: var(--container-padding-desktop);
+    }
+}
+
+/* ===================================================================
+   ROW - Contenedor de Columnas (Flexbox Fallback)
+   ===================================================================ç */
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(var(--grid-gap-mobile) / -2);
+    margin-right: calc(var(--grid-gap-mobile) / -2);
+}
+
+/* Sin gutters */
+.row.no-gutters {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.row.no-gutters > [class*="col-"] {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Tablet: Ajustar gaps */
+@media (min-width: 768px) {
+    .row {
+        margin-left: calc(var(--grid-gap-tablet) / -2);
+        margin-right: calc(var(--grid-gap-tablet) / -2);
+    }
+}
+
+/* Desktop: Ajustar gaps */
+@media (min-width: 1024px) {
+    .row {
+        margin-left: calc(var(--grid-gap-desktop) / -2);
+        margin-right: calc(var(--grid-gap-desktop) / -2);
+    }
+}
+
+/* ===================================================================
+   COLUMNAS - Sistema de 12 Columnas (Flexbox)
+   ===================================================================ç */
+
+/* Base para todas las columnas */
+[class*="col-"] {
+    position: relative;
+    width: 100%;
+    padding-left: calc(var(--grid-gap-mobile) / 2);
+    padding-right: calc(var(--grid-gap-mobile) / 2);
+}
+
+/* Tablet: Ajustar padding */
+@media (min-width: 768px) {
+    [class*="col-"] {
+        padding-left: calc(var(--grid-gap-tablet) / 2);
+        padding-right: calc(var(--grid-gap-tablet) / 2);
+    }
+}
+
+/* Desktop: Ajustar padding */
+@media (min-width: 1024px) {
+    [class*="col-"] {
+        padding-left: calc(var(--grid-gap-desktop) / 2);
+        padding-right: calc(var(--grid-gap-desktop) / 2);
+    }
+}
+
+/* Columna automática */
+.col {
+    flex: 1 0 0%;
+}
+
+/* ===================================================================
+   COLUMNAS MÓVIL (Base - Sin media query)
+   Mobile: 1 columna por defecto
+   ===================================================================ç */
+
+.col-1 { flex: 0 0 auto; width: 8.333333%; }
+.col-2 { flex: 0 0 auto; width: 16.666667%; }
+.col-3 { flex: 0 0 auto; width: 25%; }
+.col-4 { flex: 0 0 auto; width: 33.333333%; }
+.col-5 { flex: 0 0 auto; width: 41.666667%; }
+.col-6 { flex: 0 0 auto; width: 50%; }
+.col-7 { flex: 0 0 auto; width: 58.333333%; }
+.col-8 { flex: 0 0 auto; width: 66.666667%; }
+.col-9 { flex: 0 0 auto; width: 75%; }
+.col-10 { flex: 0 0 auto; width: 83.333333%; }
+.col-11 { flex: 0 0 auto; width: 91.666667%; }
+.col-12 { flex: 0 0 auto; width: 100%; }
+
+/* ===================================================================
+   COLUMNAS TABLET (768px+)
+   ===================================================================ç */
+
+@media (min-width: 768px) {
+    .col-md-1 { flex: 0 0 auto; width: 8.333333%; }
+    .col-md-2 { flex: 0 0 auto; width: 16.666667%; }
+    .col-md-3 { flex: 0 0 auto; width: 25%; }
+    .col-md-4 { flex: 0 0 auto; width: 33.333333%; }
+    .col-md-5 { flex: 0 0 auto; width: 41.666667%; }
+    .col-md-6 { flex: 0 0 auto; width: 50%; }
+    .col-md-7 { flex: 0 0 auto; width: 58.333333%; }
+    .col-md-8 { flex: 0 0 auto; width: 66.666667%; }
+    .col-md-9 { flex: 0 0 auto; width: 75%; }
+    .col-md-10 { flex: 0 0 auto; width: 83.333333%; }
+    .col-md-11 { flex: 0 0 auto; width: 91.666667%; }
+    .col-md-12 { flex: 0 0 auto; width: 100%; }
+    
+    .col-md-auto {
+        flex: 0 0 auto;
+        width: auto;
+    }
+}
+
+/* ===================================================================
+   COLUMNAS DESKTOP (1024px+)
+   ===================================================================ç */
+
+@media (min-width: 1024px) {
+    .col-lg-1 { flex: 0 0 auto; width: 8.333333%; }
+    .col-lg-2 { flex: 0 0 auto; width: 16.666667%; }
+    .col-lg-3 { flex: 0 0 auto; width: 25%; }
+    .col-lg-4 { flex: 0 0 auto; width: 33.333333%; }
+    .col-lg-5 { flex: 0 0 auto; width: 41.666667%; }
+    .col-lg-6 { flex: 0 0 auto; width: 50%; }
+    .col-lg-7 { flex: 0 0 auto; width: 58.333333%; }
+    .col-lg-8 { flex: 0 0 auto; width: 66.666667%; }
+    .col-lg-9 { flex: 0 0 auto; width: 75%; }
+    .col-lg-10 { flex: 0 0 auto; width: 83.333333%; }
+    .col-lg-11 { flex: 0 0 auto; width: 91.666667%; }
+    .col-lg-12 { flex: 0 0 auto; width: 100%; }
+    
+    .col-lg-auto {
+        flex: 0 0 auto;
+        width: auto;
+    }
+}
+
+/* ===================================================================
+   CSS GRID MODERNO - Auto Layout
+   Sistema flexible con auto-fit y minmax
+   ===================================================================ç */
+
+/* Grid básico responsive */
+.grid {
+    display: grid;
+    gap: var(--grid-gap-mobile);
+}
+
+/* Grid con 1 columna (móvil) */
+.grid-cols-1 {
+    grid-template-columns: repeat(1, 1fr);
+}
+
+/* Grid con 2 columnas */
+.grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* Grid con 3 columnas */
+.grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Grid con 4 columnas */
+.grid-cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* Grid con 6 columnas */
+.grid-cols-6 {
+    grid-template-columns: repeat(6, 1fr);
+}
+
+/* Grid con 12 columnas */
+.grid-cols-12 {
+    grid-template-columns: repeat(12, 1fr);
+}
+
+/* Grid auto-fit responsive - Se adapta automáticamente */
+.grid-auto-fit {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.grid-auto-fit-sm {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.grid-auto-fit-lg {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+/* Grid auto-fill - Llena el espacio disponible */
+.grid-auto-fill {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+/* ===================================================================
+   GRID RESPONSIVE - Tablet (768px+)
+   ===================================================================ç */
+
+@media (min-width: 768px) {
+    .grid {
+        gap: var(--grid-gap-tablet);
+    }
+    
+    .grid-md-cols-1 {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+    .grid-md-cols-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .grid-md-cols-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .grid-md-cols-4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .grid-md-cols-6 {
+        grid-template-columns: repeat(6, 1fr);
+    }
+    
+    .grid-md-cols-12 {
+        grid-template-columns: repeat(12, 1fr);
+    }
+}
+
+/* ===================================================================
+   GRID RESPONSIVE - Desktop (1024px+)
+   ===================================================================ç */
+
+@media (min-width: 1024px) {
+    .grid {
+        gap: var(--grid-gap-desktop);
+    }
+    
+    .grid-lg-cols-1 {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+    .grid-lg-cols-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .grid-lg-cols-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .grid-lg-cols-4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .grid-lg-cols-5 {
+        grid-template-columns: repeat(5, 1fr);
+    }
+    
+    .grid-lg-cols-6 {
+        grid-template-columns: repeat(6, 1fr);
+    }
+    
+    .grid-lg-cols-12 {
+        grid-template-columns: repeat(12, 1fr);
+    }
+}
+
+/* ===================================================================
+   GRID GAPS - Espaciados Personalizados
+   ===================================================================ç */
+
+.gap-0 { gap: 0; }
+.gap-1 { gap: var(--spacing-1); }
+.gap-2 { gap: var(--spacing-2); }
+.gap-3 { gap: var(--spacing-3); }
+.gap-4 { gap: var(--spacing-4); }
+.gap-6 { gap: var(--spacing-6); }
+.gap-8 { gap: var(--spacing-8); }
+.gap-12 { gap: var(--spacing-12); }
+.gap-16 { gap: var(--spacing-16); }
+
+/* Row y Column gaps separados */
+.row-gap-4 { row-gap: var(--spacing-4); }
+.row-gap-6 { row-gap: var(--spacing-6); }
+.row-gap-8 { row-gap: var(--spacing-8); }
+
+.col-gap-4 { column-gap: var(--spacing-4); }
+.col-gap-6 { column-gap: var(--spacing-6); }
+.col-gap-8 { column-gap: var(--spacing-8); }
+
+/* ===================================================================
+   GRID SPANS - Ocupar múltiples columnas/filas
+   ===================================================================ç */
+
+.col-span-1 { grid-column: span 1 / span 1; }
+.col-span-2 { grid-column: span 2 / span 2; }
+.col-span-3 { grid-column: span 3 / span 3; }
+.col-span-4 { grid-column: span 4 / span 4; }
+.col-span-6 { grid-column: span 6 / span 6; }
+.col-span-12 { grid-column: span 12 / span 12; }
+.col-span-full { grid-column: 1 / -1; }
+
+.row-span-1 { grid-row: span 1 / span 1; }
+.row-span-2 { grid-row: span 2 / span 2; }
+.row-span-3 { grid-row: span 3 / span 3; }
+.row-span-4 { grid-row: span 4 / span 4; }
+.row-span-full { grid-row: 1 / -1; }
+
+/* ===================================================================
+   FLEXBOX UTILITIES - Utilidades de Flex
+   ===================================================================ç */
+
+/* Display flex */
+.d-flex {
+    display: flex;
+}
+
+.d-inline-flex {
+    display: inline-flex;
+}
+
+/* Flex direction */
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-row-reverse {
+    flex-direction: row-reverse;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-column-reverse {
+    flex-direction: column-reverse;
+}
+
+/* Flex wrap */
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-nowrap {
+    flex-wrap: nowrap;
+}
+
+.flex-wrap-reverse {
+    flex-wrap: wrap-reverse;
+}
+
+/* Justify content */
+.justify-start {
+    justify-content: flex-start;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-around {
+    justify-content: space-around;
+}
+
+.justify-evenly {
+    justify-content: space-evenly;
+}
+
+/* Align items */
+.items-start {
+    align-items: flex-start;
+}
+
+.items-end {
+    align-items: flex-end;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.items-baseline {
+    align-items: baseline;
+}
+
+.items-stretch {
+    align-items: stretch;
+}
+
+/* Align content */
+.content-start {
+    align-content: flex-start;
+}
+
+.content-end {
+    align-content: flex-end;
+}
+
+.content-center {
+    align-content: center;
+}
+
+.content-between {
+    align-content: space-between;
+}
+
+.content-around {
+    align-content: space-around;
+}
+
+.content-stretch {
+    align-content: stretch;
+}
+
+/* Align self */
+.self-auto {
+    align-self: auto;
+}
+
+.self-start {
+    align-self: flex-start;
+}
+
+.self-end {
+    align-self: flex-end;
+}
+
+.self-center {
+    align-self: center;
+}
+
+.self-stretch {
+    align-self: stretch;
+}
+
+/* Flex grow y shrink */
+.flex-grow-0 { flex-grow: 0; }
+.flex-grow-1 { flex-grow: 1; }
+
+.flex-shrink-0 { flex-shrink: 0; }
+.flex-shrink-1 { flex-shrink: 1; }
+
+/* Flex basis */
+.flex-1 {
+    flex: 1 1 0%;
+}
+
+.flex-auto {
+    flex: 1 1 auto;
+}
+
+.flex-none {
+    flex: none;
+}
+
+/* ===================================================================
+   LAYOUTS ESPECIALES - Casos Comunes
+   ===================================================================ç */
+
+/* Layout centrado vertical y horizontal */
+.center-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Layout de dos columnas sidebar + content */
+.sidebar-layout {
+    display: grid;
+    gap: var(--grid-gap-mobile);
+}
+
+@media (min-width: 1024px) {
+    .sidebar-layout {
+        grid-template-columns: var(--sidebar-width-desktop) 1fr;
+        gap: var(--grid-gap-desktop);
+    }
+}
+
+/* Layout de header, main, footer */
+.page-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.page-layout > header {
+    flex-shrink: 0;
+}
+
+.page-layout > main {
+    flex: 1 0 auto;
+}
+
+.page-layout > footer {
+    flex-shrink: 0;
+}
+
+/* ===================================================================
+   GALERÍA - Layout Masonry Effect
+   ===================================================================ç */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: var(--grid-gap-mobile);
+}
+
+@media (min-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--grid-gap-tablet);
+    }
+}
+
+@media (min-width: 1024px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--grid-gap-desktop);
+    }
+}
+
+@media (min-width: 1280px) {
+    .gallery-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Masonry con CSS Grid (para navegadores modernos) */
+.gallery-masonry {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: 10px;
+    gap: var(--grid-gap-mobile);
+}
+
+.gallery-masonry > * {
+    grid-row-end: span var(--row-span, 20);
+}
+
+/* ===================================================================
+   UTILITIES - Ordenamiento y Visibility
+   ===================================================================ç */
+
+/* Order */
+.order-first { order: -1; }
+.order-last { order: 999; }
+.order-none { order: 0; }
+.order-1 { order: 1; }
+.order-2 { order: 2; }
+.order-3 { order: 3; }
+
+/* Responsive order */
+@media (min-width: 768px) {
+    .order-md-first { order: -1; }
+    .order-md-last { order: 999; }
+    .order-md-none { order: 0; }
+}
+
+@media (min-width: 1024px) {
+    .order-lg-first { order: -1; }
+    .order-lg-last { order: 999; }
+    .order-lg-none { order: 0; }
+}
+
+/* ===================================================================
+   NOTAS DE USO - EJEMPLOS
+   ===================================================================
+   
+   EJEMPLO 1 - Grid Responsive Básico:
+   <div class="container">
+       <div class="grid grid-cols-1 grid-md-cols-2 grid-lg-cols-3 gap-4">
+           <div>Item 1</div>
+           <div>Item 2</div>
+           <div>Item 3</div>
+       </div>
+   </div>
+   
+   EJEMPLO 2 - Flexbox Row con Columnas:
+   <div class="container">
+       <div class="row">
+           <div class="col-12 col-md-6 col-lg-4">Columna 1</div>
+           <div class="col-12 col-md-6 col-lg-4">Columna 2</div>
+           <div class="col-12 col-md-12 col-lg-4">Columna 3</div>
+       </div>
+   </div>
+   
+   EJEMPLO 3 - Auto-fit Grid (Galería):
+   <div class="container">
+       <div class="grid grid-auto-fit gap-6">
+           <div>Card 1</div>
+           <div>Card 2</div>
+           <div>Card 3</div>
+       </div>
+   </div>
+   
+   EJEMPLO 4 - Flexbox Centered:
+   <div class="d-flex justify-center items-center" style="min-height: 400px;">
+       <div>Contenido centrado</div>
+   </div>
+   
+   =================================================================== */
