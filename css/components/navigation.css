@@ -1,1 +1,596 @@
 /* css/components/navigations.css */
+
+/* ===================================================================
+   NAVIGATION.CSS - Sistema de Navegación Responsive
+   AcuarelaArte - Portafolio de Acuarelas
+   
+   Componentes:
+   - Navbar responsive con logo y menú
+   - Menú hamburguesa para móviles
+   - Theme toggle integrado
+   - Estados hover, active y focus
+   - Transiciones suaves
+   - Accesibilidad completa (ARIA, keyboard navigation)
+   
+   Breakpoints:
+   - Mobile:  Base (320px+) - Menú hamburguesa
+   - Tablet:  768px+ - Menú parcial
+   - Desktop: 1024px+ - Menú completo horizontal
+   =================================================================== */
+
+/* ===================================================================
+   HEADER - Contenedor Principal
+   =================================================================== */
+
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: var(--surface-elevated);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    z-index: var(--z-sticky);
+    transition: background-color var(--duration-normal) var(--ease-in-out),
+                border-color var(--duration-normal) var(--ease-in-out),
+                box-shadow var(--duration-normal) var(--ease-in-out);
+}
+
+/* Header con scroll (clase agregada por JavaScript) */
+.header.scrolled {
+    box-shadow: var(--shadow-md);
+}
+
+/* ===================================================================
+   NAVBAR - Barra de Navegación
+   =================================================================== */
+
+.navbar {
+    position: relative;
+    width: 100%;
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: var(--container-2xl);
+    margin: 0 auto;
+    padding: 0 var(--container-padding-mobile);
+    height: var(--nav-height-mobile);
+}
+
+/* ===================================================================
+   LOGO/BRAND
+   =================================================================== */
+
+.navbar-brand {
+    flex-shrink: 0;
+    z-index: calc(var(--z-sticky) + 1);
+}
+
+.brand-link {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: color var(--duration-fast) var(--ease-out),
+                transform var(--duration-fast) var(--ease-out);
+}
+
+.brand-link:hover {
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.brand-link:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 4px;
+    border-radius: var(--radius-sm);
+}
+
+.brand-text {
+    margin: 0;
+    font-family: var(--font-primary);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: var(--letter-spacing-tight);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ===================================================================
+   NAVBAR CONTROLS - Theme Toggle + Menu Toggle
+   =================================================================== */
+
+.navbar-controls {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    z-index: calc(var(--z-sticky) + 1);
+}
+
+/* ===================================================================
+   MENU TOGGLE - Botón Hamburguesa (Móvil)
+   =================================================================== */
+
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    padding: var(--spacing-2);
+    background: transparent;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: background-color var(--duration-fast) var(--ease-out),
+                border-color var(--duration-fast) var(--ease-out),
+                transform var(--duration-fast) var(--ease-out);
+}
+
+.menu-toggle:hover {
+    background-color: var(--surface-hover);
+    border-color: var(--border-hover);
+}
+
+.menu-toggle:active {
+    transform: scale(0.95);
+}
+
+.menu-toggle:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Líneas del hamburguesa */
+.hamburger-line {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: var(--text-primary);
+    border-radius: var(--radius-full);
+    transition: transform var(--duration-normal) var(--ease-in-out),
+                opacity var(--duration-normal) var(--ease-in-out),
+                background-color var(--duration-fast) var(--ease-out);
+}
+
+.hamburger-line:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+/* Estado activo del menú (animación X) */
+.menu-toggle[aria-expanded="true"] .hamburger-line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] .hamburger-line:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-10px);
+}
+
+.menu-toggle[aria-expanded="true"] .hamburger-line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ===================================================================
+   NAV MENU - Lista de Enlaces (Móvil)
+   =================================================================== */
+
+.nav-menu {
+    position: fixed;
+    top: var(--nav-height-mobile);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 0;
+    padding: var(--spacing-4) 0;
+    list-style: none;
+    background-color: var(--surface-elevated);
+    border-top: 1px solid var(--border-color);
+    overflow-y: auto;
+    transform: translateX(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform var(--duration-normal) var(--ease-in-out),
+                opacity var(--duration-normal) var(--ease-in-out),
+                visibility var(--duration-normal) var(--ease-in-out);
+    z-index: var(--z-sticky);
+}
+
+/* Menú abierto */
+.nav-menu.active {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Backdrop para menú móvil */
+.nav-menu::before {
+    content: '';
+    position: fixed;
+    top: var(--nav-height-mobile);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--duration-normal) var(--ease-in-out),
+                visibility var(--duration-normal) var(--ease-in-out);
+    z-index: -1;
+}
+
+.nav-menu.active::before {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ===================================================================
+   NAV ITEMS - Elementos del Menú
+   =================================================================== */
+
+.nav-item {
+    margin: 0;
+}
+
+.nav-link {
+    display: block;
+    padding: var(--spacing-4) var(--spacing-6);
+    font-family: var(--font-primary);
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-medium);
+    color: var(--text-primary);
+    text-decoration: none;
+    border-left: 3px solid transparent;
+    transition: color var(--duration-fast) var(--ease-out),
+                background-color var(--duration-fast) var(--ease-out),
+                border-color var(--duration-fast) var(--ease-out),
+                padding-left var(--duration-fast) var(--ease-out);
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+    background-color: var(--surface-hover);
+    border-left-color: var(--primary-color);
+    padding-left: calc(var(--spacing-6) + var(--spacing-2));
+}
+
+.nav-link:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: -2px;
+    background-color: var(--surface-hover);
+}
+
+/* Link activo */
+.nav-link.active,
+.nav-link[aria-current="page"] {
+    color: var(--primary-color);
+    font-weight: var(--font-weight-semibold);
+    background-color: var(--surface-active);
+    border-left-color: var(--primary-color);
+}
+
+/* ===================================================================
+   TABLET (768px+) - Menú Horizontal Parcial
+   =================================================================== */
+
+@media (min-width: 768px) {
+    .navbar-container {
+        padding: 0 var(--container-padding-tablet);
+        height: var(--nav-height-desktop);
+    }
+    
+    .nav-menu {
+        top: var(--nav-height-desktop);
+        padding: var(--spacing-6) 0;
+    }
+    
+    .nav-menu::before {
+        top: var(--nav-height-desktop);
+    }
+    
+    .nav-link {
+        font-size: var(--font-size-lg);
+        padding: var(--spacing-5) var(--spacing-8);
+    }
+    
+    .nav-link:hover {
+        padding-left: calc(var(--spacing-8) + var(--spacing-2));
+    }
+}
+
+/* ===================================================================
+   DESKTOP (1024px+) - Menú Horizontal Completo
+   =================================================================== */
+
+@media (min-width: 1024px) {
+    .navbar-container {
+        padding: 0 var(--container-padding-desktop);
+    }
+    
+    /* Ocultar botón hamburguesa */
+    .menu-toggle {
+        display: none;
+    }
+    
+    /* Menú horizontal */
+    .nav-menu {
+        position: static;
+        flex-direction: row;
+        align-items: center;
+        gap: var(--spacing-2);
+        padding: 0;
+        background-color: transparent;
+        border-top: none;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        overflow-y: visible;
+    }
+    
+    .nav-menu::before {
+        display: none;
+    }
+    
+    .nav-link {
+        padding: var(--spacing-3) var(--spacing-4);
+        font-size: var(--font-size-base);
+        border-left: none;
+        border-bottom: 2px solid transparent;
+        border-radius: var(--radius-md);
+    }
+    
+    .nav-link:hover {
+        background-color: var(--surface-hover);
+        border-bottom-color: var(--primary-color);
+        padding-left: var(--spacing-4);
+    }
+    
+    .nav-link.active,
+    .nav-link[aria-current="page"] {
+        background-color: var(--surface-active);
+        border-left: none;
+        border-bottom-color: var(--primary-color);
+    }
+}
+
+/* Desktop grande - Más espacio */
+@media (min-width: 1280px) {
+    .nav-menu {
+        gap: var(--spacing-3);
+    }
+    
+    .nav-link {
+        padding: var(--spacing-3) var(--spacing-5);
+        font-size: var(--font-size-md);
+    }
+    
+    .nav-link:hover {
+        padding-left: var(--spacing-5);
+    }
+}
+
+/* ===================================================================
+   ANIMACIONES DE ENTRADA - Items del Menú
+   =================================================================== */
+
+/* Animación stagger para items del menú móvil */
+.nav-menu.active .nav-item {
+    animation: slideInLeft var(--duration-normal) var(--ease-out) backwards;
+}
+
+.nav-menu.active .nav-item:nth-child(1) { animation-delay: 0.05s; }
+.nav-menu.active .nav-item:nth-child(2) { animation-delay: 0.1s; }
+.nav-menu.active .nav-item:nth-child(3) { animation-delay: 0.15s; }
+.nav-menu.active .nav-item:nth-child(4) { animation-delay: 0.2s; }
+.nav-menu.active .nav-item:nth-child(5) { animation-delay: 0.25s; }
+.nav-menu.active .nav-item:nth-child(6) { animation-delay: 0.3s; }
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ===================================================================
+   ACCESIBILIDAD
+   =================================================================== */
+
+/* Skip link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    padding: var(--spacing-2) var(--spacing-4);
+    background-color: var(--primary-color);
+    color: var(--text-inverse);
+    text-decoration: none;
+    font-weight: var(--font-weight-semibold);
+    border-radius: 0 0 var(--radius-md) 0;
+    z-index: calc(var(--z-modal) + 1);
+    transition: top var(--duration-fast) var(--ease-out);
+}
+
+.skip-link:focus {
+    top: 0;
+    outline: 2px solid var(--text-inverse);
+    outline-offset: -2px;
+}
+
+/* Screen reader only */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Focus visible para navegación por teclado */
+.nav-link:focus-visible,
+.brand-link:focus-visible,
+.menu-toggle:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Reducir movimiento para usuarios con preferencias */
+@media (prefers-reduced-motion: reduce) {
+    .nav-menu,
+    .hamburger-line,
+    .menu-toggle,
+    .nav-link,
+    .brand-link {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+    
+    .nav-menu.active .nav-item {
+        animation: none;
+    }
+}
+
+/* ===================================================================
+   UTILITIES - Estados y Helpers
+   =================================================================== */
+
+/* Prevenir scroll cuando menú móvil está abierto */
+body.menu-open {
+    overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+    body.menu-open {
+        overflow: auto;
+    }
+}
+
+/* Indicador de página actual para screen readers */
+[aria-current="page"]::after {
+    content: " (página actual)";
+    position: absolute;
+    left: -9999px;
+}
+
+/* ===================================================================
+   THEME INTEGRATION - Ajustes para Tema Oscuro
+   =================================================================== */
+
+[data-theme="dark"] .header {
+    background-color: var(--surface-color);
+    border-bottom-color: var(--border-color);
+}
+
+[data-theme="dark"] .nav-menu {
+    background-color: var(--surface-color);
+}
+
+[data-theme="dark"] .menu-toggle {
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .menu-toggle:hover {
+    background-color: var(--surface-hover);
+    border-color: var(--border-hover);
+}
+
+/* ===================================================================
+   PRINT STYLES
+   =================================================================== */
+
+@media print {
+    .header {
+        position: static;
+        box-shadow: none;
+        border-bottom: 1px solid #000;
+    }
+    
+    .menu-toggle,
+    .navbar-controls {
+        display: none;
+    }
+    
+    .nav-menu {
+        position: static;
+        flex-direction: row;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        border: none;
+        padding: 0;
+    }
+    
+    .nav-link {
+        padding: 0.25rem 0.5rem;
+        border: none;
+        color: #000;
+    }
+}
+
+/* ===================================================================
+   NOTAS DE USO - ESTRUCTURA HTML REQUERIDA
+   ===================================================================
+   
+   <header class="header">
+       <nav class="navbar" role="navigation" aria-label="Navegación principal">
+           <div class="navbar-container">
+               <div class="navbar-brand">
+                   <a href="/" class="brand-link">
+                       <h1 class="brand-text">AcuarelaArte</h1>
+                   </a>
+               </div>
+               
+               <div class="navbar-controls">
+                   <button class="theme-toggle" id="themeToggle">
+                       <span class="theme-icon" aria-hidden="true"></span>
+                   </button>
+                   <button class="menu-toggle" 
+                           id="menuToggle" 
+                           aria-label="Abrir menú"
+                           aria-expanded="false"
+                           aria-controls="navMenu">
+                       <span class="hamburger-line"></span>
+                       <span class="hamburger-line"></span>
+                       <span class="hamburger-line"></span>
+                   </button>
+               </div>
+               
+               <ul class="nav-menu" id="navMenu" role="menubar">
+                   <li class="nav-item" role="none">
+                       <a href="/" class="nav-link active" aria-current="page">Inicio</a>
+                   </li>
+                   <li class="nav-item" role="none">
+                       <a href="/portafolio" class="nav-link">Mi Portafolio</a>
+                   </li>
+                   <!-- Más items... -->
+               </ul>
+           </div>
+       </nav>
+   </header>
+   
+   JAVASCRIPT REQUERIDO (ResponsiveMenu.js):
+   - Toggle de menú (aria-expanded)
+   - Cerrar al hacer clic en link
+   - Cerrar al hacer clic fuera
+   - Cerrar al redimensionar ventana
+   - Agregar/remover clase "active" al nav-menu
+   - Agregar/remover clase "menu-open" al body
+   
+   =================================================================== */

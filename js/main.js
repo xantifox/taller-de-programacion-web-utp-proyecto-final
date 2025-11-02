@@ -15,7 +15,7 @@ import { initImageLoader, preloadCriticalImages, getLoadingStats } from './utils
 
 // Components (se importarán segÃºn se necesiten)
 // import ThemeToggle from './components/ThemeToggle.js';
-// import ResponsiveMenu from './components/ResponsiveMenu.js';
+import ResponsiveMenu from './components/ResponsiveMenu.js';
 // import FormValidator from './components/FormValidator.js';
 // import Gallery from './components/Gallery.js';
 // import Lightbox from './components/Lightbox.js';
@@ -128,11 +128,11 @@ class AcuarelaArteApp {
         }
 
         // 3. Responsive Menu - MenÃº hamburguesa (si el elemento existe)
-        // const menuToggle = document.getElementById('menuToggle');
-        // if (menuToggle) {
-        //     const { default: ResponsiveMenu } = await import('./components/ResponsiveMenu.js');
-        //     this.modules.responsiveMenu = new ResponsiveMenu();
-        // }
+        const menuToggle = document.getElementById('menuToggle');
+        if (menuToggle) {
+            const { default: ResponsiveMenu } = await import('./components/ResponsiveMenu.js');
+            this.modules.responsiveMenu = new ResponsiveMenu();
+        }
 
         this.log('💚 Módulos core cargados');
     }
