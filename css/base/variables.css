@@ -1,3 +1,5 @@
+/* css/base/variables.css */
+
 /* ===================================================================
    VARIABLES.CSS - Sistema de Design Tokens
    AcuarelaArte - Portafolio de Acuarelas
@@ -483,38 +485,3 @@
     --shadow-color-lg: rgba(0, 0, 0, 0.5);
     --shadow-color-xl: rgba(0, 0, 0, 0.6);
 }
-
-/* ===================================================================
-   NOTAS DE USO - GUÍA RÁPIDA
-   ===================================================================
-   
-   BREAKPOINTS (usar valores directos en media queries):
-   - Mobile:  Sin media query (320px+)
-   - Tablet:  @media (min-width: 768px)
-   - Desktop: @media (min-width: 1024px)
-   - XL:      @media (min-width: 1280px)
-   
-   EJEMPLO DE USO:
-   
-   .container {
-       padding: var(--container-padding-mobile);
-       max-width: var(--container-lg);
-   }
-   
-   @media (min-width: 768px) {
-       .container {
-           padding: var(--container-padding-tablet);
-       }
-   }
-   
-   @media (min-width: 1024px) {
-       .container {
-           padding: var(--container-padding-desktop);
-       }
-   }
-   
-   TEMA OSCURO:
-   - Se activa con: <html data-theme="dark">
-   - Automático con JavaScript en ThemeToggle.js
-   
-   =================================================================== */

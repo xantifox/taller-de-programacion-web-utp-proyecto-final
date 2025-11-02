@@ -1,1 +1,521 @@
 /* css/layout/footer.css */
+
+/* ===================================================================
+   FOOTER.CSS - Footer Responsive
+   AcuarelaArte - Portafolio de Acuarelas
+   
+   Componentes:
+   - Footer container con grid responsive
+   - Secciones de información y navegación
+   - Social media links
+   - Copyright y credits
+   - Sticky footer con flexbox
+   
+   Breakpoints:
+   - Mobile:  Base (320px+) - Stack vertical
+   - Tablet:  768px+ - Grid 2 columnas
+   - Desktop: 1024px+ - Grid 3-4 columnas
+   =================================================================== */
+
+/* ===================================================================
+   FOOTER - Contenedor Principal
+   =================================================================== */
+
+.footer {
+    width: 100%;
+    background-color: var(--surface-color);
+    border-top: 1px solid var(--border-color);
+    padding: var(--footer-padding-mobile) 0 var(--spacing-6);
+    margin-top: auto; /* Push footer to bottom */
+    transition: background-color var(--duration-normal) var(--ease-in-out),
+                border-color var(--duration-normal) var(--ease-in-out);
+}
+
+.footer-container {
+    max-width: var(--container-2xl);
+    margin: 0 auto;
+    padding: 0 var(--container-padding-mobile);
+}
+
+/* ===================================================================
+   FOOTER CONTENT - Grid de Secciones
+   =================================================================== */
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-8);
+    margin-bottom: var(--spacing-8);
+}
+
+/* ===================================================================
+   FOOTER SECTIONS - Bloques de Información
+   =================================================================== */
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+}
+
+/* Título principal del footer */
+.footer-title {
+    margin: 0 0 var(--spacing-2) 0;
+    font-family: var(--font-primary);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-primary);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Subtítulos de sección */
+.footer-subtitle {
+    margin: 0 0 var(--spacing-3) 0;
+    font-family: var(--font-primary);
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-wide);
+}
+
+/* Descripción del footer */
+.footer-description {
+    margin: 0;
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-relaxed);
+    color: var(--text-secondary);
+    max-width: 400px;
+}
+
+/* ===================================================================
+   FOOTER LINKS - Enlaces de Navegación
+   =================================================================== */
+
+.footer-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3);
+}
+
+.footer-link {
+    display: inline-flex;
+    align-items: center;
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-normal);
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color var(--duration-fast) var(--ease-out),
+                transform var(--duration-fast) var(--ease-out);
+}
+
+.footer-link:hover {
+    color: var(--primary-color);
+    transform: translateX(4px);
+}
+
+.footer-link:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+}
+
+/* ===================================================================
+   SOCIAL MEDIA - Iconos de Redes Sociales
+   =================================================================== */
+
+.footer-social {
+    display: flex;
+    gap: var(--spacing-3);
+    margin-top: var(--spacing-2);
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background-color: var(--surface-elevated);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: var(--font-size-xl);
+    transition: background-color var(--duration-fast) var(--ease-out),
+                border-color var(--duration-fast) var(--ease-out),
+                color var(--duration-fast) var(--ease-out),
+                transform var(--duration-fast) var(--ease-out);
+}
+
+.social-link:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--text-inverse);
+    transform: translateY(-2px);
+}
+
+.social-link:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+.social-link:active {
+    transform: translateY(0);
+}
+
+/* Iconos específicos con colores de marca (opcional) */
+.social-link.facebook:hover {
+    background-color: #1877F2;
+    border-color: #1877F2;
+}
+
+.social-link.instagram:hover {
+    background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF);
+    border-color: #DD2A7B;
+}
+
+.social-link.youtube:hover {
+    background-color: #FF0000;
+    border-color: #FF0000;
+}
+
+.social-link.pinterest:hover {
+    background-color: #E60023;
+    border-color: #E60023;
+}
+
+/* ===================================================================
+   FOOTER BOTTOM - Copyright y Credits
+   =================================================================== */
+
+.footer-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3);
+    padding-top: var(--spacing-6);
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.footer-copyright,
+.footer-credits,
+.footer-note {
+    margin: 0;
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-relaxed);
+    color: var(--text-tertiary);
+}
+
+.footer-copyright {
+    font-weight: var(--font-weight-medium);
+}
+
+.footer-credits {
+    font-style: italic;
+}
+
+/* Enlace en copyright */
+.footer-bottom a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color var(--duration-fast) var(--ease-out);
+}
+
+.footer-bottom a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+/* ===================================================================
+   NEWSLETTER - Suscripción (Opcional)
+   =================================================================== */
+
+.footer-newsletter {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3);
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3);
+}
+
+.newsletter-input {
+    width: 100%;
+    padding: var(--spacing-3) var(--spacing-4);
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-base);
+    color: var(--text-primary);
+    background-color: var(--surface-elevated);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    transition: border-color var(--duration-fast) var(--ease-out),
+                box-shadow var(--duration-fast) var(--ease-out);
+}
+
+.newsletter-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(74, 144, 194, 0.1);
+}
+
+.newsletter-button {
+    padding: var(--spacing-3) var(--spacing-6);
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-inverse);
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: background-color var(--duration-fast) var(--ease-out),
+                transform var(--duration-fast) var(--ease-out);
+}
+
+.newsletter-button:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.newsletter-button:active {
+    transform: translateY(0);
+}
+
+/* ===================================================================
+   CONTACT INFO - Información de Contacto
+   =================================================================== */
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2);
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    font-size: var(--font-size-base);
+    color: var(--text-secondary);
+}
+
+.contact-icon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    color: var(--primary-color);
+}
+
+/* ===================================================================
+   TABLET (768px+) - Grid 2 Columnas
+   =================================================================== */
+
+@media (min-width: 768px) {
+    .footer {
+        padding: var(--footer-padding-tablet) 0 var(--spacing-8);
+    }
+    
+    .footer-container {
+        padding: 0 var(--container-padding-tablet);
+    }
+    
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-10);
+    }
+    
+    /* Primera sección ocupa 2 columnas */
+    .footer-section:first-child {
+        grid-column: 1 / -1;
+    }
+    
+    .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+    
+    .newsletter-form {
+        flex-direction: row;
+    }
+    
+    .newsletter-input {
+        flex: 1;
+    }
+    
+    .newsletter-button {
+        width: auto;
+        flex-shrink: 0;
+    }
+}
+
+/* ===================================================================
+   DESKTOP (1024px+) - Grid 3-4 Columnas
+   =================================================================== */
+
+@media (min-width: 1024px) {
+    .footer {
+        padding: var(--footer-padding-desktop) 0 var(--spacing-10);
+    }
+    
+    .footer-container {
+        padding: 0 var(--container-padding-desktop);
+    }
+    
+    .footer-content {
+        grid-template-columns: 2fr repeat(3, 1fr);
+        gap: var(--spacing-12);
+    }
+    
+    /* Primera sección ocupa su columna normal */
+    .footer-section:first-child {
+        grid-column: auto;
+    }
+    
+    .footer-title {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .footer-subtitle {
+        font-size: var(--font-size-lg);
+    }
+    
+    .footer-social {
+        gap: var(--spacing-4);
+    }
+    
+    .social-link {
+        width: 48px;
+        height: 48px;
+        font-size: var(--font-size-2xl);
+    }
+}
+
+/* Desktop extra grande */
+@media (min-width: 1280px) {
+    .footer-content {
+        gap: var(--spacing-16);
+    }
+}
+
+/* ===================================================================
+   THEME INTEGRATION - Modo Oscuro
+   =================================================================== */
+
+[data-theme="dark"] .footer {
+    background-color: var(--surface-color);
+    border-top-color: var(--border-color);
+}
+
+[data-theme="dark"] .social-link {
+    background-color: var(--surface-elevated);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .social-link:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+[data-theme="dark"] .newsletter-input {
+    background-color: var(--surface-elevated);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+/* ===================================================================
+   PRINT STYLES
+   =================================================================== */
+
+@media print {
+    .footer {
+        page-break-inside: avoid;
+        border-top: 1px solid #000;
+        padding: 1rem 0;
+    }
+    
+    .footer-social,
+    .footer-newsletter {
+        display: none;
+    }
+    
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .footer-link {
+        color: #000;
+    }
+    
+    .footer-bottom {
+        border-top: 1px solid #ccc;
+        padding-top: 0.5rem;
+    }
+}
+
+/* ===================================================================
+   ACCESSIBILITY
+   =================================================================== */
+
+/* Focus visible para links */
+.footer-link:focus-visible,
+.social-link:focus-visible,
+.newsletter-input:focus-visible,
+.newsletter-button:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Reducir animaciones para usuarios con preferencias */
+@media (prefers-reduced-motion: reduce) {
+    .footer-link,
+    .social-link,
+    .newsletter-button {
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ===================================================================
+   UTILITIES - Helpers Específicos del Footer
+   =================================================================== */
+
+/* Separador entre secciones en móvil */
+@media (max-width: 767px) {
+    .footer-section:not(:last-child) {
+        padding-bottom: var(--spacing-6);
+        border-bottom: 1px solid var(--border-color-light);
+    }
+}
+
+/* Logo en footer (si existe) */
+.footer-logo {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: var(--spacing-3);
+}
+
+/* Badge o insignia en footer */
+.footer-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    padding: var(--spacing-2) var(--spacing-3);
+    background-color: var(--surface-elevated);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    margin-top: var(--spacing-3);
+}

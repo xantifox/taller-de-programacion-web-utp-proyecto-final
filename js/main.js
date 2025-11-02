@@ -14,7 +14,7 @@
 import { initImageLoader, preloadCriticalImages, getLoadingStats } from './utils/imageLoader.js';
 
 // Components (se importarán segÃºn se necesiten)
-// import ThemeToggle from './components/ThemeToggle.js';
+import ThemeToggle from './components/ThemeToggle.js';
 import ResponsiveMenu from './components/ResponsiveMenu.js';
 // import FormValidator from './components/FormValidator.js';
 // import Gallery from './components/Gallery.js';

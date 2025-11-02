@@ -1,1 +1,668 @@
 /* css/pages/gallery.css */
+
+/* ===================================================================
+   GALLERY.CSS - Galería de Portafolio Responsive
+   AcuarelaArte - Portafolio de Acuarelas
+   
+   Componentes:
+   - Filtros de categorías
+   - Grid masonry responsive
+   - Artwork cards con hover effects
+   - Lightbox modal para visualización
+   - Navegación lightbox (prev/next)
+   - Lazy loading support
+   
+   Breakpoints:
+   - Mobile:  1 columna
+   - Tablet:  2 columnas
+   - Desktop: 3-4 columnas
+   =================================================================== */
+
+/* ===================================================================
+   GALLERY CONTAINER - Contenedor Principal
+   =================================================================== */
+
+.gallery-section {
+    padding: var(--spacing-16) 0;
+    background-color: var(--background-color);
+}
+
+.gallery-container {
+    max-width: var(--container-2xl);
+    margin: 0 auto;
+    padding: 0 var(--container-padding-mobile);
+}
+
+/* ===================================================================
+   FILTER CONTROLS - Controles de Filtro
+   =================================================================== */
+
+.filter-controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-3);
+    margin-bottom: var(--spacing-12);
+    padding: var(--spacing-4);
+    background-color: var(--surface-color);
+    border-radius: var(--radius-xl);
+}
+
+.filter-btn {
+    padding: var(--spacing-3) var(--spacing-6);
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+    color: var(--text-secondary);
+    background-color: var(--surface-elevated);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: all var(--duration-fast) var(--ease-out);
+}
+
+.filter-btn:hover {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    background-color: var(--surface-hover);
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    color: var(--text-inverse);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-color: transparent;
+    box-shadow: 0 4px 12px rgba(74, 144, 194, 0.3);
+}
+
+.filter-btn:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* ===================================================================
+   GALLERY GRID - Grid de Obras
+   =================================================================== */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: var(--spacing-6);
+    margin-top: var(--spacing-8);
+}
+
+/* ===================================================================
+   ARTWORK CARD - Tarjeta de Obra
+   =================================================================== */
+
+.artwork-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--surface-elevated);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-base);
+    cursor: pointer;
+    transition: transform var(--duration-normal) var(--ease-out),
+                box-shadow var(--duration-normal) var(--ease-out),
+                border-color var(--duration-normal) var(--ease-out);
+}
+
+.artwork-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-2xl);
+    border-color: var(--primary-color);
+}
+
+.artwork-card:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Imagen del artwork */
+.artwork-image-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 75%; /* Aspect ratio 4:3 */
+    overflow: hidden;
+    background-color: var(--surface-color);
+}
+
+.artwork-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--duration-slow) var(--ease-out),
+                opacity var(--duration-normal) var(--ease-in-out);
+}
+
+.artwork-card:hover .artwork-image {
+    transform: scale(1.1);
+}
+
+/* Lazy loading */
+.artwork-image[data-src] {
+    opacity: 0;
+}
+
+.artwork-image.loaded {
+    opacity: 1;
+}
+
+/* Overlay de hover */
+.artwork-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(0, 0, 0, 0.7) 100%
+    );
+    opacity: 0;
+    transition: opacity var(--duration-normal) var(--ease-in-out);
+    display: flex;
+    align-items: flex-end;
+    padding: var(--spacing-4);
+}
+
+.artwork-card:hover .artwork-overlay {
+    opacity: 1;
+}
+
+.artwork-overlay-content {
+    color: var(--text-inverse);
+    width: 100%;
+}
+
+.artwork-overlay-title {
+    margin: 0;
+    font-family: var(--font-primary);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+}
+
+/* Información del artwork */
+.artwork-info {
+    padding: var(--spacing-4);
+}
+
+.artwork-title {
+    margin: 0 0 var(--spacing-2) 0;
+    font-family: var(--font-primary);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-primary);
+}
+
+.artwork-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-3);
+    margin-top: var(--spacing-3);
+}
+
+.detail-item {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-1);
+    padding: var(--spacing-1) var(--spacing-3);
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    background-color: var(--surface-color);
+    border-radius: var(--radius-full);
+}
+
+/* Icono de zoom */
+.zoom-icon {
+    position: absolute;
+    top: var(--spacing-4);
+    right: var(--spacing-4);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: var(--radius-full);
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity var(--duration-fast) var(--ease-out),
+                transform var(--duration-fast) var(--ease-out);
+}
+
+.artwork-card:hover .zoom-icon {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ===================================================================
+   LIGHTBOX MODAL - Modal de Visualización
+   =================================================================== */
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: var(--z-modal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--duration-normal) var(--ease-in-out),
+                visibility var(--duration-normal) var(--ease-in-out);
+}
+
+.lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Contenido del lightbox */
+.lightbox-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-4);
+    padding: var(--spacing-6);
+}
+
+/* Imagen del lightbox */
+.lightbox-image {
+    max-width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    animation: zoomIn var(--duration-normal) var(--ease-out);
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Información del lightbox */
+.lightbox-info {
+    text-align: center;
+    color: var(--text-inverse);
+    max-width: 600px;
+}
+
+.lightbox-info h3 {
+    margin: 0 0 var(--spacing-2) 0;
+    font-family: var(--font-primary);
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+}
+
+.lightbox-info p {
+    margin: 0;
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-relaxed);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.lightbox-info .artwork-details {
+    justify-content: center;
+    margin-top: var(--spacing-4);
+}
+
+.lightbox-info .detail-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-inverse);
+}
+
+/* Botón cerrar */
+.close-lightbox {
+    position: absolute;
+    top: var(--spacing-4);
+    right: var(--spacing-4);
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-3xl);
+    color: var(--text-inverse);
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: background-color var(--duration-fast) var(--ease-out),
+                border-color var(--duration-fast) var(--ease-out),
+                transform var(--duration-fast) var(--ease-out);
+}
+
+.close-lightbox:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: rotate(90deg);
+}
+
+.close-lightbox:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Navegación del lightbox */
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-3xl);
+    color: var(--text-inverse);
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: background-color var(--duration-fast) var(--ease-out),
+                border-color var(--duration-fast) var(--ease-out),
+                transform var(--duration-fast) var(--ease-out);
+}
+
+.lightbox-nav:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.lightbox-nav:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.lightbox-nav.prev {
+    left: var(--spacing-4);
+}
+
+.lightbox-nav.next {
+    right: var(--spacing-4);
+}
+
+.lightbox-nav:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* ===================================================================
+   EMPTY STATE - Estado Vacío
+   =================================================================== */
+
+.gallery-empty {
+    padding: var(--spacing-16) var(--spacing-4);
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+.gallery-empty-icon {
+    font-size: var(--font-size-6xl);
+    margin-bottom: var(--spacing-4);
+    opacity: 0.5;
+}
+
+.gallery-empty-message {
+    font-size: var(--font-size-lg);
+    margin: 0;
+}
+
+/* ===================================================================
+   LOADING STATE - Estado de Carga
+   =================================================================== */
+
+.gallery-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+}
+
+.loading-spinner {
+    width: 48px;
+    height: 48px;
+    border: 4px solid var(--border-color);
+    border-top-color: var(--primary-color);
+    border-radius: var(--radius-full);
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ===================================================================
+   TABLET (768px+) - Grid 2 Columnas
+   =================================================================== */
+
+@media (min-width: 768px) {
+    .gallery-container {
+        padding: 0 var(--container-padding-tablet);
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-8);
+    }
+    
+    .filter-controls {
+        gap: var(--spacing-4);
+        margin-bottom: var(--spacing-16);
+    }
+    
+    .filter-btn {
+        font-size: var(--font-size-md);
+    }
+    
+    .lightbox-content {
+        max-width: 85%;
+    }
+    
+    .lightbox-nav {
+        width: 64px;
+        height: 64px;
+        font-size: var(--font-size-4xl);
+    }
+    
+    .lightbox-nav.prev {
+        left: var(--spacing-8);
+    }
+    
+    .lightbox-nav.next {
+        right: var(--spacing-8);
+    }
+}
+
+/* ===================================================================
+   DESKTOP (1024px+) - Grid 3 Columnas
+   =================================================================== */
+
+@media (min-width: 1024px) {
+    .gallery-container {
+        padding: 0 var(--container-padding-desktop);
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-10);
+    }
+    
+    .filter-controls {
+        gap: var(--spacing-4);
+    }
+    
+    .lightbox-content {
+        max-width: 80%;
+        max-height: 95vh;
+    }
+    
+    .lightbox-image {
+        max-height: 80vh;
+    }
+}
+
+/* Desktop extra grande - 4 columnas */
+@media (min-width: 1280px) {
+    .gallery-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--spacing-12);
+    }
+}
+
+/* ===================================================================
+   ANIMATIONS - Animaciones de Filtrado
+   =================================================================== */
+
+/* Animación al filtrar */
+.artwork-card.filtering-out {
+    animation: fadeOut var(--duration-fast) var(--ease-in-out) forwards;
+}
+
+.artwork-card.filtering-in {
+    animation: fadeIn var(--duration-fast) var(--ease-in-out) forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Animación de aparición escalonada */
+.artwork-card {
+    animation: slideUp var(--duration-normal) var(--ease-out) backwards;
+}
+
+.artwork-card:nth-child(1) { animation-delay: 0.05s; }
+.artwork-card:nth-child(2) { animation-delay: 0.1s; }
+.artwork-card:nth-child(3) { animation-delay: 0.15s; }
+.artwork-card:nth-child(4) { animation-delay: 0.2s; }
+.artwork-card:nth-child(5) { animation-delay: 0.25s; }
+.artwork-card:nth-child(6) { animation-delay: 0.3s; }
+.artwork-card:nth-child(7) { animation-delay: 0.35s; }
+.artwork-card:nth-child(8) { animation-delay: 0.4s; }
+.artwork-card:nth-child(9) { animation-delay: 0.45s; }
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===================================================================
+   ACCESSIBILITY
+   =================================================================== */
+
+/* Prevenir scroll cuando lightbox está abierto */
+body.lightbox-open {
+    overflow: hidden;
+}
+
+/* Reducir animaciones para usuarios con preferencias */
+@media (prefers-reduced-motion: reduce) {
+    .artwork-card,
+    .lightbox-image,
+    .filter-btn,
+    .lightbox-nav {
+        animation: none !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ===================================================================
+   THEME INTEGRATION - Modo Oscuro
+   =================================================================== */
+
+[data-theme="dark"] .gallery-section {
+    background-color: var(--background-color);
+}
+
+[data-theme="dark"] .filter-controls {
+    background-color: var(--surface-color);
+}
+
+[data-theme="dark"] .filter-btn {
+    background-color: var(--surface-elevated);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .artwork-card {
+    background-color: var(--surface-elevated);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .artwork-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 20px 40px rgba(93, 173, 226, 0.2);
+}
+
+/* ===================================================================
+   PRINT STYLES
+   =================================================================== */
+
+@media print {
+    .filter-controls,
+    .lightbox,
+    .zoom-icon,
+    .artwork-overlay {
+        display: none;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .artwork-card {
+        box-shadow: none;
+        border: 1px solid #ccc;
+        page-break-inside: avoid;
+    }
+}
