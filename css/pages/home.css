@@ -7,8 +7,8 @@
    Componentes:
    - Hero Section con imagen y contenido
    - Philosophy Cards (Filosofía Artística)
+   - Highlights Section (¿Qué Encontrarás Aquí?) - MEJORADO
    - CTA Buttons (Call to Action)
-   - Section Headers
    - Animaciones de entrada
    
    Breakpoints:
@@ -66,14 +66,6 @@
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-/* Gradiente en título (opcional) */
-.hero-title.gradient-text {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
 .hero-subtitle {
     margin: 0;
     font-family: var(--font-secondary);
@@ -81,128 +73,6 @@
     font-weight: var(--font-weight-normal);
     line-height: var(--line-height-relaxed);
     color: var(--text-secondary);
-    max-width: 600px;
-}
-
-/* ===================================================================
-   HERO ACTIONS - Botones CTA
-   =================================================================== */
-
-.hero-actions {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-4);
-    margin-top: var(--spacing-4);
-}
-
-/* Botones CTA */
-.cta-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 48px;
-    padding: var(--spacing-4) var(--spacing-8);
-    font-family: var(--font-primary);
-    font-size: var(--font-size-md);
-    font-weight: var(--font-weight-semibold);
-    text-decoration: none;
-    text-align: center;
-    border-radius: var(--radius-lg);
-    cursor: pointer;
-    transition: transform var(--duration-fast) var(--ease-out),
-                box-shadow var(--duration-fast) var(--ease-out),
-                background-color var(--duration-fast) var(--ease-out);
-}
-
-/* CTA Primary - Botón principal */
-.cta-primary {
-    color: var(--text-inverse);
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-    border: none;
-    box-shadow: 0 4px 12px rgba(74, 144, 194, 0.3);
-}
-
-.cta-primary:hover {
-    background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
-    box-shadow: 0 6px 16px rgba(74, 144, 194, 0.4);
-    transform: translateY(-2px);
-}
-
-.cta-primary:active {
-    transform: translateY(0);
-}
-
-/* CTA Secondary - Botón secundario */
-.cta-secondary {
-    color: var(--primary-color);
-    background-color: transparent;
-    border: 2px solid var(--primary-color);
-    box-shadow: none;
-}
-
-.cta-secondary:hover {
-    background-color: var(--primary-color);
-    color: var(--text-inverse);
-    box-shadow: 0 4px 12px rgba(74, 144, 194, 0.2);
-    transform: translateY(-2px);
-}
-
-.cta-secondary:active {
-    transform: translateY(0);
-}
-
-/* Focus state para accesibilidad */
-.cta-button:focus-visible {
-    outline: 3px solid var(--primary-color);
-    outline-offset: 3px;
-}
-
-/* ===================================================================
-   HERO IMAGE - Imagen Principal
-   =================================================================== */
-
-.hero-image {
-    position: relative;
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    border-radius: var(--radius-2xl);
-    overflow: hidden;
-    box-shadow: var(--shadow-2xl);
-}
-
-.hero-img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-    transition: transform var(--duration-slow) var(--ease-out);
-}
-
-.hero-image:hover .hero-img {
-    transform: scale(1.05);
-}
-
-/* Overlay decorativo */
-.hero-image-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(
-        135deg,
-        rgba(74, 144, 194, 0.1) 0%,
-        rgba(123, 104, 238, 0.1) 50%,
-        rgba(255, 107, 107, 0.1) 100%
-    );
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity var(--duration-normal) var(--ease-in-out);
-}
-
-.hero-image:hover .hero-image-overlay {
-    opacity: 1;
 }
 
 /* ===================================================================
@@ -219,10 +89,6 @@
     margin: 0 auto;
     padding: 0 var(--container-padding-mobile);
 }
-
-/* ===================================================================
-   SECTION HEADER - Encabezado de Sección
-   =================================================================== */
 
 .section-header {
     text-align: center;
@@ -248,19 +114,11 @@
     margin: 0 auto;
 }
 
-/* ===================================================================
-   PHILOSOPHY GRID - Grid de Cards
-   =================================================================== */
-
 .philosophy-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--spacing-6);
 }
-
-/* ===================================================================
-   PHILOSOPHY CARD - Tarjetas de Filosofía
-   =================================================================== */
 
 .philosophy-card {
     display: flex;
@@ -283,43 +141,215 @@
     border-color: var(--primary-color);
 }
 
-.philosophy-card:focus {
-    outline: 2px solid var(--primary-color);
-    outline-offset: 2px;
+/* ===================================================================
+   HIGHLIGHTS SECTION - ¿Qué Encontrarás Aquí? - MEJORADO
+   =================================================================== */
+
+.highlights {
+    padding: var(--spacing-16) 0;
+    background: linear-gradient(180deg, 
+        var(--background-color) 0%,
+        var(--surface-color) 50%,
+        var(--background-color) 100%);
+    position: relative;
+    overflow: hidden;
 }
 
-/* Icono de la card */
-.card-icon {
-    width: 80px;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: var(--spacing-4);
+/* Efectos de fondo decorativos flotantes */
+.highlights::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, 
+        rgba(74, 144, 194, 0.08) 0%, 
+        transparent 70%);
+    pointer-events: none;
+    animation: float 20s ease-in-out infinite;
+}
+
+.highlights::after {
+    content: '';
+    position: absolute;
+    bottom: -50%;
+    left: -20%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, 
+        rgba(123, 104, 238, 0.06) 0%, 
+        transparent 70%);
+    pointer-events: none;
+    animation: float 25s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    33% { transform: translate(30px, -30px) rotate(5deg); }
+    66% { transform: translate(-20px, 20px) rotate(-5deg); }
+}
+
+.highlights-container {
+    max-width: var(--container-2xl);
+    margin: 0 auto;
+    padding: 0 var(--container-padding-mobile);
+    position: relative;
+    z-index: 1;
+}
+
+/* Grid de highlights */
+.highlights-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-8);
+    margin-top: var(--spacing-8);
+}
+
+/* ===================================================================
+   HIGHLIGHT ITEM - Tarjeta Individual Mejorada
+   =================================================================== */
+
+.highlight-item {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-6);
+    padding: var(--spacing-8);
+    background: var(--surface-elevated);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-base);
+    position: relative;
+    overflow: hidden;
+    transition: all var(--duration-normal) var(--ease-out);
+}
+
+/* Borde animado gradiente en hover */
+.highlight-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: var(--radius-2xl);
+    padding: 2px;
+    background: linear-gradient(135deg, 
+        var(--primary-color), 
+        var(--secondary-color), 
+        var(--accent-color));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity var(--duration-normal) var(--ease-in-out);
+}
+
+.highlight-item:hover::before {
+    opacity: 1;
+}
+
+.highlight-item:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--shadow-2xl);
+    border-color: transparent;
+}
+
+/* Focus state para accesibilidad */
+.highlight-item:focus-within {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 4px;
+}
+
+/* ===================================================================
+   HIGHLIGHT IMAGE - Imagen con efectos avanzados
+   =================================================================== */
+
+.highlight-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
     background: linear-gradient(135deg, 
         var(--primary-color) 0%, 
         var(--secondary-color) 100%);
-    border-radius: var(--radius-full);
-    box-shadow: 0 8px 16px rgba(74, 144, 194, 0.3);
 }
 
-.card-icon .icon {
-    width: 40px;
-    height: 40px;
-    filter: brightness(0) invert(1); /* White icon */
+.highlight-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--duration-slow) var(--ease-out),
+                filter var(--duration-normal) var(--ease-in-out);
 }
 
-/* Título de la card */
-.card-title {
-    margin: 0 0 var(--spacing-3) 0;
+/* Efecto zoom y rotación en hover */
+.highlight-item:hover .highlight-img {
+    transform: scale(1.1) rotate(2deg);
+    filter: brightness(1.1) saturate(1.2);
+}
+
+/* Overlay gradiente que aparece en hover */
+.highlight-image::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(to top, 
+        rgba(0, 0, 0, 0.6) 0%, 
+        transparent 100%);
+    opacity: 0;
+    transition: opacity var(--duration-normal) var(--ease-in-out);
+}
+
+.highlight-item:hover .highlight-image::after {
+    opacity: 1;
+}
+
+/* ===================================================================
+   HIGHLIGHT CONTENT - Contenido textual mejorado
+   =================================================================== */
+
+.highlight-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+}
+
+.highlight-title {
+    margin: 0;
     font-family: var(--font-primary);
-    font-size: var(--font-size-xl);
-    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
     color: var(--text-primary);
+    position: relative;
+    padding-bottom: var(--spacing-3);
+    transition: color var(--duration-normal) var(--ease-in-out);
 }
 
-/* Descripción de la card */
-.card-description {
+/* Subrayado animado que crece en hover */
+.highlight-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        var(--primary-color), 
+        var(--secondary-color));
+    border-radius: var(--radius-full);
+    transition: width var(--duration-normal) var(--ease-out);
+}
+
+.highlight-item:hover .highlight-title::after {
+    width: 60px;
+}
+
+.highlight-description {
     margin: 0;
     font-family: var(--font-secondary);
     font-size: var(--font-size-base);
@@ -328,25 +358,58 @@
 }
 
 /* ===================================================================
-   ANIMACIONES DE ENTRADA
+   HIGHLIGHT LINK - Enlace CTA con animación
    =================================================================== */
 
-/* Fade in up animation */
+.highlight-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    color: var(--primary-color);
+    text-decoration: none;
+    margin-top: var(--spacing-2);
+    transition: all var(--duration-fast) var(--ease-out);
+    position: relative;
+}
+
+.highlight-link::after {
+    content: '→';
+    transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.highlight-link:hover {
+    color: var(--primary-light);
+    gap: var(--spacing-3);
+}
+
+.highlight-link:hover::after {
+    transform: translateX(4px);
+}
+
+.highlight-link:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 4px;
+    border-radius: var(--radius-sm);
+}
+
+/* ===================================================================
+   ANIMACIONES DE ENTRADA - Fade In Up
+   =================================================================== */
+
 .fade-in-up {
     opacity: 0;
     animation: fadeInUp var(--duration-slow) var(--ease-out) forwards;
 }
 
 .fade-in-up.delay-1 {
-    animation-delay: 0.1s;
-}
-
-.fade-in-up.delay-2 {
     animation-delay: 0.2s;
 }
 
-.fade-in-up.delay-3 {
-    animation-delay: 0.3s;
+.fade-in-up.delay-2 {
+    animation-delay: 0.4s;
 }
 
 @keyframes fadeInUp {
@@ -361,38 +424,23 @@
 }
 
 /* ===================================================================
-   TABLET (768px+) - Layout Híbrido
+   RESPONSIVE - TABLET (768px+)
    =================================================================== */
 
 @media (min-width: 768px) {
-    .hero {
-        min-height: 80vh;
-        padding: var(--spacing-24) 0 var(--spacing-20);
+    .hero-container {
+        flex-direction: row;
+        align-items: center;
+        gap: var(--spacing-12);
     }
     
-    .hero-container {
-        padding: 0 var(--container-padding-tablet);
+    .hero-content,
+    .hero-image {
+        flex: 1;
     }
     
     .hero-title {
         font-size: var(--font-size-4xl);
-    }
-    
-    .hero-subtitle {
-        font-size: var(--font-size-xl);
-    }
-    
-    .hero-actions {
-        flex-direction: row;
-        gap: var(--spacing-4);
-    }
-    
-    .cta-button {
-        min-width: 180px;
-    }
-    
-    .philosophy-container {
-        padding: 0 var(--container-padding-tablet);
     }
     
     .philosophy-grid {
@@ -400,13 +448,33 @@
         gap: var(--spacing-8);
     }
     
-    .section-title {
-        font-size: var(--font-size-4xl);
+    /* Highlights: imagen y contenido lado a lado */
+    .highlight-item {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: var(--spacing-8);
+    }
+    
+    /* Alternar orden de imagen/contenido para diseño dinámico */
+    .highlight-item:nth-child(even) .highlight-image {
+        order: 2;
+    }
+    
+    .highlight-item:nth-child(even) .highlight-content {
+        order: 1;
+    }
+    
+    .highlight-title {
+        font-size: var(--font-size-3xl);
+    }
+    
+    .highlight-description {
+        font-size: var(--font-size-lg);
     }
 }
 
 /* ===================================================================
-   DESKTOP (1024px+) - Side by Side Layout
+   RESPONSIVE - DESKTOP (1024px+)
    =================================================================== */
 
 @media (min-width: 1024px) {
@@ -414,159 +482,25 @@
         min-height: 90vh;
     }
     
-    .hero-container {
-        flex-direction: row;
-        align-items: center;
-        gap: var(--spacing-16);
-        padding: 0 var(--container-padding-desktop);
-    }
-    
-    .hero-content {
-        flex: 1;
-        max-width: 600px;
-    }
-    
-    .hero-title {
-        font-size: var(--font-size-5xl);
-    }
-    
-    .hero-subtitle {
-        font-size: var(--font-size-xl);
-    }
-    
-    .hero-image {
-        flex: 1;
-        max-width: 550px;
-        margin: 0;
-    }
-    
-    .philosophy-container {
-        padding: 0 var(--container-padding-desktop);
-    }
-    
     .philosophy-grid {
         grid-template-columns: repeat(3, 1fr);
-        gap: var(--spacing-10);
     }
     
-    .section-header {
-        margin-bottom: var(--spacing-16);
+    .highlights {
+        padding: var(--spacing-20) 0;
     }
     
-    .section-title {
-        font-size: var(--font-size-5xl);
-    }
-    
-    .section-subtitle {
-        font-size: var(--font-size-xl);
-    }
-}
-
-/* Desktop extra grande */
-@media (min-width: 1280px) {
-    .hero-title {
-        font-size: var(--font-size-6xl);
-    }
-    
-    .hero-container {
-        gap: var(--spacing-20);
-    }
-    
-    .philosophy-grid {
+    .highlights-grid {
         gap: var(--spacing-12);
     }
-}
-
-/* ===================================================================
-   DECORATIVE ELEMENTS - Elementos Decorativos
-   =================================================================== */
-
-/* Fondo decorativo con formas */
-.hero::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -20%;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, 
-        rgba(74, 144, 194, 0.15) 0%, 
-        transparent 70%);
-    border-radius: var(--radius-full);
-    pointer-events: none;
-    z-index: 0;
-}
-
-.hero::after {
-    content: '';
-    position: absolute;
-    bottom: -30%;
-    left: -10%;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, 
-        rgba(123, 104, 238, 0.12) 0%, 
-        transparent 70%);
-    border-radius: var(--radius-full);
-    pointer-events: none;
-    z-index: 0;
-}
-
-/* ===================================================================
-   ADDITIONAL SECTIONS - Secciones Adicionales
-   =================================================================== */
-
-/* Featured Works Preview (opcional) */
-.featured-works {
-    padding: var(--spacing-16) 0;
-    background-color: var(--background-color);
-}
-
-.works-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--spacing-6);
-    margin-top: var(--spacing-12);
-}
-
-@media (min-width: 768px) {
-    .works-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--spacing-8);
+    
+    .highlight-item {
+        padding: var(--spacing-10);
     }
-}
-
-@media (min-width: 1024px) {
-    .works-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: var(--spacing-10);
+    
+    .highlight-image {
+        aspect-ratio: 4 / 3;
     }
-}
-
-/* Work Card */
-.work-card {
-    position: relative;
-    overflow: hidden;
-    border-radius: var(--radius-xl);
-    box-shadow: var(--shadow-md);
-    transition: transform var(--duration-normal) var(--ease-out),
-                box-shadow var(--duration-normal) var(--ease-out);
-}
-
-.work-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-2xl);
-}
-
-.work-card img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform var(--duration-slow) var(--ease-out);
-}
-
-.work-card:hover img {
-    transform: scale(1.1);
 }
 
 /* ===================================================================
@@ -578,10 +512,6 @@
         rgba(93, 173, 226, 0.12) 0%,
         rgba(187, 143, 206, 0.12) 50%,
         rgba(241, 148, 138, 0.12) 100%);
-}
-
-[data-theme="dark"] .hero-title {
-    text-shadow: 0 2px 8px rgba(93, 173, 226, 0.3);
 }
 
 [data-theme="dark"] .philosophy {
@@ -598,32 +528,50 @@
     box-shadow: 0 20px 40px rgba(93, 173, 226, 0.2);
 }
 
+[data-theme="dark"] .highlights {
+    background: linear-gradient(180deg, 
+        var(--background-color) 0%,
+        rgba(34, 34, 34, 0.8) 50%,
+        var(--background-color) 100%);
+}
+
+[data-theme="dark"] .highlights::before {
+    background: radial-gradient(circle, 
+        rgba(93, 173, 226, 0.12) 0%, 
+        transparent 70%);
+}
+
+[data-theme="dark"] .highlights::after {
+    background: radial-gradient(circle, 
+        rgba(187, 143, 206, 0.1) 0%, 
+        transparent 70%);
+}
+
+[data-theme="dark"] .highlight-item {
+    background: var(--surface-elevated);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .highlight-item:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6),
+                0 0 30px rgba(93, 173, 226, 0.15);
+}
+
 /* ===================================================================
-   ACCESSIBILITY
+   ACCESSIBILITY - Reducir movimiento
    =================================================================== */
 
-/* Reducir movimiento para usuarios con preferencias */
 @media (prefers-reduced-motion: reduce) {
     .fade-in-up,
     .philosophy-card,
-    .cta-button,
-    .hero-img {
+    .highlight-item,
+    .highlight-img,
+    .float,
+    .highlights::before,
+    .highlights::after {
         animation: none !important;
         transition-duration: 0.01ms !important;
     }
-}
-
-/* Screen reader only text */
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
 }
 
 /* ===================================================================
@@ -637,17 +585,12 @@
         background: none;
     }
     
-    .hero::before,
-    .hero::after {
+    .highlights::before,
+    .highlights::after {
         display: none;
     }
     
-    .hero-actions,
-    .cta-button {
-        display: none;
-    }
-    
-    .philosophy-card {
+    .highlight-item {
         box-shadow: none;
         border: 1px solid #ccc;
         page-break-inside: avoid;
