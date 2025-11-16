@@ -39,7 +39,7 @@
 }
 
 /* ===================================================================
-   CONTROLES DE BÚSQUEDA Y FILTRADO
+   CONTROLES DE BÃšSQUEDA Y FILTRADO
    =================================================================== */
 
 .materials-controls {
@@ -224,7 +224,7 @@
 }
 
 /* ===================================================================
-   BADGES Y CATEGORÍAS
+   BADGES Y CATEGORÃAS
    =================================================================== */
 
 .category-badge {
@@ -354,7 +354,7 @@
 }
 
 /* ===================================================================
-   INFORMACIÓN DE LA TABLA
+   INFORMACIÃ“N DE LA TABLA
    =================================================================== */
 
 .table-info {
@@ -574,15 +574,15 @@
 }
 
 .materials-table th[aria-sort="ascending"] .sort-icon::before {
-    content: "↑";
+    content: "â†‘";
 }
 
 .materials-table th[aria-sort="descending"] .sort-icon::before {
-    content: "↓";
+    content: "â†“";
 }
 
 .materials-table th[aria-sort="none"] .sort-icon::before {
-    content: "↕";
+    content: "â†•";
 }
 
 /* Loading states */
@@ -601,4 +601,49 @@
     padding: 1rem;
     border-radius: 4px;
     font-weight: 500;
+}
+
+/* ===================================================================
+   ANIMACIONES FADE-IN-UP (PARA HOME Y OTRAS PÁGINAS)
+   Solución para IntersectionObserver
+   =================================================================== */
+
+/* Estado inicial: elementos ocultos */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+/* Estado animado: cuando IntersectionObserver agrega .animate-in */
+.fade-in-up.animate-in {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Delays para animaciones escalonadas */
+.fade-in-up.delay-1 {
+    animation-delay: 0.15s;
+}
+
+.fade-in-up.delay-2 {
+    animation-delay: 0.3s;
+}
+
+.fade-in-up.delay-3 {
+    animation-delay: 0.45s;
+}
+
+.fade-in-up.delay-4 {
+    animation-delay: 0.6s;
+}
+
+/* Keyframe para la animación */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
